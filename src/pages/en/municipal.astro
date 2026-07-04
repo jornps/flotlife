@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SegmentDetail from '../../components/sections/SegmentDetail.astro';
+
+const entry = (await getCollection('segments', (s) => s.data.segmentKey === 'kommunal' && s.data.lang === 'en'))[0];
+if (!entry) throw new Error('Missing segment entry: kommunal/en');
+const allSolutions = await getCollection('solutions', (s) => s.data.lang === 'en');
+const solutions = allSolutions.filter((s) => entry.data.relatedSolutions.includes(s.data.solutionKey));
+---
+
+<BaseLayout
+  lang="en"
+  pageKey="kommunal"
+  title={entry.data.seoTitle ?? entry.data.title}
+  description={entry.data.seoDescription ?? entry.data.excerpt}
+>
+  <SegmentDetail entry={entry} solutions={solutions} lang="en" />
+</BaseLayout>

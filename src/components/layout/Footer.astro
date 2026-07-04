@@ -1,0 +1,57 @@
+---
+import { pathFor, type PageKey, type Lang } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+import Logo from '../../assets/brand/flotlife-logo.svg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const segmentLinks: PageKey[] = ['havbruk', 'industri', 'kommunal', 'maritim'];
+const companyLinks: PageKey[] = ['solutions', 'sustainability', 'about', 'contact'];
+const navKeys: Record<PageKey, string> = {
+  home: t('nav.home'),
+  havbruk: t('nav.havbruk'),
+  industri: t('nav.industri'),
+  kommunal: t('nav.kommunal'),
+  maritim: t('nav.maritim'),
+  solutions: t('nav.solutions'),
+  sustainability: t('nav.sustainability'),
+  about: t('nav.about'),
+  contact: t('nav.contact'),
+};
+const year = 2026;
+---
+
+<footer class="bg-brand-navy-950 text-white/70">
+  <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <Logo class="h-6 w-auto text-brand-cyan-500" />
+        <p class="mt-4 max-w-sm text-sm leading-relaxed">{t('footer.tagline')}</p>
+        <p class="mt-2 text-sm text-white/50">{t('footer.partOf')}</p>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wide text-white/40">{t('footer.segmentsHeading')}</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          {segmentLinks.map((key) => (
+            <li><a href={pathFor(key, lang)} class="hover:text-white">{navKeys[key]}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wide text-white/40">{t('footer.companyHeading')}</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          {companyLinks.map((key) => (
+            <li><a href={pathFor(key, lang)} class="hover:text-white">{navKeys[key]}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+      <p>FlotLife Nordic AS &copy; {year}. {t('footer.rights')}</p>
+    </div>
+  </div>
+</footer>

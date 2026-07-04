@@ -1,0 +1,61 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Hero from './Hero.astro';
+import StatBlock from './StatBlock.astro';
+import CTA from './CTA.astro';
+import { pathFor, type Lang } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  entry: CollectionEntry<'segments'>;
+  solutions: CollectionEntry<'solutions'>[];
+  lang: Lang;
+}
+
+const { entry, solutions, lang } = Astro.props;
+const t = useTranslations(lang);
+const { Content } = await render(entry);
+---
+
+<Hero
+  eyebrow={t('nav.segmentsLabel')}
+  title={entry.data.title}
+  subtitle={entry.data.excerpt}
+  image={entry.data.heroImage}
+  imageAlt={entry.data.heroImageAlt}
+  ctaLabel={t('common.getInTouch')}
+  ctaHref={pathFor('contact', lang)}
+/>
+
+<StatBlock stats={entry.data.stats} heading={t('segment.stats.heading')} />
+
+<section class="bg-neutral-50">
+  <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+    <div class="prose prose-neutral max-w-none prose-headings:font-heading prose-headings:text-brand-navy-950 prose-a:text-brand-navy-700">
+      <Content />
+    </div>
+  </div>
+</section>
+
+{solutions.length > 0 && (
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">{t('segment.solutions.heading')}</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {solutions.map((s) => (
+          <a href={pathFor('solutions', lang)} class="block rounded-2xl border border-neutral-200 p-6 hover:shadow-md">
+            <h3 class="font-heading text-lg font-bold text-brand-navy-950">{s.data.title}</h3>
+            <p class="mt-2 text-sm text-neutral-600">{s.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<CTA
+  heading={t('segment.cta.heading')}
+  ctaLabel={t('common.contactUs')}
+  ctaHref={pathFor('contact', lang)}
+/>

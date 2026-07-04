@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import StatBlock from '../../components/sections/StatBlock.astro';
+import CTA from '../../components/sections/CTA.astro';
+import { pathFor } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'no';
+const t = useTranslations(lang);
+
+const stats = [
+  { value: '400 000 t', label: 'Slam generert av norsk havbruk hvert år (Ragn-Sells)' },
+  { value: '~2 %', label: 'Andel av ekskrementer og fôrrester som samles som slam i dag (NIBIO)' },
+  { value: '66 000 t N / 14 000 t P', label: 'Nitrogen og fosfor tapt til sjøen årlig (NIBIO)' },
+];
+---
+
+<BaseLayout lang={lang} pageKey="sustainability" title="Bærekraft | FlotLife Nordic" description="Hvorfor slam fra nordisk havbruk og industri er en næringsressurs, ikke avfall — og hvordan oppsamlingsteknologi gjør gjenvinning mulig.">
+  <Hero title={t('sustainability.hero.title')} subtitle="Hvert år genererer nordisk havbruk og industri slam rikt på nitrogen og fosfor. Nesten ingenting av det fanges opp. Det er ikke et avhendingsproblem — det er en ressurs som ikke samles inn." />
+
+  <StatBlock stats={stats} heading="Størrelsen på det som går tapt" />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl space-y-10 px-6 py-16 lg:px-8">
+      <div>
+        <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Hva som faktisk er i fiskeslam</h2>
+        <p class="mt-3 leading-relaxed text-neutral-700">
+          Fiskeslam er en blanding av ekskrementer og uspist fôr — i moderne landbaserte
+          lakseanlegg kan uspist fôr utgjøre opptil halvparten av det (Nofima). Fordi det i
+          praksis er ubehandlet fôr og avfall, bærer det med seg fôrets opprinnelige
+          næringsinnhold: nitrogen, fosfor, fett og protein. Norsk lakseoppdrett bruker
+          rundt 2 millioner tonn fôr i året for å produsere 1,5 millioner tonn laks —
+          gapet mellom disse tallene er der slammet kommer fra.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Hvorfor så lite samles inn i dag</h2>
+        <p class="mt-3 leading-relaxed text-neutral-700">
+          Oppsamling er i dag kun påkrevd ved landbaserte anlegg, og selv der fanges bare
+          30–40 % av uspist fôr og ekskrementer opp før det spres som fine partikler som
+          unnslipper oppsamlingssystemene (Nofima). Ved sjøbaserte anlegg har
+          slamoppsamling stort sett vært frivillig — men det er i endring. SINTEFs
+          OppSlam-prosjekt (2025–2027), støttet av FHF og elleve industri- og
+          forskningspartnere inkludert Mowi og Cermaq, bygger en beregningsmodell for
+          realistisk potensial for slamoppsamling, delvis drevet av krav om å beskytte
+          sårbare bunnhabitater nær sensitive lokaliteter.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Hvorfor fosfor gjør dette presserende</h2>
+        <p class="mt-3 leading-relaxed text-neutral-700">
+          Fosfor er en begrenset, geografisk konsentrert ressurs — Europa importerer det
+          meste av sin forsyning fra et fåtall land. Ragn-Sells' AquaPhoenix-prosjekt,
+          støttet med 110 millioner euro i EU-midler, anslår at fosforgjenvinning fra
+          havbruksslam kan redusere Norges fosforimportbehov med opptil 40 %. Innsamlet
+          slam er ikke bare avledet avfall — det er en innenlands, fornybar fosforkilde
+          som ennå ikke finnes i stor skala.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Fra oppsamling til et brukbart produkt</h2>
+        <p class="mt-3 leading-relaxed text-neutral-700">
+          Innsamlet slam har allerede reelle bruksområder — som gjødsel i konvensjonelt
+          jordbruk, som råstoff til biogass, og i økende grad som innsatsfaktor i den typen
+          sirkulær bioøkonomi nordisk havbruk beveger seg mot, der organiske sidestrømmer
+          erstatter jomfruelige, areal- og ferskvannskrevende fôringredienser. Ingenting av
+          dette er mulig uten å samle inn og konsentrere slammet i utgangspunktet — og det
+          er nøyaktig der DAF og mekanisk avvanning gjør jobben.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Oppsamling er første steg. Vi bygger utstyret for det."
+    body="Utforsk våre DAF- og slamavvanningsløsninger, eller ta kontakt for å diskutere hva som er realistisk for deres anlegg."
+    ctaLabel={t('common.viewAllSolutions')}
+    ctaHref={pathFor('solutions', lang)}
+  />
+</BaseLayout>

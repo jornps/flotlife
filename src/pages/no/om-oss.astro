@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ProcessSteps from '../../components/sections/ProcessSteps.astro';
+import CTA from '../../components/sections/CTA.astro';
+import { pathFor } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'no';
+const t = useTranslations(lang);
+
+const processSteps = [
+  { label: 'Capture', description: 'Tidlig fangst av partikler, feces, biosolids og suspenderte stoffer, før de sprer seg og blir vanskeligere å håndtere.' },
+  { label: 'Separate & Concentrate', description: 'Effektiv separasjon og konsentrering av organisk materiale ut av vannstrømmen.' },
+  { label: 'Dewater', description: 'Mekanisk avvanning som kutter volum og gjør slam til noe transportvennlig.' },
+  { label: 'Polish', description: 'Vannpolering som gir lavere organisk belastning og et utslipp du trygt kan stå inne for.' },
+];
+
+const differentiators = [
+  { title: 'Helhetlig prosess, ikke enkeltkomponenter', body: 'Vi tenker hele linjen — fra første partikkel til siste dråpe — og designer løsninger som faktisk henger sammen.' },
+  { title: 'Modulære og skalerbare løsninger', body: 'Systemene våre er bygget for å tilpasses, utvides og integreres, i stedet for monolittiske anlegg som er vanskelige å endre etter installasjon.' },
+  { title: 'Driftsorientert tilnærming', body: 'Vi er opptatt av hvordan anlegget fungerer på dag 1, dag 100 og dag 1000 — ikke bare hvordan det ser ut på tegnebrettet.' },
+  { title: 'Ærlig og presis kommunikasjon', body: 'Vi lover ikke mer enn teknologien kan levere, og vi er tydelige på både styrker og begrensninger.' },
+];
+
+const howWeWork = [
+  { title: 'Analyse og rådgivning', body: 'Vi starter med å forstå belastning, prosess og krav — før vi foreslår noe som helst.' },
+  { title: 'Prosessdesign', body: 'Vi setter sammen riktige moduler til én helhetlig linje, tilpasset deres vertikal og anlegg.' },
+  { title: 'Leveranse og integrasjon', body: 'Implementert i nye eller eksisterende anlegg, med minimal forstyrrelse av pågående drift.' },
+  { title: 'Oppfølging og forbedring', body: 'Vi følger opp når systemet er i drift, måler effekten, og justerer der det trengs.' },
+];
+---
+
+<BaseLayout lang={lang} pageKey="about" title="Om FlotLife Nordic" description="FlotLife Nordic AS bringer FlotLife-konsernets vannbehandlingsteknologi til det nordiske markedet — capture, separate, dewater og polish, bygget for havbruk, industri, kommunal sektor og maritim virksomhet.">
+  <Hero title={t('about.hero.title')} subtitle="Den nordiske partneren for håndtering av vann, partikler og slam — bygget på FlotLife-teknologi og nordisk driftsforståelse." />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand-green-600">Visjon</p>
+      <p class="mt-3 text-2xl font-heading font-bold leading-snug text-brand-navy-950">
+        Å være den mest tillitsvekkende og fremtidsrettede partneren for håndtering av
+        vann, partikler og slam i Norden.
+      </p>
+      <p class="mt-4 leading-relaxed text-neutral-700">
+        Vi vil gjøre det mulig for havbruk, industri, kommunal sektor og maritim virksomhet
+        å kombinere høy produksjon med renere vann, lavere ressursbruk og løsninger som er
+        teknisk gjennomtenkte, driftsvennlige og miljømessig ansvarlige.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand-green-600">Misjon</p>
+      <p class="mt-3 text-xl font-heading font-bold leading-snug text-brand-navy-950">
+        Integrerte, modulære prosessløsninger for tidlig fangst, separasjon, konsentrering,
+        avvanning og polering av vann.
+      </p>
+      <p class="mt-4 leading-relaxed text-neutral-700">Vi jobber for å:</p>
+      <ul class="mt-3 space-y-2 text-neutral-700">
+        <li>— gi kundene kontroll på organisk belastning og partikler før de skaper problemer</li>
+        <li>— redusere volum og kostnader knyttet til slam og vannhåndtering</li>
+        <li>— gjøre det enkelt å oppfylle og dokumentere utslipps- og miljøkrav</li>
+        <li>— tilpasse løsninger til konkrete vertikaler: havbruk, industri, kommunal og maritim</li>
+        <li>— være en langsiktig teknisk og strategisk partner, ikke bare en utstyrsleverandør</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Hvem vi er</h2>
+      <p class="mt-4 leading-relaxed text-neutral-700">
+        FlotLife Nordic er den nordiske enheten for FlotLife — et internasjonalt
+        teknologiselskap som utvikler løsninger for vannbehandling, partikkelfangst,
+        slamkonsentrering og avvanning. Vi er etablert for å kombinere FlotLifes teknologi
+        med nordisk erfaring fra havbruk, industri, kommunal sektor og maritim virksomhet.
+      </p>
+      <p class="mt-4 leading-relaxed text-neutral-700">
+        Vi kjenner både de tekniske utfordringene og de regulatoriske kravene som preger
+        nordiske produksjonsmiljøer, og vi bygger løsninger som fungerer i praksis — over
+        tid, ikke bare på dag én.
+      </p>
+    </div>
+  </section>
+
+  <ProcessSteps
+    heading="Hva vi gjør"
+    intro="Kjernen i det vi leverer er én sammenhengende prosesslinje, tilpasset hver vertikal fremfor solgt som en standardpakke som bare 'nesten' passer."
+    steps={processSteps}
+  />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Hvordan vi skiller oss ut</h2>
+      <div class="mt-8 grid gap-8 sm:grid-cols-2">
+        {differentiators.map((d) => (
+          <div>
+            <h3 class="font-heading text-lg font-bold text-brand-navy-950">{d.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-600">{d.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Hvordan vi jobber</h2>
+      <ol class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {howWeWork.map((step, i) => (
+          <li>
+            <span class="font-heading text-sm font-semibold text-brand-navy-700">0{i + 1}</span>
+            <h3 class="mt-2 font-heading text-base font-bold text-brand-navy-950">{step.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-600">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <CTA heading={t('segment.cta.heading')} ctaLabel={t('common.contactUs')} ctaHref={pathFor('contact', lang)} />
+</BaseLayout>

@@ -1,0 +1,98 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Replace with the real Web3Forms access key (https://web3forms.com) before launch.
+const WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+
+const segments = [
+  { value: 'havbruk', label: lang === 'no' ? 'Havbruk' : 'Aquaculture' },
+  { value: 'industri', label: lang === 'no' ? 'Industri' : 'Industry' },
+  { value: 'kommunal', label: lang === 'no' ? 'Kommunal' : 'Municipal' },
+  { value: 'maritim', label: lang === 'no' ? 'Maritim' : 'Maritime' },
+];
+---
+
+<form id="contact-form" class="space-y-5">
+  <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+  <input type="hidden" name="subject" value="New enquiry from flotlife.no" />
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="name" class="block text-sm font-medium text-neutral-900">{t('contact.form.name')}</label>
+      <input id="name" name="name" type="text" required class="mt-1.5 w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-brand-navy-600 focus:outline-none" />
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-neutral-900">{t('contact.form.email')}</label>
+      <input id="email" name="email" type="email" required class="mt-1.5 w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-brand-navy-600 focus:outline-none" />
+    </div>
+    <div>
+      <label for="company" class="block text-sm font-medium text-neutral-900">{t('contact.form.company')}</label>
+      <input id="company" name="company" type="text" class="mt-1.5 w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-brand-navy-600 focus:outline-none" />
+    </div>
+    <div>
+      <label for="segment" class="block text-sm font-medium text-neutral-900">{t('contact.form.segment')}</label>
+      <select id="segment" name="segment" class="mt-1.5 w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-brand-navy-600 focus:outline-none">
+        <option value="">{t('contact.form.segmentPlaceholder')}</option>
+        {segments.map((s) => <option value={s.value}>{s.label}</option>)}
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-neutral-900">{t('contact.form.message')}</label>
+    <textarea id="message" name="message" rows="5" required class="mt-1.5 w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-brand-navy-600 focus:outline-none"></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="inline-flex items-center justify-center rounded-full bg-brand-navy-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-navy-800 disabled:opacity-60"
+  >
+    {t('contact.form.submit')}
+  </button>
+
+  <p id="contact-form-status" class="hidden text-sm" role="status"></p>
+</form>
+
+<script define:vars={{ sendingText: t('contact.form.sending'), submitText: t('contact.form.submit'), successText: t('contact.form.success'), errorText: t('contact.form.error') }}>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('contact-form-status');
+  const button = form?.querySelector('button[type="submit"]');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement) || !status || !(button instanceof HTMLButtonElement)) return;
+
+    button.disabled = true;
+    button.textContent = sendingText;
+    status.classList.add('hidden');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      const result = await response.json();
+
+      status.textContent = result.success ? successText : errorText;
+      status.className = result.success ? 'text-sm text-brand-green-600' : 'text-sm text-red-600';
+      if (result.success) form.reset();
+    } catch {
+      status.textContent = errorText;
+      status.className = 'text-sm text-red-600';
+    } finally {
+      status.classList.remove('hidden');
+      button.disabled = false;
+      button.textContent = submitText;
+    }
+  });
+</script>

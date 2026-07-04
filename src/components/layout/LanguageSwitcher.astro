@@ -1,0 +1,21 @@
+---
+import { pathFor, type PageKey, type Lang } from '../../i18n/routes';
+import { languages } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  pageKey: PageKey;
+  class?: string;
+}
+
+const { lang, pageKey, class: className = '' } = Astro.props;
+const otherLang: Lang = lang === 'en' ? 'no' : 'en';
+---
+
+<a
+  href={pathFor(pageKey, otherLang)}
+  class:list={['text-sm font-semibold uppercase tracking-wide', className]}
+  aria-label={`Switch to ${languages[otherLang]}`}
+>
+  {otherLang}
+</a>

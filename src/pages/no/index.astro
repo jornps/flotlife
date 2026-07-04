@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ProcessSteps from '../../components/sections/ProcessSteps.astro';
+import StatBlock from '../../components/sections/StatBlock.astro';
+import SegmentCard from '../../components/sections/SegmentCard.astro';
+import CTA from '../../components/sections/CTA.astro';
+import { pathFor } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'no';
+const t = useTranslations(lang);
+const segments = (await getCollection('segments', (s) => s.data.lang === lang)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const stats = [
+  { value: '400 000 t', label: 'Slam generert av norsk havbruk hvert år' },
+  { value: 'opptil 7x', label: 'Volumreduksjon av slam med avvanning' },
+  { value: '4', label: 'Nordiske segmenter betjent med én teknologiplattform' },
+];
+
+const processSteps = [
+  { label: 'Capture', description: 'Tidlig fangst av partikler, feces, biosolids og suspenderte stoffer, før de sprer seg og blir vanskeligere å håndtere.' },
+  { label: 'Separate & Concentrate', description: 'Effektiv separasjon og konsentrering av organisk materiale ut av vannstrømmen.' },
+  { label: 'Dewater', description: 'Mekanisk avvanning som kutter volum og gjør slam til noe transportvennlig.' },
+  { label: 'Polish', description: 'Vannpolering som gir lavere organisk belastning og et utslipp du trygt kan stå inne for.' },
+];
+---
+
+<BaseLayout lang={lang} pageKey="home" title="FlotLife Nordic — Vannbehandling for havbruk, industri, kommune og maritim" description="FlotLife Nordic bringer utprøvd DAF- og slamavvanningsteknologi til havbruk, industri, kommuner og maritim virksomhet i Norden.">
+  <Hero
+    eyebrow={t('home.hero.eyebrow')}
+    title={t('home.hero.title')}
+    subtitle={t('home.hero.subtitle')}
+    ctaLabel={t('home.hero.cta')}
+    ctaHref={pathFor('contact', lang)}
+    ctaSecondaryLabel={t('home.hero.ctaSecondary')}
+    ctaSecondaryHref={pathFor('solutions', lang)}
+    image={segments[0]?.data.heroImage}
+    imageAlt={segments[0]?.data.heroImageAlt}
+  />
+
+  <ProcessSteps
+    heading="Én prosesslinje, tilpasset anlegget deres"
+    intro="Hvert FlotLife Nordic-system bygges av de samme fire modulene — konfigurert ulikt avhengig av hva som er i vannet deres og hva som må skje med det."
+    steps={processSteps}
+  />
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-3xl font-bold text-brand-navy-950">{t('home.segments.heading')}</h2>
+      <p class="mt-3 max-w-2xl text-neutral-600">{t('home.segments.subheading')}</p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {segments.map((s) => (
+          <SegmentCard
+            href={pathFor(s.data.segmentKey, lang)}
+            title={s.data.title}
+            excerpt={s.data.excerpt}
+            image={s.data.heroImage}
+            imageAlt={s.data.heroImageAlt}
+            ctaLabel={t('common.exploreSegment')}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <StatBlock stats={stats} heading={t('home.stats.heading')} />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-3xl font-bold text-brand-navy-950">{t('home.why.heading')}</h2>
+      <p class="mt-3 max-w-2xl text-neutral-600">
+        FlotLife Nordic kombinerer FlotLifes teknologi med nordisk driftsforståelse — vi vil
+        heller være en langsiktig teknisk partner enn en engangsleverandør av utstyr.
+      </p>
+      <div class="mt-10 grid gap-10 sm:grid-cols-3">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-brand-navy-950">Én partner, fullt ansvar</h3>
+          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Design, utstyr, installasjon og automasjon — fra ett team, ikke en kjede av underleverandører.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-brand-navy-950">Utprøvd i felt, ikke bare på papiret</h3>
+          <p class="mt-2 text-sm leading-relaxed text-neutral-600">FlotLifes avvanningsenheter er allerede i drift på kommunalt, industrielt og akvakultur-slam i Norden — inkludert på et torskeoppdrett i Norge.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-brand-navy-950">Avfall som blir en ressurs</h3>
+          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Slamavvanningen vår reduserer ikke bare avhendingskostnader — den gjør et biprodukt til noe verdt å samle inn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA heading={t('home.cta.heading')} body={t('home.cta.body')} ctaLabel={t('common.contactUs')} ctaHref={pathFor('contact', lang)} />
+</BaseLayout>

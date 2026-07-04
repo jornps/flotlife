@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import SolutionCard from '../../components/sections/SolutionCard.astro';
+import CTA from '../../components/sections/CTA.astro';
+import { pathFor } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'no';
+const t = useTranslations(lang);
+const solutions = (await getCollection('solutions', (s) => s.data.lang === lang)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const segmentLabels: Record<string, string> = {
+  havbruk: t('nav.havbruk'),
+  industri: t('nav.industri'),
+  kommunal: t('nav.kommunal'),
+  maritim: t('nav.maritim'),
+};
+
+const processStepLabels: Record<string, string> = {
+  daf: 'Capture & Separate',
+  'screw-press': 'Dewater',
+  'biological-treatment': 'Polish',
+  'containerized-plant': 'Hele linjen',
+};
+---
+
+<BaseLayout lang={lang} pageKey="solutions" title="Løsninger | FlotLife Nordic" description="DAF, slamavvanning, biologisk rensing og containerbaserte anlegg — de fire kjerneteknologiene bak FlotLife Nordic.">
+  <Hero title={t('solutions.hero.title')} subtitle={t('solutions.hero.subtitle')} />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-5xl px-6 pt-16 lg:px-8">
+      <p class="text-neutral-700">
+        Hver løsning under er én modul i samme prosesslinje — capture, separate &amp;
+        concentrate, dewater, polish. Vi kombinerer og dimensjonerer dem ulikt avhengig av
+        vannet deres, men logikken bak er den samme.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-5xl space-y-6 px-6 py-16 lg:px-8">
+      {solutions.map((s) => (
+        <SolutionCard
+          title={s.data.title}
+          excerpt={s.data.excerpt}
+          image={s.data.image}
+          imageAlt={s.data.imageAlt}
+          usedInLabel={t('solutions.forSegments')}
+          usedIn={s.data.applicableSegments.map((key) => segmentLabels[key])}
+          processStep={processStepLabels[s.data.solutionKey]}
+        />
+      ))}
+    </div>
+  </section>
+
+  <CTA heading={t('segment.cta.heading')} ctaLabel={t('common.contactUs')} ctaHref={pathFor('contact', lang)} />
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/sections/ContactForm.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} pageKey="contact" title="Contact | FlotLife Nordic" description="Get in touch with FlotLife Nordic about water treatment for your aquaculture, industrial, municipal or maritime site.">
+  <section class="bg-brand-navy-950 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center lg:px-8">
+      <h1 class="font-heading text-4xl font-bold">{t('contact.hero.title')}</h1>
+      <p class="mx-auto mt-4 max-w-xl text-white/80">{t('contact.hero.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-5xl gap-12 px-6 py-16 lg:grid-cols-3 lg:px-8">
+      <div class="lg:col-span-2">
+        <ContactForm lang={lang} />
+      </div>
+      <div>
+        <h2 class="font-heading text-lg font-bold text-brand-navy-950">{t('contact.details.heading')}</h2>
+        <dl class="mt-4 space-y-3 text-sm text-neutral-600">
+          <div>
+            <dt class="font-semibold text-neutral-900">Email</dt>
+            <dd><a href="mailto:info@flotlife.no" class="hover:text-brand-navy-700">info@flotlife.no</a></dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-neutral-900">FlotLife group</dt>
+            <dd>Mazcenu aleja 37, Jaunmārupe, LV-2166, Latvia</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

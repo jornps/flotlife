@@ -1,0 +1,99 @@
+---
+import { pathFor, type PageKey, type Lang } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import Logo from '../../assets/brand/flotlife-logo.svg';
+
+interface Props {
+  lang: Lang;
+  pageKey: PageKey;
+}
+
+const { lang, pageKey } = Astro.props;
+const t = useTranslations(lang);
+
+const segmentLinks: PageKey[] = ['havbruk', 'industri', 'kommunal', 'maritim'];
+const navKeys: Record<PageKey, string> = {
+  home: t('nav.home'),
+  havbruk: t('nav.havbruk'),
+  industri: t('nav.industri'),
+  kommunal: t('nav.kommunal'),
+  maritim: t('nav.maritim'),
+  solutions: t('nav.solutions'),
+  sustainability: t('nav.sustainability'),
+  about: t('nav.about'),
+  contact: t('nav.contact'),
+};
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-brand-navy-950/95 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <a href={pathFor('home', lang)} class="shrink-0">
+      <Logo class="h-6 w-auto text-brand-cyan-500" />
+    </a>
+
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Main">
+      <a href={pathFor('solutions', lang)} class="text-sm font-medium text-white/90 hover:text-white">{t('nav.solutions')}</a>
+      <div class="group relative">
+        <button class="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-white">
+          {t('nav.segmentsLabel')}
+          <svg class="h-3 w-3" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="invisible absolute left-0 top-full w-56 rounded-xl border border-white/10 bg-brand-navy-900 p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
+          {segmentLinks.map((key) => (
+            <a href={pathFor(key, lang)} class="block rounded-lg px-3 py-2 text-sm text-white/85 hover:bg-white/5 hover:text-brand-cyan-400">
+              {navKeys[key]}
+            </a>
+          ))}
+        </div>
+      </div>
+      <a href={pathFor('sustainability', lang)} class="text-sm font-medium text-white/90 hover:text-white">{t('nav.sustainability')}</a>
+      <a href={pathFor('about', lang)} class="text-sm font-medium text-white/90 hover:text-white">{t('nav.about')}</a>
+    </nav>
+
+    <div class="hidden items-center gap-5 lg:flex">
+      <LanguageSwitcher lang={lang} pageKey={pageKey} class="text-white/70 hover:text-white" />
+      <a
+        href={pathFor('contact', lang)}
+        class="rounded-full bg-brand-cyan-500 px-5 py-2 text-sm font-semibold text-brand-navy-950 hover:bg-brand-cyan-400"
+      >
+        {t('nav.contact')}
+      </a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      class="flex flex-col gap-1.5 p-2 lg:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="h-0.5 w-6 bg-white"></span>
+      <span class="h-0.5 w-6 bg-white"></span>
+      <span class="h-0.5 w-6 bg-white"></span>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-white/10 px-6 py-4 lg:hidden" aria-label="Mobile">
+    <a href={pathFor('solutions', lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{t('nav.solutions')}</a>
+    {segmentLinks.map((key) => (
+      <a href={pathFor(key, lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{navKeys[key]}</a>
+    ))}
+    <a href={pathFor('sustainability', lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{t('nav.sustainability')}</a>
+    <a href={pathFor('about', lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{t('nav.about')}</a>
+    <a href={pathFor('contact', lang)} class="rounded-lg px-2 py-2 text-brand-cyan-400">{t('nav.contact')}</a>
+    <div class="mt-2 border-t border-white/10 pt-3">
+      <LanguageSwitcher lang={lang} pageKey={pageKey} class="text-white/70" />
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const isHidden = menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isHidden));
+    menu?.classList.toggle('flex', !isHidden);
+  });
+</script>

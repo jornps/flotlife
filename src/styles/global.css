@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand: deep navy anchors the FlotLife cyan wordmark, green ties to the
+     sludge-as-resource / sustainability story, neutrals stay warm, not clinical. */
+  --color-brand-navy-950: #061a26;
+  --color-brand-navy-900: #0a2536;
+  --color-brand-navy-800: #103649;
+  --color-brand-navy-700: #17485f;
+  --color-brand-navy-600: #205d79;
+
+  --color-brand-cyan-500: #00d2ff;
+  --color-brand-cyan-400: #3ddcff;
+  --color-brand-cyan-300: #7ee8ff;
+
+  --color-brand-green-700: #2b5c46;
+  --color-brand-green-600: #35714f;
+  --color-brand-green-500: #4d8c62;
+  --color-brand-green-200: #cfe6d5;
+
+  --color-neutral-950: #12181a;
+  --color-neutral-900: #1c2426;
+  --color-neutral-600: #55636a;
+  --color-neutral-400: #96a3a8;
+  --color-neutral-200: #e4e9e8;
+  --color-neutral-100: #eff2f1;
+  --color-neutral-50: #f7f9f8;
+
+  --font-sans:
+    "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-heading:
+    "Segoe UI Semibold", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}

@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ProcessSteps from '../../components/sections/ProcessSteps.astro';
+import CTA from '../../components/sections/CTA.astro';
+import { pathFor } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const processSteps = [
+  { label: 'Capture', description: 'Early capture of particles, feces, biosolids and suspended solids, before they spread and become harder to manage.' },
+  { label: 'Separate & Concentrate', description: 'Efficient separation and concentration of organic material out of the water stream.' },
+  { label: 'Dewater', description: 'Mechanical dewatering that cuts volume and turns sludge into something transportable.' },
+  { label: 'Polish', description: 'Water polishing that lowers organic load and makes discharge safer to answer for.' },
+];
+
+const differentiators = [
+  { title: 'One process, not loose components', body: 'We think in terms of the whole line — from the first particle to the last drop — and design solutions that actually connect end to end.' },
+  { title: 'Modular and scalable', body: 'Our systems are built to be adapted, extended and integrated, rather than monolithic plants that are hard to change once installed.' },
+  { title: 'Built around operations', body: 'We care how a plant performs on day one, day one hundred and day one thousand — not just how it looks on the drawing board.' },
+  { title: 'Honest, precise communication', body: 'We don’t promise more than the technology can deliver, and we’re direct about both strengths and limitations.' },
+];
+
+const howWeWork = [
+  { title: 'Analysis and advice', body: 'We start by understanding your load, process and requirements — before we propose anything.' },
+  { title: 'Process design', body: 'We combine the right modules into one coherent line, matched to your vertical and your site.' },
+  { title: 'Delivery and integration', body: 'Implemented in new or existing facilities, with minimal disruption to ongoing operations.' },
+  { title: 'Follow-up and improvement', body: 'We stay engaged once the system is running, measure the effect, and adjust where it’s needed.' },
+];
+---
+
+<BaseLayout lang={lang} pageKey="about" title="About FlotLife Nordic" description="FlotLife Nordic AS brings the FlotLife group's water treatment technology to the Nordic market — capture, separate, dewater and polish, built for aquaculture, industry, municipal and maritime operators.">
+  <Hero title={t('about.hero.title')} subtitle="The Nordic partner for handling water, particles and sludge — built on FlotLife technology and Nordic operating experience." />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand-green-600">Vision</p>
+      <p class="mt-3 text-2xl font-heading font-bold leading-snug text-brand-navy-950">
+        To be the most trusted, forward-looking partner for water, particle and sludge
+        management in the Nordics.
+      </p>
+      <p class="mt-4 leading-relaxed text-neutral-700">
+        We want to make it possible for aquaculture, industry, municipal operators and
+        maritime businesses to combine high production with cleaner water, lower resource
+        use, and solutions that are technically sound, easy to run day to day, and
+        environmentally responsible.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand-green-600">Mission</p>
+      <p class="mt-3 text-xl font-heading font-bold leading-snug text-brand-navy-950">
+        Integrated, modular process solutions for early capture, separation, concentration,
+        dewatering and polishing of water.
+      </p>
+      <p class="mt-4 leading-relaxed text-neutral-700">We work to:</p>
+      <ul class="mt-3 space-y-2 text-neutral-700">
+        <li>— give customers control over organic load and particles before they cause problems</li>
+        <li>— reduce the volume and cost tied to sludge and water handling</li>
+        <li>— make it straightforward to meet and document discharge and environmental requirements</li>
+        <li>— tailor solutions to specific verticals: aquaculture, industry, municipal and maritime</li>
+        <li>— be a long-term technical and strategic partner, not just an equipment supplier</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">Who we are</h2>
+      <p class="mt-4 leading-relaxed text-neutral-700">
+        FlotLife Nordic is the Nordic arm of FlotLife, an international technology company
+        developing solutions for water treatment, particle capture, sludge concentration
+        and dewatering. We were established to combine FlotLife's technology with Nordic
+        experience from aquaculture, industry, municipal treatment and maritime operations.
+      </p>
+      <p class="mt-4 leading-relaxed text-neutral-700">
+        We understand both the technical challenges and the regulatory requirements that
+        shape Nordic production environments, and we build solutions that hold up in
+        practice — over time, not just on day one.
+      </p>
+    </div>
+  </section>
+
+  <ProcessSteps
+    heading="What we do"
+    intro="At the core of what we deliver is one continuous process line, adapted to each vertical rather than sold as a standard package that only 'almost' fits."
+    steps={processSteps}
+  />
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">What sets us apart</h2>
+      <div class="mt-8 grid gap-8 sm:grid-cols-2">
+        {differentiators.map((d) => (
+          <div>
+            <h3 class="font-heading text-lg font-bold text-brand-navy-950">{d.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-600">{d.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <h2 class="font-heading text-2xl font-bold text-brand-navy-950">How we work</h2>
+      <ol class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {howWeWork.map((step, i) => (
+          <li>
+            <span class="font-heading text-sm font-semibold text-brand-navy-700">0{i + 1}</span>
+            <h3 class="mt-2 font-heading text-base font-bold text-brand-navy-950">{step.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-600">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <CTA heading={t('segment.cta.heading')} ctaLabel={t('common.contactUs')} ctaHref={pathFor('contact', lang)} />
+</BaseLayout>
