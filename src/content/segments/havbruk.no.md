@@ -1,59 +1,67 @@
 ---
-lang: no
+lang: 'no'
 segmentKey: havbruk
-title: Havbruk
+title: Akvakultur
 slug: havbruk
-excerpt: Vann- og slambehandling for RAS, sjøbaserte anlegg, brønnbåt og ventemerd — bygget for nordisk havbruk.
+excerpt: >-
+  Vann- og slambehandling for RAS-anlegg, havbaserte oppdrettsanlegg,
+  transportfartøy og oppbevaringsmerder — utviklet for nordisk akvakultur.
 heroImage: ../../assets/segments/havbruk/fish-farm-treatment.jpg
-heroImageAlt: Vannbehandlingsutstyr ved et fiskeoppdrettsanlegg
+heroImageAlt: Vannbehandlingsutstyr ved et oppdrettsanlegg
 stats:
-  - value: "7x"
-    label: Mulig volumreduksjon av slam med avvanning
-  - value: "24/7"
-    label: Automatisert drift uten tilsyn
-  - value: "4"
-    label: Kjerneteknologier, ett samlet system
-relatedSolutions: ["daf", "screw-press"]
-seoTitle: Vannbehandling for havbruk | FlotLife Nordic
-seoDescription: DAF- og slamavvanningsanlegg for RAS, sjøbaserte anlegg, brønnbåt og ventemerd i nordisk havbruksnæring.
+  - value: 7x
+    label: Potensiell reduksjon av slamvolumet ved avvanning
+  - value: 24/7
+    label: 'Automatisert, uovervåket drift'
+  - value: '4'
+    label: 'Kjerneteknologier, ett integrert system'
+relatedSolutions:
+  - daf
+  - screw-press
+seoTitle: Vannbehandling for akvakultur | FlotLife Nordic
+seoDescription: >-
+  DAF- og slamavvanningssystemer for RAS, havbaserte oppdrettsanlegg,
+  transportbåter og oppbevaringsmerder i den nordiske akvakulturindustrien.
 order: 1
 ---
+<!-- Automatisk oversatt 2026-07-04 av DeepL — sjekk teksten før publisering -->
 
-## Vann er den mest krevende innsatsfaktoren dere har
+## Vann er den mest krevende innsatsfaktoren for produktet ditt
 
-Enten dere driver et landbasert RAS-anlegg, et sjøbasert anlegg, en brønnbåtflåte eller
-ventemerd før slakting, er vannkvalitet ikke en sidesak — det er miljøet fisken lever i.
-FlotLife Nordic bygger vann- og slambehandling rundt denne virkeligheten: tidlig fangst
-av feces og biosolids, stabil vannkvalitet og mindre slam å håndtere nedstrøms — ikke
-etter en generisk industrimal.
+Uansett om du driver et landbasert RAS-anlegg, et sjøbasert anlegg, en brønnbåtflåte eller oppbevaringsmerder
+før slakting, er vannkvaliteten ikke et sidespørsmål – det er det fisken din lever
+i. FlotLife Nordic utvikler vann- og slambehandling med utgangspunkt i denne realiteten: tidlig oppsamling
+av avføring og biosolider, stabil vannkvalitet og mindre slam å håndtere nedstrøms –
+ikke en generisk industriell mal.
 
-## Fra utslippsproblem til innsamlet ressurs
+## Fra utslippsproblem til utnyttet ressurs
 
-DAF (dissolved air flotation) fjerner suspendert stoff og fett før vannet returneres til
-resipienten eller resirkuleres. Det som samles opp trenger ikke å bli en avhendingskostnad:
-våre slamavvanningsanlegg konsentrerer materialet til et håndterbart, transportvennlig
-produkt — det reduserer volum og åpner for gjenbruk som næringsressurs i stedet for avfall.
-Les mer på [bærekraftsiden vår](/no/baerekraft/).
+Flotasjon med oppløst luft fjerner suspenderte faste stoffer og fett før vannet føres tilbake til
+miljøet eller resirkuleres. Det som fanges opp trenger ikke å bli en avhendingskostnad: våre
+slamavvanningssystemer konsentrerer dette materialet til et håndterbart, transportabelt produkt,
+noe som reduserer håndteringsvolumet og åpner for gjenbruk som næringsressurs i stedet for
+avfall. Les mer på vår [bærekraftsside](/no/bærekraft/).
 
-## Bygget for hvordan nordisk havbruk faktisk drives
+## Utviklet for den måten nordisk akvakultur faktisk drives på
 
-- **RAS og semi-lukkede anlegg** — kontinuerlig, automatisert behandling som følger tempoet
-  i intensiv oppdrett.
-- **Sjøbaserte anlegg** — kompakte containerløsninger tilpasset begrenset plass på flåter
-  og lektere.
-- **Brønnbåt** — ombordbehandling av vann som tas inn ved lasting, transport og avlusing.
-- **Ventemerd** — håndtering av utslipp i den følsomme siste fasen før slakting, der
-  regulatorisk oppmerksomhet er størst.
+- **RAS og halvlukkede systemer** — kontinuerlig, automatisert rensing som holder tritt med
+  intensive besetningstettheter.
+- **Havbaserte anlegg** — kompakte, containeriserte enheter tilpasset begrenset plass på flåter og
+  lektere.
+- **Brønnbåter** — behandling om bord av vann som tas opp under lasting, transport og
+  avlusingsoperasjoner.
+- **Ventemerd** — håndtering av utslipp i den følsomme sluttfasen før
+  slakting, der myndighetenes kontroll er strengest.
 
-## En regulatorisk trend dere kan ligge foran
+## En myndighetstrend du kan ligge i forkant av
 
-Krav om slamoppsamling ved sjøbaserte anlegg beveger seg fra frivillig til forventet,
-særlig nær sårbare bunnhabitater. Anlegg som allerede har oppsamling og avvanning på plass
-blir ikke tatt på senga når kravene innhenter dem.
+Kravene til oppsamling av slam for havbaserte anlegg er i ferd med å gå fra å være frivillige til å bli forventet,
+spesielt i nærheten av sårbare havbunnshabitater. Anlegg som allerede har systemer for oppsamling og
+avvanning på plass, blir ikke tatt på sengen når kravene innhenter dem.
 
 ## Allerede utprøvd på nordisk fiskeslam
 
-Vår FDS-avvanningslinje — inkludert den tilhengermonterte mobilenheten FDS-MB — er
-demonstrert på slam fra fiskeforedling, fiskeslam fra biologisk rensing, og ved et
-torskeoppdrett i Norge. Vil dere se hvordan deres eget slam avvannes før dere forplikter
-dere til en fast installasjon, er det et realistisk første steg. [Se den i aksjon på Vimeo](https://vimeo.com/showcase/fdsmb).
+Vår FDS-avvanningsserie – inkludert den tilhengerbaserte mobile enheten FDS-MB – har blitt
+demonstrert på slam fra fiskeforedling, fiskeslam fra biologisk rensing og på et
+torskoppdrett i Norge. Hvis du vil se hvordan ditt eget slam avvannes før du forplikter deg til
+en fast installasjon, er dette et realistisk første skritt. [Se det i aksjon på Vimeo](https://vimeo.com/showcase/fdsmb).
