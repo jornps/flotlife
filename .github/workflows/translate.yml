@@ -11,10 +11,11 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   translate:
-    if: github.event.head_commit.author.email != 'translate-bot@flotlife.no'
+    if: "!contains(github.event.head_commit.message, 'Auto-translate updated content')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,11 +34,18 @@ jobs:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: node scripts/translate.mjs
 
-      - name: Commit translated draft(s)
+      - name: Open a PR with the translated draft(s)
         if: steps.translate.outputs.updated == 'true'
-        run: |
-          git config user.name "flotlife-translate-bot"
-          git config user.email "translate-bot@flotlife.no"
-          git add src/content/segments/*.md src/content/solutions/*.md
-          git commit -m "Auto-translate updated content (needs review)"
-          git push
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Auto-translate updated content (needs review)"
+          title: "Auto-translated content update — needs review"
+          body: |
+            Automatisk oversatt utkast generert av DeepL etter en endring i innholdet.
+
+            **Sjekk teksten før du godkjenner** — spesielt formuleringer og eventuelle
+            markdown-formateringsfeil fra oversettelsen. Slå sammen (merge) denne PR-en
+            når teksten ser riktig ut, eller lukk den uten å slå sammen om oversettelsen
+            ikke skal brukes.
+          branch: auto-translate/${{ github.sha }}
+          labels: auto-translate

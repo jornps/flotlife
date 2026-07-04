@@ -10,6 +10,12 @@ const DEEPL_API_KEY = process.env.DEEPL_API_KEY;
 const DEEPL_API_URL = 'https://api-free.deepl.com/v2/translate';
 
 const TRANSLATABLE_SCALAR_FIELDS = ['title', 'excerpt', 'heroImageAlt', 'imageAlt', 'seoTitle', 'seoDescription'];
+const TRANSLATION_MARKER = '<!-- Automatisk oversatt';
+
+function isUnreviewedTranslation(filePath) {
+  const { content } = matter(fs.readFileSync(filePath, 'utf8'));
+  return content.trimStart().startsWith(TRANSLATION_MARKER);
+}
 const DEEPL_TARGET_LANG = { en: 'EN-US', no: 'NB' };
 const DEEPL_SOURCE_LANG = { en: 'EN', no: 'NB' };
 
@@ -103,6 +109,14 @@ async function main() {
     const pairKey = [file, sibling].sort().join('|');
     if (processedPairs.has(pairKey)) continue;
     processedPairs.add(pairKey);
+
+    if (isUnreviewedTranslation(file)) {
+      // This file is itself a not-yet-reviewed machine translation (merged from a
+      // prior auto-translate PR) — don't translate it back the other way, or an
+      // unreviewed draft would ping-pong between both languages indefinitely.
+      console.log(`Skipping ${file} — it's an unreviewed auto-translation, not a human edit.`);
+      continue;
+    }
 
     await translatePairInto(file, sibling);
     anyUpdated = true;

@@ -41,13 +41,13 @@ wrong URL.
 
 `.github/workflows/translate.yml` + `scripts/translate.mjs`: whenever a `src/content/segments/`
 or `src/content/solutions/` markdown file changes on `main`, the sibling-language file is
-automatically re-translated via DeepL and **pushed straight to `main` — no review step**
-(an explicit choice; the alternative was opening a PR for review instead). Structural
-frontmatter fields (`lang`, `segmentKey`/`solutionKey`, `slug`, image paths, `order`,
-`relatedSolutions`/`applicableSegments`) are preserved from the existing target file, never
-overwritten by the translation. Translated files get an HTML-comment marker
-(`<!-- Automatisk oversatt ... -->`) at the top of the body as a visual (source-only) flag
-that a human should double check the wording.
+automatically re-translated via DeepL and opened as a **Pull Request for review** — it never
+lands on `main`/goes live until someone merges it. Structural frontmatter fields (`lang`,
+`segmentKey`/`solutionKey`, `slug`, image paths, `order`, `relatedSolutions`/`applicableSegments`)
+are preserved from the existing target file, never overwritten by the translation. Translated
+files get an HTML-comment marker (`<!-- Automatisk oversatt ... -->`) at the top of the body;
+the script also uses this marker to avoid translating an unreviewed draft back into the
+other language (which would ping-pong indefinitely once merged).
 
 Requires a repo secret **`DEEPL_API_KEY`** (Settings → Secrets and variables → Actions) —
 sign up for the free DeepL API plan at [deepl.com/pro-api](https://www.deepl.com/pro-api) to
