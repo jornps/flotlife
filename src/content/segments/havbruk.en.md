@@ -3,7 +3,7 @@ lang: en
 segmentKey: havbruk
 title: Aquaculture
 slug: aquaculture
-excerpt: Water and sludge treatment for RAS, sea-based farms, well boats and holding pens — built for Nordic aquaculture. Testing the translation pipeline.
+excerpt: Water and sludge treatment for RAS, sea-based farms, well boats and holding pens — built for Nordic aquaculture.
 heroImage: ../../assets/segments/havbruk/fish-farm-treatment.jpg
 heroImageAlt: Water treatment equipment at a fish farming facility
 stats:
