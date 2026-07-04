@@ -23,6 +23,36 @@ To work on the site:
 - `src/pages/en/contact.astro` / `src/pages/no/kontakt.astro` — `info@flotlife.no` and the
   address are placeholders.
 
+## Deployment
+
+GitHub repo `jornps/flotlife` (branch `main`) → Netlify auto-deploys on every push. Build
+settings live in `netlify.toml` (build command, publish dir, Node version) — no manual
+Netlify config needed.
+
+## Content editing (PagesCMS)
+
+Non-technical edits to segment/solution text go through [app.pagescms.org](https://app.pagescms.org)
+(log in with GitHub, add the `jornps/flotlife` repo). The schema lives in `.pages.yml` at the
+repo root. Fields labeled "IKKE ENDRE" control routing/identity (language, segment/solution
+key, slug, image path) — changing them can break the page they belong to or point it at the
+wrong URL.
+
+### Auto-translation
+
+`.github/workflows/translate.yml` + `scripts/translate.mjs`: whenever a `src/content/segments/`
+or `src/content/solutions/` markdown file changes on `main`, the sibling-language file is
+automatically re-translated via DeepL and **pushed straight to `main` — no review step**
+(an explicit choice; the alternative was opening a PR for review instead). Structural
+frontmatter fields (`lang`, `segmentKey`/`solutionKey`, `slug`, image paths, `order`,
+`relatedSolutions`/`applicableSegments`) are preserved from the existing target file, never
+overwritten by the translation. Translated files get an HTML-comment marker
+(`<!-- Automatisk oversatt ... -->`) at the top of the body as a visual (source-only) flag
+that a human should double check the wording.
+
+Requires a repo secret **`DEEPL_API_KEY`** (Settings → Secrets and variables → Actions) —
+sign up for the free DeepL API plan at [deepl.com/pro-api](https://www.deepl.com/pro-api) to
+get a key.
+
 ## Project structure
 
 ```text

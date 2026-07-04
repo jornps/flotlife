@@ -1,0 +1,43 @@
+name: Auto-translate content
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/segments/*.en.md"
+      - "src/content/segments/*.no.md"
+      - "src/content/solutions/*.en.md"
+      - "src/content/solutions/*.no.md"
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    if: github.event.head_commit.author.email != 'translate-bot@flotlife.no'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Translate changed content into its sibling language
+        id: translate
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: node scripts/translate.mjs
+
+      - name: Commit translated draft(s)
+        if: steps.translate.outputs.updated == 'true'
+        run: |
+          git config user.name "flotlife-translate-bot"
+          git config user.email "translate-bot@flotlife.no"
+          git add src/content/segments/*.md src/content/solutions/*.md
+          git commit -m "Auto-translate updated content (needs review)"
+          git push
