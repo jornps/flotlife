@@ -1,42 +1,47 @@
 @import "tailwindcss";
+@import "@fontsource-variable/figtree";
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Brand: deep navy anchors the FlotLife cyan wordmark, green ties to the
-     sludge-as-resource / sustainability story, neutrals stay warm, not clinical. */
-  --color-brand-navy-950: #061a26;
-  --color-brand-navy-900: #0a2536;
-  --color-brand-navy-800: #103649;
-  --color-brand-navy-700: #17485f;
-  --color-brand-navy-600: #205d79;
+  /* Coast Seafood Group — Brand palette (Clear Blue accent) */
+  --color-navy:   #003764;
+  --color-blue:   #3CB4E6;
+  --color-ink:    #14202b;
+  --color-muted:  #5b6b78;
+  --color-tint:   #eef3f6;
+  --color-line:   #e3e9ee;
+  --color-footer: #022038;
 
-  --color-brand-cyan-500: #00d2ff;
-  --color-brand-cyan-400: #3ddcff;
-  --color-brand-cyan-300: #7ee8ff;
+  /* brand-* aliases used by segment/solutions/about pages */
+  --color-brand-navy-950: #031829;
+  --color-brand-navy-900: #003764;
+  --color-brand-navy-800: #004a85;
+  --color-brand-navy-700: #0059a0;
+  --color-brand-navy-600: #0070c4;
+  --color-brand-cyan-500: #3CB4E6;
+  --color-brand-cyan-400: #68c9ef;
+  --color-brand-cyan-300: #a0dcf5;
+  --color-brand-green-700: #00763d;
+  --color-brand-green-600: #009B50;
+  --color-brand-green-500: #00b85f;
+  --color-brand-green-200: #b3f0d2;
+  --color-neutral-950: #14202b;
+  --color-neutral-900: #1e2d3a;
+  --color-neutral-600: #5b6b78;
+  --color-neutral-400: #8ea0ad;
+  --color-neutral-200: #e3e9ee;
+  --color-neutral-100: #eef3f6;
+  --color-neutral-50:  #f6f9fb;
 
-  --color-brand-green-700: #2b5c46;
-  --color-brand-green-600: #35714f;
-  --color-brand-green-500: #4d8c62;
-  --color-brand-green-200: #cfe6d5;
-
-  --color-neutral-950: #12181a;
-  --color-neutral-900: #1c2426;
-  --color-neutral-600: #55636a;
-  --color-neutral-400: #96a3a8;
-  --color-neutral-200: #e4e9e8;
-  --color-neutral-100: #eff2f1;
-  --color-neutral-50: #f7f9f8;
-
-  --font-sans:
-    "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --font-heading:
-    "Segoe UI Semibold", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans:    'Figtree Variable','Figtree','Franklin Gothic',Arial,sans-serif;
+  --font-heading: 'Figtree Variable','Figtree','Franklin Gothic',Arial,sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-sans);
+  color: #14202b;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
 }

@@ -1,117 +1,246 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/sections/Hero.astro';
-import ProcessSteps from '../../components/sections/ProcessSteps.astro';
-import StatBlock from '../../components/sections/StatBlock.astro';
-import SegmentCard from '../../components/sections/SegmentCard.astro';
-import CTA from '../../components/sections/CTA.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
 import { Image } from 'astro:assets';
-import beforeAfterImage from '../../assets/solutions/water-before-after.jpg';
+import heroImg from '../../assets/segments/havbruk/fish-farm-treatment.jpg';
+import baImg   from '../../assets/solutions/water-before-after.jpg';
 
 const lang = 'no';
 const t = useTranslations(lang);
-const segments = (await getCollection('segments', (s) => s.data.lang === lang)).sort(
-  (a, b) => a.data.order - b.data.order,
-);
 
-const stats = [
-  { value: '400 000 t', label: 'Slam generert av norsk havbruk hvert år' },
-  { value: 'opptil 7x', label: 'Volumreduksjon av slam med avvanning' },
-  { value: '4', label: 'Nordiske segmenter betjent med én teknologiplattform' },
+const steps = [
+  { n: '01', title: 'Fangst',                  body: 'Tidlig fangst av partikler, feces, biosolids og suspenderte stoffer, før de sprer seg og blir vanskeligere å håndtere.' },
+  { n: '02', title: 'Separer og konsentrer',    body: 'Effektiv separasjon og konsentrering av organisk materiale ut av vannstrømmen.' },
+  { n: '03', title: 'Avvann',                   body: 'Mekanisk avvanning som kutter volum og gjør slam til noe transportvennlig.' },
+  { n: '04', title: 'Polen',                    body: 'Vannpolering som gir lavere organisk belastning og et utslipp du trygt kan stå inne for.' },
 ];
 
-const processSteps = [
-  { label: 'Capture', description: 'Tidlig fangst av partikler, feces, biosolids og suspenderte stoffer, før de sprer seg og blir vanskeligere å håndtere.' },
-  { label: 'Separate & Concentrate', description: 'Effektiv separasjon og konsentrering av organisk materiale ut av vannstrømmen.' },
-  { label: 'Dewater', description: 'Mekanisk avvanning som kutter volum og gjør slam til noe transportvennlig.' },
-  { label: 'Polish', description: 'Vannpolering som gir lavere organisk belastning og et utslipp du trygt kan stå inne for.' },
+const segments = [
+  {
+    href: pathFor('havbruk', lang),
+    title: 'Havbruk',
+    body: 'Vannet fisken lever i er den viktigste innsatsfaktoren dere har. Vi hjelper dere å kontrollere det.',
+    icon: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 12c3-4 7-5 10-5 4 0 7 2 8 5-1 3-4 5-8 5-3 0-7-1-10-5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><path d="M18 9l3-2v10l-3-2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>`,
+  },
+  {
+    href: pathFor('industri', lang),
+    title: 'Industri',
+    body: 'Prosessvann er en kostnad — helt til det er riktig utformet. Vi gjør det om til noe dere har kontroll på.',
+    icon: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 21V10l6 3V10l6 3V6l6 2v13H3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 21v-3M13 21v-3M18 21v-3" stroke="currentColor" stroke-width="1.6"/></svg>`,
+  },
+  {
+    href: pathFor('kommunal', lang),
+    title: 'Kommunal',
+    body: 'Riktig dimensjonert rensing for kommunen dere betjener — uten arealbehovet eller kostnaden av et fullskala anlegg.',
+    icon: `<svg viewBox="0 0 24 24" fill="none"><path d="M5 21V5l7-3 7 3v16H5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2M10 21v-4h4v4" stroke="currentColor" stroke-width="1.5"/></svg>`,
+  },
+  {
+    href: pathFor('maritim', lang),
+    title: 'Maritim',
+    body: 'Begrenset plass, ingen margin for nedetid. Kompakt, automatisert behandling for fartøy, offshore og havner.',
+    icon: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 15l2 5h14l2-5-9-3-9 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 12V5M9 8h6M6 15V9h12v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`,
+  },
+];
+
+const stats = [
+  { big: '400 000 t', cap: 'Slam generert av norsk havbruk hvert år' },
+  { big: 'opptil 7×',  cap: 'Volumreduksjon av slam med avvanning' },
+  { big: '4',           cap: 'Nordiske segmenter betjent med én teknologiplattform' },
+];
+
+const reasons = [
+  { n: '01', title: 'Én partner, fullt ansvar',              body: 'Design, utstyr, installasjon og automasjon — fra ett team, ikke en kjede av underleverandører.' },
+  { n: '02', title: 'Utprøvd i felt, ikke bare på papiret', body: 'FlotLifes avvanningsenheter er allerede i drift på kommunalt, industrielt og akvakultur-slam i Norden — inkludert på et torskeoppdrett i Norge.' },
+  { n: '03', title: 'Avfall som blir en ressurs',            body: 'Slamavvanningen vår reduserer ikke bare avhendingskostnader — den gjør et biprodukt til noe verdt å samle inn.' },
 ];
 ---
 
-<BaseLayout lang={lang} pageKey="home" title="FlotLife Nordic — Vannbehandling for havbruk, industri, kommune og maritim" description="FlotLife Nordic bringer utprøvd DAF- og slamavvanningsteknologi til havbruk, industri, kommuner og maritim virksomhet i Norden.">
-  <Hero
-    eyebrow={t('home.hero.eyebrow')}
-    title={t('home.hero.title')}
-    subtitle={t('home.hero.subtitle')}
-    ctaLabel={t('home.hero.cta')}
-    ctaHref={pathFor('contact', lang)}
-    ctaSecondaryLabel={t('home.hero.ctaSecondary')}
-    ctaSecondaryHref={pathFor('solutions', lang)}
-    image={segments[0]?.data.heroImage}
-    imageAlt={segments[0]?.data.heroImageAlt}
-  />
+<BaseLayout lang={lang} pageKey="home"
+  title="FlotLife Nordic — Vannbehandling for havbruk, industri, kommune og maritim"
+  description="FlotLife Nordic bringer utprøvd DAF- og slamavvanningsteknologi til havbruk, industri, kommuner og maritim virksomhet i Norden.">
 
-  <ProcessSteps
-    heading="Én prosesslinje, tilpasset anlegget deres"
-    intro="Hvert FlotLife Nordic-system bygges av de samme fire modulene — konfigurert ulikt avhengig av hva som er i vannet deres og hva som må skje med det."
-    steps={processSteps}
-  />
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="fl-hero">
+    <Image src={heroImg} alt="Vannbehandlingsutstyr ved et fiskeoppdrettsanlegg"
+      widths={[800,1400,2000]} sizes="100vw"
+      class="fl-hero-img" loading="eager" />
+    <div class="fl-hero-scrim"></div>
+    <div class="fl-wrap fl-hero-in">
+      <p class="fl-eyebrow" style="color:#3CB4E6;">FlotLife Nordic</p>
+      <h1 class="fl-h1">Fra første partikkel<br>til siste dråpe</h1>
+      <p class="fl-hero-lead">Vi bygger renselinjer som fanger, separerer, avvanner og polerer — og gjør partikler og slam om fra et avhendingsproblem til noe dere har kontroll på. For havbruk, industri, kommunal sektor og maritim virksomhet i Norden.</p>
+      <div class="fl-herobtns">
+        <a href={pathFor('contact', lang)} class="fl-btn fl-btn-acc">Snakk med oss</a>
+        <a href={pathFor('solutions', lang)} class="fl-btn fl-btn-line">Se våre løsninger</a>
+      </div>
+    </div>
+  </section>
 
-  <section class="bg-neutral-50">
-    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <h2 class="font-heading text-3xl font-bold text-brand-navy-950">{t('home.segments.heading')}</h2>
-      <p class="mt-3 max-w-2xl text-neutral-600">{t('home.segments.subheading')}</p>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {segments.map((s) => (
-          <SegmentCard
-            href={pathFor(s.data.segmentKey, lang)}
-            title={s.data.title}
-            excerpt={s.data.excerpt}
-            image={s.data.heroImage}
-            imageAlt={s.data.heroImageAlt}
-            ctaLabel={t('common.exploreSegment')}
-          />
+  <!-- ── PROCESS ───────────────────────────────────────────── -->
+  <section class="fl-sec fl-sec-tint" id="process">
+    <div class="fl-wrap">
+      <div class="fl-rule"></div>
+      <h2 class="fl-h2">Én prosesslinje, tilpasset anlegget deres</h2>
+      <p class="fl-lead">Hvert FlotLife Nordic-system bygges av de samme fire modulene — konfigurert ulikt avhengig av hva som er i vannet og hva som må skje med det.</p>
+      <div class="fl-steps">
+        {steps.map((s) => (
+          <div class="fl-step">
+            <div class="fl-step-num">{s.n}</div>
+            <div class="fl-step-bar"></div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-5xl px-6 py-16 lg:px-8">
-      <div class="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-12">
-        <div class="sm:w-1/2">
-          <Image src={beforeAfterImage} alt="Vann før og etter DAF-behandling — uklart til venstre, klart til høyre" widths={[500, 800]} sizes="(min-width:640px) 50vw, 100vw" class="w-full rounded-xl object-cover shadow-md" />
-        </div>
-        <div class="sm:w-1/2">
-          <p class="text-sm font-semibold uppercase tracking-wide text-brand-green-600">Resultater, ikke løfter</p>
-          <h2 class="mt-3 font-heading text-2xl font-bold leading-snug text-brand-navy-950">Vann som kom inn uklart. Vann som kom ut klart.</h2>
-          <p class="mt-3 leading-relaxed text-neutral-600">Slik ser dissolved air flotation ut på ekte prosessvann fra akvakultur. Suspenderte stoffer, fett og biosolids fjernet i én passasje — ingen kjemisk magi, bare fysikk gjort riktig.</p>
-          <a href={pathFor('solutions', lang)} class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy-700 hover:text-brand-navy-950">
-            Se hvordan det fungerer <span aria-hidden="true">→</span>
+  <!-- ── SEGMENTS ──────────────────────────────────────────── -->
+  <section class="fl-sec" id="segments">
+    <div class="fl-wrap">
+      <div class="fl-rule"></div>
+      <h2 class="fl-h2">Bygget for fire nordiske segmenter</h2>
+      <p class="fl-lead">Én teknologiplattform, tilpasset vannutfordringene i fire svært ulike bransjer.</p>
+      <div class="fl-segs">
+        {segments.map((s) => (
+          <a href={s.href} class="fl-seg">
+            <div class="fl-seg-ico" set:html={s.icon} />
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+            <span class="fl-seg-link">Utforsk segmentet →</span>
           </a>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <StatBlock stats={stats} heading={t('home.stats.heading')} />
-
-  <section class="bg-white">
-    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <h2 class="font-heading text-3xl font-bold text-brand-navy-950">{t('home.why.heading')}</h2>
-      <p class="mt-3 max-w-2xl text-neutral-600">
-        FlotLife Nordic kombinerer FlotLifes teknologi med nordisk driftsforståelse — vi vil
-        heller være en langsiktig teknisk partner enn en engangsleverandør av utstyr.
-      </p>
-      <div class="mt-10 grid gap-10 sm:grid-cols-3">
-        <div>
-          <h3 class="font-heading text-lg font-bold text-brand-navy-950">Én partner, fullt ansvar</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Design, utstyr, installasjon og automasjon — fra ett team, ikke en kjede av underleverandører.</p>
-        </div>
-        <div>
-          <h3 class="font-heading text-lg font-bold text-brand-navy-950">Utprøvd i felt, ikke bare på papiret</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">FlotLifes avvanningsenheter er allerede i drift på kommunalt, industrielt og akvakultur-slam i Norden — inkludert på et torskeoppdrett i Norge.</p>
-        </div>
-        <div>
-          <h3 class="font-heading text-lg font-bold text-brand-navy-950">Avfall som blir en ressurs</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Slamavvanningen vår reduserer ikke bare avhendingskostnader — den gjør et biprodukt til noe verdt å samle inn.</p>
-        </div>
+  <!-- ── RESULTS ───────────────────────────────────────────── -->
+  <section class="fl-sec fl-sec-navy" id="results">
+    <div class="fl-wrap fl-split">
+      <div class="fl-ba-img">
+        <Image src={baImg} alt="Vann før og etter DAF-behandling — uklart til venstre, klart til høyre"
+          widths={[600,1000]} sizes="(min-width:1000px) 50vw, 100vw"
+          class="fl-ba-photo" />
+      </div>
+      <div>
+        <p class="fl-eyebrow" style="color:#3CB4E6;">Resultater, ikke løfter</p>
+        <h2 class="fl-h2" style="color:#fff;">Vann som kom inn uklart.<br>Vann som kom ut klart.</h2>
+        <p class="fl-lead" style="color:#a9c2d4;">Slik ser dissolved air flotation ut på ekte prosessvann fra akvakultur. Suspenderte stoffer, fett og biosolids fjernet i én passasje — ingen kjemisk magi, bare fysikk gjort riktig.</p>
+        <a href={pathFor('solutions', lang)} class="fl-linkarrow">Se hvordan det fungerer →</a>
       </div>
     </div>
   </section>
 
-  <CTA heading={t('home.cta.heading')} body={t('home.cta.body')} ctaLabel={t('common.contactUs')} ctaHref={pathFor('contact', lang)} />
+  <!-- ── SCALE ─────────────────────────────────────────────── -->
+  <section class="fl-sec fl-sec-tint" id="scale">
+    <div class="fl-wrap">
+      <div class="fl-rule"></div>
+      <h2 class="fl-h2">Størrelsen på mulighetsrommet</h2>
+      <div class="fl-stats">
+        {stats.map((s) => (
+          <div class="fl-stat">
+            <div class="fl-stat-big">{s.big}</div>
+            <div class="fl-stat-cap">{s.cap}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY ───────────────────────────────────────────────── -->
+  <section class="fl-sec" id="why">
+    <div class="fl-wrap">
+      <div class="fl-rule"></div>
+      <h2 class="fl-h2">Hvorfor FlotLife Nordic</h2>
+      <p class="fl-lead">FlotLife Nordic kombinerer FlotLifes teknologi med nordisk driftsforståelse — vi vil heller være en langsiktig teknisk partner enn en engangsleverandør av utstyr.</p>
+      <div class="fl-reasons">
+        {reasons.map((r) => (
+          <div class="fl-reason">
+            <div class="fl-rn">{r.n}</div>
+            <h3>{r.title}</h3>
+            <p>{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="fl-cta" id="contact">
+    <div class="fl-wrap" style="text-align:center;">
+      <h2 class="fl-cta-h2">La oss snakke om vannet deres</h2>
+      <p class="fl-cta-p">Uansett hva dere produserer, trenger ikke prosessvann og slam å være en kostnad. Fortell oss om anlegget deres, så foreslår vi en vei videre.</p>
+      <div style="margin-top:36px;">
+        <a href={pathFor('contact', lang)} class="fl-btn fl-btn-acc">Kontakt oss</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+.fl-wrap  { max-width:1200px; margin:0 auto; padding:0 40px; }
+.fl-rule  { width:52px; height:3px; background:#3CB4E6; border-radius:2px; }
+.fl-eyebrow { font-size:12px; letter-spacing:2.4px; text-transform:uppercase; font-weight:700; margin:0; }
+.fl-h2    { font-size:40px; line-height:1.08; font-weight:800; letter-spacing:-.5px; margin:14px 0 0; color:#003764; }
+.fl-lead  { font-size:18px; color:#5b6b78; max-width:640px; margin:16px 0 0; line-height:1.6; }
+.fl-sec   { padding:104px 0; }
+.fl-sec-tint { background:#eef3f6; }
+.fl-sec-navy { background:#003764; color:#fff; }
+.fl-btn { display:inline-flex; align-items:center; gap:8px; height:50px; padding:0 26px; border-radius:2px; font-weight:700; font-size:15px; transition:.16s; cursor:pointer; border:1.5px solid transparent; text-decoration:none; }
+.fl-btn-acc  { background:#3CB4E6; color:#fff; }
+.fl-btn-acc:hover  { filter:brightness(.93); }
+.fl-btn-line { border-color:rgba(255,255,255,.4); color:#fff; }
+.fl-btn-line:hover { background:rgba(255,255,255,.1); }
+.fl-hero { position:relative; min-height:640px; display:flex; align-items:center; overflow:hidden; }
+.fl-hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.fl-hero-scrim { position:absolute; inset:0; background:linear-gradient(100deg,rgba(0,25,45,.94) 0%,rgba(0,40,70,.82) 42%,rgba(0,45,80,.35) 100%); }
+.fl-hero-in { position:relative; padding:96px 0; }
+.fl-h1 { font-size:62px; line-height:1.02; font-weight:800; letter-spacing:-1.5px; color:#fff; margin:18px 0 0; max-width:15ch; }
+.fl-hero-lead { color:#cfe0ec; font-size:19px; line-height:1.6; max-width:56ch; margin:22px 0 0; }
+.fl-herobtns { display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
+.fl-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:52px; background:#e3e9ee; border:1px solid #e3e9ee; border-radius:4px; overflow:hidden; }
+.fl-step  { background:#fff; padding:34px 28px 38px; }
+.fl-step-num { font-size:15px; font-weight:800; color:#3CB4E6; letter-spacing:1px; }
+.fl-step-bar { width:34px; height:3px; background:#3CB4E6; margin-top:6px; border-radius:2px; }
+.fl-step h3  { font-size:21px; font-weight:700; margin:20px 0 10px; color:#003764; }
+.fl-step p   { font-size:15px; color:#5b6b78; margin:0; line-height:1.6; }
+.fl-segs { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:52px; }
+.fl-seg  { border:1px solid #e3e9ee; border-radius:6px; padding:32px 26px 26px; display:flex; flex-direction:column; transition:.18s; background:#fff; text-decoration:none; color:inherit; }
+.fl-seg:hover { border-color:#003764; box-shadow:0 16px 40px rgba(0,40,70,.10); transform:translateY(-3px); }
+.fl-seg-ico { width:46px; height:46px; display:flex; align-items:center; justify-content:center; border-radius:3px; background:#eef3f6; color:#3CB4E6; }
+.fl-seg-ico svg { width:26px; height:26px; }
+.fl-seg h3   { font-size:22px; font-weight:700; color:#003764; margin:22px 0 10px; }
+.fl-seg p    { font-size:15px; color:#5b6b78; margin:0 0 22px; line-height:1.55; flex:1; }
+.fl-seg-link { font-size:14px; font-weight:700; color:#3CB4E6; display:flex; align-items:center; gap:7px; transition:gap .16s; }
+.fl-seg:hover .fl-seg-link { gap:11px; }
+.fl-split { display:grid; grid-template-columns:1.05fr 1fr; gap:60px; align-items:center; }
+.fl-ba-img { border-radius:6px; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.4); }
+.fl-ba-photo { display:block; width:100%; height:auto; }
+.fl-linkarrow { display:inline-flex; align-items:center; gap:8px; font-weight:700; color:#3CB4E6; margin-top:26px; font-size:16px; text-decoration:none; transition:gap .16s; }
+.fl-linkarrow:hover { gap:12px; }
+.fl-stats { display:grid; grid-template-columns:repeat(3,1fr); margin-top:56px; border-top:1px solid #e3e9ee; }
+.fl-stat  { padding:44px 34px 0; border-right:1px solid #e3e9ee; }
+.fl-stat:last-child { border-right:0; }
+.fl-stat-big { font-size:58px; font-weight:800; color:#003764; letter-spacing:-1.5px; line-height:1; }
+.fl-stat-cap { font-size:16px; color:#5b6b78; margin-top:16px; max-width:26ch; line-height:1.5; }
+.fl-reasons { display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin-top:56px; }
+.fl-rn { font-size:14px; font-weight:800; color:#3CB4E6; letter-spacing:1px; }
+.fl-reason h3 { font-size:22px; font-weight:700; color:#003764; margin:18px 0 12px; line-height:1.2; }
+.fl-reason p  { font-size:16px; color:#5b6b78; margin:0; line-height:1.6; }
+.fl-cta   { background:#003764; color:#fff; padding:100px 0; }
+.fl-cta-h2 { font-size:46px; font-weight:800; letter-spacing:-.8px; margin:0; }
+.fl-cta-p  { font-size:19px; color:#a9c2d4; max-width:60ch; margin:20px auto 0; line-height:1.6; }
+@media (max-width:1000px) {
+  .fl-steps, .fl-segs, .fl-stats, .fl-reasons, .fl-split { grid-template-columns:1fr; }
+  .fl-h1    { font-size:44px; }
+  .fl-h2, .fl-cta-h2 { font-size:32px; }
+  .fl-stat  { border-right:0; border-bottom:1px solid #e3e9ee; padding:32px 0; }
+  .fl-stat:last-child { border-bottom:0; }
+}
+@media (max-width:600px) {
+  .fl-wrap { padding:0 20px; }
+  .fl-sec  { padding:64px 0; }
+}
+</style>

@@ -2,7 +2,6 @@
 import { pathFor, type PageKey, type Lang } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import Logo from '../../assets/brand/flotlife-logo.svg';
 
 interface Props {
   lang: Lang;
@@ -12,88 +11,200 @@ interface Props {
 const { lang, pageKey } = Astro.props;
 const t = useTranslations(lang);
 
-const segmentLinks: PageKey[] = ['havbruk', 'industri', 'kommunal', 'maritim'];
-const navKeys: Record<PageKey, string> = {
-  home: t('nav.home'),
-  havbruk: t('nav.havbruk'),
-  industri: t('nav.industri'),
-  kommunal: t('nav.kommunal'),
-  maritim: t('nav.maritim'),
-  solutions: t('nav.solutions'),
-  sustainability: t('nav.sustainability'),
-  about: t('nav.about'),
-  contact: t('nav.contact'),
-};
+const segmentLinks: { key: PageKey; label: string }[] = [
+  { key: 'havbruk',  label: t('nav.havbruk') },
+  { key: 'industri', label: t('nav.industri') },
+  { key: 'kommunal', label: t('nav.kommunal') },
+  { key: 'maritim',  label: t('nav.maritim') },
+];
 ---
 
-<header class="sticky top-0 z-50 border-b border-white/10 bg-brand-navy-950/95 backdrop-blur">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-    <a href={pathFor('home', lang)} class="shrink-0">
-      <Logo class="h-6 w-auto text-brand-cyan-500" />
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e3e9ee;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+
+    <!-- Brand -->
+    <a href={pathFor('home', lang)} style="display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;color:#003764;letter-spacing:-.3px;text-decoration:none;">
+      <svg width="22" height="26" viewBox="0 0 22 26" fill="none">
+        <path d="M11 1C11 1 20 12 20 18.5C20 23 16 25 11 25C6 25 2 23 2 18.5C2 12 11 1 11 1Z" fill="#3CB4E6"/>
+        <path d="M7 19a4 4 0 0 0 4 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      FlotLife <small style="font-weight:600;color:#3CB4E6;">Nordic</small>
     </a>
 
-    <nav class="hidden items-center gap-7 lg:flex" aria-label="Main">
-      <a href={pathFor('solutions', lang)} class="text-sm font-medium text-white/90 hover:text-white">{t('nav.solutions')}</a>
-      <div class="group relative">
-        <button class="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-white">
+    <!-- Desktop nav -->
+    <nav class="fl-navlinks" aria-label="Main">
+      <a href={pathFor('solutions', lang)}>{t('nav.solutions')}</a>
+      <div class="fl-seg-wrap">
+        <button class="fl-seg-btn" type="button">
           {t('nav.segmentsLabel')}
-          <svg class="h-3 w-3" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </button>
-        <div class="invisible absolute left-0 top-full w-56 rounded-xl border border-white/10 bg-brand-navy-900 p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100">
-          {segmentLinks.map((key) => (
-            <a href={pathFor(key, lang)} class="block rounded-lg px-3 py-2 text-sm text-white/85 hover:bg-white/5 hover:text-brand-cyan-400">
-              {navKeys[key]}
-            </a>
+        <div class="fl-seg-drop">
+          {segmentLinks.map(({ key, label }) => (
+            <a href={pathFor(key, lang)}>{label}</a>
           ))}
         </div>
       </div>
-      <a href={pathFor('sustainability', lang)} class="text-sm font-medium text-white/90 hover:text-white">{t('nav.sustainability')}</a>
-      <a href={pathFor('about', lang)} class="text-sm font-medium text-white/90 hover:text-white">{t('nav.about')}</a>
+      <a href={pathFor('sustainability', lang)}>{t('nav.sustainability')}</a>
+      <a href={pathFor('about', lang)}>{t('nav.about')}</a>
     </nav>
 
-    <div class="hidden items-center gap-5 lg:flex">
-      <LanguageSwitcher lang={lang} pageKey={pageKey} class="text-white/70 hover:text-white" />
-      <a
-        href={pathFor('contact', lang)}
-        class="rounded-full bg-brand-cyan-500 px-5 py-2 text-sm font-semibold text-brand-navy-950 hover:bg-brand-cyan-400"
-      >
-        {t('nav.contact')}
-      </a>
+    <!-- Right side -->
+    <div class="fl-navright">
+      <LanguageSwitcher lang={lang} pageKey={pageKey} class="fl-lang" />
+      <a href={pathFor('contact', lang)} class="fl-contact-btn">{t('nav.contact')}</a>
     </div>
 
-    <button
-      id="menu-toggle"
-      class="flex flex-col gap-1.5 p-2 lg:hidden"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span class="h-0.5 w-6 bg-white"></span>
-      <span class="h-0.5 w-6 bg-white"></span>
-      <span class="h-0.5 w-6 bg-white"></span>
+    <!-- Mobile hamburger -->
+    <button id="fl-menu-toggle" class="fl-ham" aria-label="Toggle menu" aria-expanded="false" aria-controls="fl-mobile-menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-white/10 px-6 py-4 lg:hidden" aria-label="Mobile">
-    <a href={pathFor('solutions', lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{t('nav.solutions')}</a>
-    {segmentLinks.map((key) => (
-      <a href={pathFor(key, lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{navKeys[key]}</a>
+  <!-- Mobile menu -->
+  <nav id="fl-mobile-menu" class="fl-mobile hidden" aria-label="Mobile">
+    <a href={pathFor('solutions', lang)}>{t('nav.solutions')}</a>
+    {segmentLinks.map(({ key, label }) => (
+      <a href={pathFor(key, lang)} style="padding-left:1.5rem;">{label}</a>
     ))}
-    <a href={pathFor('sustainability', lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{t('nav.sustainability')}</a>
-    <a href={pathFor('about', lang)} class="rounded-lg px-2 py-2 text-white/90 hover:bg-white/5">{t('nav.about')}</a>
-    <a href={pathFor('contact', lang)} class="rounded-lg px-2 py-2 text-brand-cyan-400">{t('nav.contact')}</a>
-    <div class="mt-2 border-t border-white/10 pt-3">
-      <LanguageSwitcher lang={lang} pageKey={pageKey} class="text-white/70" />
+    <a href={pathFor('sustainability', lang)}>{t('nav.sustainability')}</a>
+    <a href={pathFor('about', lang)}>{t('nav.about')}</a>
+    <a href={pathFor('contact', lang)} style="color:#3CB4E6;font-weight:700;">{t('nav.contact')}</a>
+    <div style="border-top:1px solid #e3e9ee;padding-top:.75rem;margin-top:.25rem;">
+      <LanguageSwitcher lang={lang} pageKey={pageKey} class="fl-lang" />
     </div>
   </nav>
 </header>
 
+<style>
+.fl-navlinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #33434f;
+}
+.fl-navlinks a { text-decoration: none; transition: color .16s; }
+.fl-navlinks a:hover { color: #003764; }
+
+.fl-seg-wrap { position: relative; }
+.fl-seg-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #33434f;
+  cursor: pointer;
+  padding: 0;
+  transition: color .16s;
+}
+.fl-seg-btn:hover { color: #003764; }
+.fl-seg-drop {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #e3e9ee;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,40,80,.10);
+  padding: 6px;
+  flex-direction: column;
+  z-index: 100;
+}
+.fl-seg-wrap:hover .fl-seg-drop { display: flex; }
+.fl-seg-drop a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #33434f;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .12s, color .12s;
+}
+.fl-seg-drop a:hover { background: #eef3f6; color: #003764; }
+
+.fl-navright {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+:global(.fl-lang) {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5b6b78;
+  border: 1px solid #e3e9ee;
+  border-radius: 2px;
+  padding: 5px 9px;
+  text-decoration: none;
+  transition: border-color .16s, color .16s;
+}
+:global(.fl-lang:hover) { border-color: #003764; color: #003764; }
+.fl-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 20px;
+  background: #3CB4E6;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: filter .16s;
+}
+.fl-contact-btn:hover { filter: brightness(.93); }
+
+.fl-ham {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.fl-ham span { display: block; width: 22px; height: 2px; background: #003764; border-radius: 1px; }
+
+.fl-mobile {
+  flex-direction: column;
+  border-top: 1px solid #e3e9ee;
+  padding: 12px 40px 16px;
+}
+.fl-mobile a {
+  display: block;
+  padding: 9px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #33434f;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f4f7;
+}
+.fl-mobile.hidden { display: none; }
+
+@media (max-width: 900px) {
+  .fl-navlinks { display: none; }
+  .fl-navright  { display: none; }
+  .fl-ham       { display: flex; }
+  .fl-mobile:not(.hidden) { display: flex; }
+}
+</style>
+
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  toggle?.addEventListener('click', () => {
-    const isHidden = menu?.classList.toggle('hidden');
-    toggle.setAttribute('aria-expanded', String(!isHidden));
-    menu?.classList.toggle('flex', !isHidden);
-  });
+const toggle = document.getElementById('fl-menu-toggle');
+const menu   = document.getElementById('fl-mobile-menu');
+toggle?.addEventListener('click', () => {
+  const open = menu?.classList.toggle('hidden');
+  toggle.setAttribute('aria-expanded', String(!open));
+});
 </script>

@@ -1,7 +1,6 @@
 ---
 import { pathFor, type PageKey, type Lang } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
-import Logo from '../../assets/brand/flotlife-logo.svg';
 
 interface Props {
   lang: Lang;
@@ -12,46 +11,71 @@ const t = useTranslations(lang);
 const segmentLinks: PageKey[] = ['havbruk', 'industri', 'kommunal', 'maritim'];
 const companyLinks: PageKey[] = ['solutions', 'sustainability', 'about', 'contact'];
 const navKeys: Record<PageKey, string> = {
-  home: t('nav.home'),
-  havbruk: t('nav.havbruk'),
-  industri: t('nav.industri'),
-  kommunal: t('nav.kommunal'),
-  maritim: t('nav.maritim'),
-  solutions: t('nav.solutions'),
+  home:         t('nav.home'),
+  havbruk:      t('nav.havbruk'),
+  industri:     t('nav.industri'),
+  kommunal:     t('nav.kommunal'),
+  maritim:      t('nav.maritim'),
+  solutions:    t('nav.solutions'),
   sustainability: t('nav.sustainability'),
-  about: t('nav.about'),
-  contact: t('nav.contact'),
+  about:        t('nav.about'),
+  contact:      t('nav.contact'),
 };
 const year = 2026;
 ---
 
-<footer class="bg-brand-navy-950 text-white/70">
-  <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-    <div class="grid gap-10 md:grid-cols-4">
-      <div class="md:col-span-2">
-        <Logo class="h-6 w-auto text-brand-cyan-500" />
-        <p class="mt-4 max-w-sm text-sm leading-relaxed">{t('footer.tagline')}</p>
-        <p class="mt-2 text-sm text-white/50">{t('footer.partOf')}</p>
-      </div>
+<footer style="background:#022038;color:#8ba5b8;padding:70px 0 40px;font-size:15px;font-family:inherit;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+    <div class="fl-foot-top">
+      <!-- Brand col -->
       <div>
-        <p class="text-xs font-semibold uppercase tracking-wide text-white/40">{t('footer.segmentsHeading')}</p>
-        <ul class="mt-3 space-y-2 text-sm">
+        <div style="display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#fff;letter-spacing:-.3px;">
+          <svg width="18" height="22" viewBox="0 0 22 26" fill="none">
+            <path d="M11 1C11 1 20 12 20 18.5C20 23 16 25 11 25C6 25 2 23 2 18.5C2 12 11 1 11 1Z" fill="#3CB4E6"/>
+            <path d="M7 19a4 4 0 0 0 4 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          FlotLife <small style="color:#3CB4E6;font-weight:600;">Nordic</small>
+        </div>
+        <p style="margin:16px 0 0;max-width:34ch;line-height:1.6;color:#7c98ab;">{t('footer.tagline')}</p>
+        <p style="margin:8px 0 0;font-size:13px;color:#5f7d92;">{t('footer.partOf')}</p>
+      </div>
+
+      <!-- Segments col -->
+      <div>
+        <h4 style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#5f7d92;margin:0 0 18px;font-weight:700;">{t('footer.segmentsHeading')}</h4>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
           {segmentLinks.map((key) => (
-            <li><a href={pathFor(key, lang)} class="hover:text-white">{navKeys[key]}</a></li>
+            <li><a href={pathFor(key, lang)} style="color:inherit;text-decoration:none;transition:color .14s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">{navKeys[key]}</a></li>
           ))}
         </ul>
       </div>
+
+      <!-- Company col -->
       <div>
-        <p class="text-xs font-semibold uppercase tracking-wide text-white/40">{t('footer.companyHeading')}</p>
-        <ul class="mt-3 space-y-2 text-sm">
+        <h4 style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#5f7d92;margin:0 0 18px;font-weight:700;">{t('footer.companyHeading')}</h4>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
           {companyLinks.map((key) => (
-            <li><a href={pathFor(key, lang)} class="hover:text-white">{navKeys[key]}</a></li>
+            <li><a href={pathFor(key, lang)} style="color:inherit;text-decoration:none;transition:color .14s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">{navKeys[key]}</a></li>
           ))}
         </ul>
       </div>
     </div>
-    <div class="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
-      <p>FlotLife Nordic AS &copy; {year}. {t('footer.rights')}</p>
+
+    <div style="padding-top:26px;font-size:13px;color:#5f7d92;">
+      FlotLife Nordic AS &copy; {year}. {t('footer.rights')}
     </div>
   </div>
 </footer>
+
+<style>
+.fl-foot-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+@media (max-width: 700px) {
+  .fl-foot-top { grid-template-columns: 1fr; }
+}
+</style>
