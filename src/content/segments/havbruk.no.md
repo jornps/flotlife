@@ -1,47 +1,54 @@
 ---
-lang: no
+lang: 'no'
 segmentKey: havbruk
-title: Havbruk
+title: Akvakultur
 slug: havbruk
-excerpt: Vannet fisken lever i er den viktigste innsatsfaktoren dere har. Vi hjelper dere å kontrollere det.
+excerpt: >-
+  Vannet som fiskene dine lever i, er den viktigste faktoren. Vi hjelper deg med
+  å holde det under kontroll.
 heroImage: ../../assets/segments/havbruk/fish-farm-treatment.jpg
-heroImageAlt: Vannbehandlingsutstyr ved et fiskeoppdrettsanlegg
+heroImageAlt: Vannbehandlingsutstyr ved et oppdrettsanlegg
 stats:
-  - value: "7x"
-    label: Mulig volumreduksjon av slam med avvanning
-  - value: "24/7"
-    label: Automatisert drift uten tilsyn
-  - value: "4"
-    label: Kjerneteknologier, ett samlet system
-relatedSolutions: ["daf", "screw-press"]
-seoTitle: Vannbehandling for havbruk | FlotLife Nordic
-seoDescription: DAF- og slamavvanningsanlegg for RAS, sjøbaserte anlegg, brønnbåt og ventemerd i nordisk havbruksnæring.
+  - value: 7x
+    label: Potensiell reduksjon av slamvolumet ved avvanning
+  - value: 24/7
+    label: 'Automatisert, ubemannet drift'
+  - value: '4'
+    label: 'Kjerneteknologier, ett integrert system'
+relatedSolutions:
+  - daf
+  - screw-press
+seoTitle: Vannbehandling for akvakultur | FlotLife Nordic
+seoDescription: >-
+  DAF- og slamavvanningssystemer for RAS, havbaserte oppdrettsanlegg,
+  transportbåter og oppbevaringsmerder i den nordiske akvakulturindustrien.
 order: 1
 ---
+<!-- Automatisk oversatt 2026-07-06 av DeepL — sjekk teksten før publisering -->
 
-## Vannet fisken lever i
+## Vannet fiskene dine lever i
 
-Fisk tolererer ikke marginal vannkvalitet. Suspendert stoff, for høy organisk belastning og akkumulerte fines reduserer oksygennivå, øker sykdomsrisiko og svekker fôrutnyttelsen — lenge før et utslippstillatelse kommer under press.
+Fisk tåler ikke dårlig vannkvalitet. Suspenderte partikler, overskudd av organisk materiale og opphopning av finpartikler reduserer oksygennivået, øker sykdomsrisikoen og reduserer fôrkonverteringen – lenge før utslippstillatelsen kommer under press.
 
-FlotLife Nordic fjerner problemet ved kilden: tidlig fangst av feces og biosolids, før de sprer seg og blir vanskeligere å håndtere.
+FlotLife Nordic fjerner problemet ved kilden: oppsamling av avføring og biosolider på et tidlig stadium, før de sprer seg og blir vanskeligere å håndtere.
 
-## Fra avfallsstrøm til innsamlet ressurs
+## Fra avfallsstrøm til utnyttbar ressurs
 
-DAF (dissolved air flotation) fjerner suspendert stoff og fett fra vannsøylen på minutter. Det som samles opp trenger ikke å bli en regning: slamavvanningssystemene våre reduserer materialet med opptil 7x i volum og produserer en tørr, transportvennlig kake som kan gå til biogass eller gjødsel — ikke til et behandlingsbassin.
+Flotasjon med oppløst luft trekker suspenderte partikler og fett ut av vannsøylen i løpet av få minutter. Det som fanges opp, trenger ikke å bli en avfallsregning: våre slamavvanningssystemer reduserer volumet på dette materialet med opptil 7 ganger, og produserer en tørr, transportabel kake som kan brukes til biogass eller gjødsel i stedet for å havne i et rensebasseng.
 
-[Les mer om slam som ressurs →](/no/baerekraft/)
+[Les mer om slam som ressurs →](/no/bærekraft/)
 
-## Bygget for alle formater i nordisk havbruk
+## Utviklet for alle former for nordisk akvakultur
 
-- **RAS og semi-lukkede anlegg** — kontinuerlig, automatisert behandling som følger tempoet i intensivt oppdrett.
-- **Sjøbaserte anlegg** — kompakte containerenheter tilpasset begrenset dekkareal på flåter og lektere.
-- **Brønnbåt** — ombordbehandling av vann som tas inn ved lasting, transport og avlusing.
-- **Ventemerd** — håndtering av utslipp i den mest følsomme fasen før slakting.
+- **RAS og halvlukkede systemer** — kontinuerlig, automatisert rensing som holder tritt med høye tettheter.
+- **Havbaserte anlegg** — kompakte enheter i containere som passer til begrenset dekksplass på flåter og lektere.
+- **Brønnbåter** — behandling om bord for vann som tas om bord under lasting, transport og avlusing.
+- **Ventemerd** — håndtering av utslipp på det mest følsomme punktet før slakting.
 
-## Ligge foran den regulatoriske utviklingen
+## Et skritt foran regelverket
 
-Krav om slamoppsamling ved sjøbaserte anlegg strammes inn, særlig nær sårbare bunnhabitater. Anlegg som allerede kjører oppsamling og avvanning blir ikke tatt på senga når kravene formaliseres.
+Kravene til oppsamling av slam for havbaserte anlegg skjerpes, særlig i nærheten av følsomme havbunnshabitater. Anlegg som allerede har oppsamling og avvanning i drift, vil ikke bli tatt på sengen når kravene blir formalisert.
 
-## Utprøvd på nordisk fiskeslam
+## Testet på nordisk fiskeslam
 
-Vår FDS-avvanningslinje — inkludert den tilhengermonterte FDS-MB — er demonstrert på fiskeslam fra biologisk rensing, slam fra fiskeforedling og ved et torskeoppdrett i Norge. [Se den i aksjon på Vimeo →](https://vimeo.com/showcase/fdsmb)
+Vår FDS-avvanningsserie — inkludert den tilhengerbaserte mobile enheten FDS-MB — har blitt demonstrert på fiskeslam fra biologisk rensing, avfall fra fiskeforedling og et torskeoppdrettsanlegg i Norge. [Se den i drift på Vimeo →](https://vimeo.com/showcase/fdsmb)
