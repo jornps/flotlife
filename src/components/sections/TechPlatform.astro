@@ -1,0 +1,313 @@
+---
+import type { Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const no = lang === 'no';
+
+const eyebrow  = no ? 'Teknologiplattformen' : 'Technology platform';
+const heading  = no ? 'Fire moduler, én prosesslinje' : 'Four modules, one treatment line';
+const subtitle = no
+  ? 'Alle anlegg vi designer kombinerer disse fire byggesteinene. Hvilke du trenger — og i hvilken kombinasjon — avhenger av prosessvannet, avrenningskravene og plassen du har tilgjengelig.'
+  : 'Every installation we design draws from these four building blocks. Which ones you need — and how they combine — depends on your process water, discharge targets, and available space.';
+
+const usedIn = no ? 'Brukes i' : 'Used in';
+
+const modules = [
+  {
+    step: no ? 'Fang og separér' : 'Capture & Separate',
+    name: no ? 'Flotasjon (DAF)' : 'Dissolved Air Flotation',
+    abbr: 'DAF',
+    body: no
+      ? 'Mikroboblene løfter suspenderte stoffer, fett og organisk materiale til overflaten for kontinuerlig skimming. Utgangspunktet for nesten alle behandlingslinjer vi bygger.'
+      : 'Micro-bubbles lift suspended solids, fats and organic matter to the surface for continuous skimming. The starting point for nearly every treatment line we build.',
+    segments: no ? 'Havbruk · Industri · Maritim' : 'Aquaculture · Industry · Maritime',
+    color: '#3CB4E6',
+    svg: `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#eef3f6" stroke="#3CB4E6" stroke-width="1.5"/>
+      <rect x="10" y="28" width="28" height="10" rx="3" fill="#3CB4E6" opacity=".15" stroke="#3CB4E6" stroke-width="1.5"/>
+      <path d="M10 24 Q18 18 24 22 Q30 26 38 20" stroke="#3CB4E6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <circle cx="16" cy="22" r="1.5" fill="#3CB4E6" opacity=".7"/>
+      <circle cx="24" cy="20" r="1.5" fill="#3CB4E6" opacity=".7"/>
+      <circle cx="32" cy="18" r="1.5" fill="#3CB4E6" opacity=".7"/>
+      <line x1="14" y1="34" x2="14" y2="40" stroke="#3CB4E6" stroke-width="1.2" stroke-dasharray="2 2" opacity=".5"/>
+      <line x1="24" y1="34" x2="24" y2="40" stroke="#3CB4E6" stroke-width="1.2" stroke-dasharray="2 2" opacity=".5"/>
+      <line x1="34" y1="34" x2="34" y2="40" stroke="#3CB4E6" stroke-width="1.2" stroke-dasharray="2 2" opacity=".5"/>
+    </svg>`,
+  },
+  {
+    step: no ? 'Avvann' : 'Dewater',
+    name: no ? 'FDS Slamavvanning' : 'FDS Sludge Dewatering',
+    abbr: 'FDS',
+    body: no
+      ? 'Multidisk-skruepresse separerer mekanisk vann fra fast stoff og reduserer slamvolum med opptil 7×. Fullt automatisk, uten kjemikalier og uten manuell håndtering.'
+      : 'Multi-disc screw press mechanically separates liquid from solids, cutting sludge volume by up to 7×. Fully automatic — no chemicals, no manual handling.',
+    segments: no ? 'Alle segmenter' : 'All segments',
+    color: '#003764',
+    svg: `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#eef3f6" stroke="#003764" stroke-width="1.5"/>
+      <rect x="8" y="19" width="32" height="12" rx="6" fill="#003764" opacity=".1" stroke="#003764" stroke-width="1.5"/>
+      <ellipse cx="16" cy="25" rx="4" ry="6" fill="none" stroke="#003764" stroke-width="1.5"/>
+      <ellipse cx="24" cy="25" rx="4" ry="6" fill="none" stroke="#003764" stroke-width="1.5"/>
+      <ellipse cx="32" cy="25" rx="4" ry="6" fill="none" stroke="#003764" stroke-width="1.5"/>
+      <line x1="16" y1="31" x2="14" y2="38" stroke="#3CB4E6" stroke-width="1.2" stroke-dasharray="2 2" opacity=".6"/>
+      <line x1="24" y1="31" x2="24" y2="38" stroke="#3CB4E6" stroke-width="1.2" stroke-dasharray="2 2" opacity=".6"/>
+      <path d="M32 31 l4 6" stroke="#003764" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    step: no ? 'Poler' : 'Polish',
+    name: no ? 'Biologisk rensing' : 'Biological Treatment',
+    abbr: 'BIO',
+    body: no
+      ? 'Mikroorganismer bryter ned løst organisk belastning som flotasjon ikke fjerner. Polerings-trinnet som gir deg godkjent avrenning og lave BOD/COD-verdier.'
+      : 'Microorganisms break down dissolved organic load that flotation cannot remove. The polishing step that achieves discharge compliance and low BOD/COD.',
+    segments: no ? 'Industri · Kommunal' : 'Industry · Municipal',
+    color: '#009B50',
+    svg: `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#eef3f6" stroke="#009B50" stroke-width="1.5"/>
+      <circle cx="24" cy="24" r="10" fill="#009B50" opacity=".08" stroke="#009B50" stroke-width="1.5"/>
+      <circle cx="18" cy="22" r="3" fill="#009B50" opacity=".35"/>
+      <circle cx="28" cy="20" r="2.5" fill="#009B50" opacity=".35"/>
+      <circle cx="24" cy="28" r="3.5" fill="#009B50" opacity=".35"/>
+      <circle cx="32" cy="27" r="2" fill="#009B50" opacity=".25"/>
+      <path d="M14 36 Q20 30 28 34 Q34 38 40 32" stroke="#009B50" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5"/>
+    </svg>`,
+  },
+  {
+    step: no ? 'Full linje' : 'Full line',
+    name: no ? 'Containeranlegg' : 'Containerised Plant',
+    abbr: 'CTP',
+    body: no
+      ? 'Alle behandlingstrinn ferdigmontert og -testet i én container. Raskeste veien til en komplett behandlingslinje på stedet — uten anleggsarbeid og uten integrasjonskompleksitet.'
+      : 'All treatment stages pre-assembled and factory-tested in one container. Fastest path to a complete on-site treatment line — no civil works, no integration complexity.',
+    segments: no ? 'Alle segmenter' : 'All segments',
+    color: '#5b6b78',
+    svg: `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#eef3f6" stroke="#5b6b78" stroke-width="1.5"/>
+      <rect x="10" y="17" width="28" height="18" rx="3" fill="none" stroke="#5b6b78" stroke-width="1.5"/>
+      <rect x="10" y="17" width="8" height="18" rx="0" fill="#5b6b78" opacity=".08"/>
+      <rect x="18" y="17" width="8" height="18" rx="0" fill="#5b6b78" opacity=".04"/>
+      <rect x="26" y="17" width="8" height="18" rx="0" fill="#5b6b78" opacity=".08"/>
+      <line x1="18" y1="17" x2="18" y2="35" stroke="#5b6b78" stroke-width="1" opacity=".4"/>
+      <line x1="26" y1="17" x2="26" y2="35" stroke="#5b6b78" stroke-width="1" opacity=".4"/>
+      <line x1="34" y1="17" x2="34" y2="35" stroke="#5b6b78" stroke-width="1" opacity=".4"/>
+      <rect x="14" y="35" width="4" height="3" rx="1" fill="#5b6b78" opacity=".5"/>
+      <rect x="30" y="35" width="4" height="3" rx="1" fill="#5b6b78" opacity=".5"/>
+    </svg>`,
+  },
+];
+---
+
+<section class="tp-section">
+  <div class="tp-inner">
+    <div class="tp-header">
+      <span class="tp-eyebrow">{eyebrow}</span>
+      <h2 class="tp-heading">{heading}</h2>
+      <p class="tp-sub">{subtitle}</p>
+    </div>
+
+    <div class="tp-grid">
+      {modules.map((m, i) => (
+        <>
+          <div class="tp-card">
+            <div class="tp-step-badge">{m.step}</div>
+            <div class="tp-icon" set:html={m.svg} />
+            <div class="tp-abbr" style={`color:${m.color}`}>{m.abbr}</div>
+            <h3 class="tp-name">{m.name}</h3>
+            <p class="tp-body">{m.body}</p>
+            <div class="tp-segments">
+              <span class="tp-segments-label">{usedIn}</span>
+              <span>{m.segments}</span>
+            </div>
+          </div>
+          {i < modules.length - 1 && (
+            <div class="tp-arrow" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="#e3e9ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+
+    <div class="tp-note">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" stroke="#3CB4E6" stroke-width="1.4"/>
+        <path d="M8 7v4M8 5.5v.5" stroke="#3CB4E6" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span>{no
+        ? 'De fleste anlegg vi leverer kombinerer DAF og FDS. Biologisk rensing og containeranlegg legges til etter behov.'
+        : 'Most installations we deliver combine DAF and FDS. Biological treatment and containerised plants are added depending on specific discharge requirements.'
+      }</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.tp-section {
+  background: #fff;
+  padding: 72px 0 64px;
+  border-top: 1px solid #e3e9ee;
+}
+
+.tp-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.tp-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 52px;
+}
+
+.tp-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #3CB4E6;
+  margin-bottom: 14px;
+}
+
+.tp-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #003764;
+  letter-spacing: -0.7px;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+
+.tp-sub {
+  font-size: 16.5px;
+  color: #5b6b78;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Grid with arrow connectors ── */
+.tp-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.tp-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e3e9ee;
+  border-radius: 8px;
+  padding: 28px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow .2s, border-color .2s, transform .2s;
+}
+
+.tp-card:hover {
+  box-shadow: 0 10px 28px rgba(0,40,80,.08);
+  border-color: #c8d8e4;
+  transform: translateY(-2px);
+}
+
+.tp-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  flex-shrink: 0;
+}
+
+.tp-step-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8fa0ae;
+  margin-bottom: 2px;
+}
+
+.tp-icon {
+  width: 56px;
+  height: 56px;
+  margin: 4px 0 6px;
+}
+
+.tp-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tp-abbr {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tp-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #14202b;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.tp-body {
+  font-size: 13.5px;
+  color: #5b6b78;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.tp-segments {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f0f4f7;
+  font-size: 12px;
+  color: #5b6b78;
+}
+
+.tp-segments-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8fa0ae;
+}
+
+.tp-note {
+  margin-top: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #5b6b78;
+  background: #eef3f6;
+  border-radius: 6px;
+  padding: 14px 18px;
+  line-height: 1.55;
+}
+
+.tp-note svg { flex-shrink: 0; margin-top: 1px; }
+
+/* ── Responsive ── */
+@media (max-width: 1050px) {
+  .tp-grid { flex-wrap: wrap; gap: 16px; }
+  .tp-arrow { display: none; }
+  .tp-card { flex: 1 1 calc(50% - 8px); }
+}
+
+@media (max-width: 640px) {
+  .tp-card { flex: 1 1 100%; }
+  .tp-heading { font-size: 26px; }
+  .tp-inner { padding: 0 24px; }
+  .tp-section { padding: 48px 0; }
+}
+</style>

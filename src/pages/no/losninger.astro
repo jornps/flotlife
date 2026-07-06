@@ -5,6 +5,7 @@ import Hero from '../../components/sections/Hero.astro';
 import SolutionCard from '../../components/sections/SolutionCard.astro';
 import CTA from '../../components/sections/CTA.astro';
 import HowItWorks from '../../components/sections/HowItWorks.astro';
+import TechPlatform from '../../components/sections/TechPlatform.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
 
@@ -22,25 +23,28 @@ const segmentLabels: Record<string, string> = {
 };
 
 const processStepLabels: Record<string, string> = {
-  daf: 'Capture & Separate',
-  'screw-press': 'Dewater',
-  'biological-treatment': 'Polish',
-  'containerized-plant': 'Hele linjen',
+  daf: 'Fang og separér',
+  'screw-press': 'Avvann',
+  'biological-treatment': 'Poler',
+  'containerized-plant': 'Full linje',
 };
 ---
 
 <BaseLayout lang={lang} pageKey="solutions" title="Løsninger | FlotLife Nordic" description="DAF, slamavvanning, biologisk rensing og containerbaserte anlegg — de fire kjerneteknologiene bak FlotLife Nordic.">
   <Hero title={t('solutions.hero.title')} subtitle={t('solutions.hero.subtitle')} />
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-5xl px-6 pt-16 lg:px-8">
-      <p class="text-neutral-700">
-        Hver løsning under er én modul i samme prosesslinje — capture, separate &amp;
-        concentrate, dewater, polish. Vi kombinerer og dimensjonerer dem ulikt avhengig av
-        vannet deres, men logikken bak er den samme.
+  <section style="background:#fff;padding:56px 0 0;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+      <p style="font-size:18px;color:#5b6b78;line-height:1.7;max-width:720px;">
+        FlotLife Nordic starter ikke med utstyr — vi starter med vannet ditt. Når vi vet hva
+        som er i det, hvilke avrenningskrav som gjelder og plassen som er tilgjengelig,
+        setter vi sammen en behandlingslinje fra de fire kjerneteknologiene nedenfor.
+        De fleste anlegg trenger to eller tre av dem. Noen trenger alle fire.
       </p>
     </div>
   </section>
+
+  <TechPlatform lang={lang} />
 
   <HowItWorks lang={lang} />
 

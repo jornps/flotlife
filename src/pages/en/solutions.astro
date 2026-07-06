@@ -5,6 +5,7 @@ import Hero from '../../components/sections/Hero.astro';
 import SolutionCard from '../../components/sections/SolutionCard.astro';
 import CTA from '../../components/sections/CTA.astro';
 import HowItWorks from '../../components/sections/HowItWorks.astro';
+import TechPlatform from '../../components/sections/TechPlatform.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
 
@@ -32,15 +33,18 @@ const processStepLabels: Record<string, string> = {
 <BaseLayout lang={lang} pageKey="solutions" title="Solutions | FlotLife Nordic" description="Dissolved air flotation, sludge dewatering, biological treatment and containerized plants — the four core technologies behind FlotLife Nordic.">
   <Hero title={t('solutions.hero.title')} subtitle={t('solutions.hero.subtitle')} />
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-5xl px-6 pt-16 lg:px-8">
-      <p class="text-neutral-700">
-        Every solution below is one module in the same process line — capture, separate
-        &amp; concentrate, dewater, polish. We combine and size them differently depending
-        on your water, but the underlying logic doesn't change.
+  <section style="background:#fff;padding:56px 0 0;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+      <p style="font-size:18px;color:#5b6b78;line-height:1.7;max-width:720px;">
+        FlotLife Nordic doesn't start with equipment — we start with your water. Once we know
+        what's in it, what you need to discharge, and what space you have, we assemble a
+        treatment line from the four core technologies below. Most sites need two or three of
+        them. Some need all four.
       </p>
     </div>
   </section>
+
+  <TechPlatform lang={lang} />
 
   <HowItWorks lang={lang} />
 

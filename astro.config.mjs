@@ -9,12 +9,12 @@ export default defineConfig({
   trailingSlash: 'always',
 
   redirects: {
-    '/': '/en/',
+    '/': '/no/',
   },
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'no'],
+    defaultLocale: 'no',
+    locales: ['no', 'en'],
     routing: {
       prefixDefaultLocale: true,
     },
