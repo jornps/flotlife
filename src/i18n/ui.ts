@@ -52,6 +52,19 @@ export const ui = {
     'solutions.hero.subtitle':
       'Four core technologies, combined and configured to match your water, your site and your budget.',
     'solutions.forSegments': 'Used in',
+    'solutions.technicalDetails': 'Technical specifications',
+
+    'howWeWork.heading': 'How we work',
+    'howWeWork.tagline': 'Engineering-first. Not equipment-first.',
+    'howWeWork.sub': 'Our equipment is a result — not the start — of the solution.',
+    'howWeWork.step1.title': 'Audit & sampling',
+    'howWeWork.step1.body': 'We analyse your real operating conditions — flow patterns, solids load, discharge requirements and sludge characteristics.',
+    'howWeWork.step2.title': 'Jar tests & modelling',
+    'howWeWork.step2.body': 'We test your actual water to find the most efficient treatment chemistry and process configuration for your specific stream.',
+    'howWeWork.step3.title': 'Process design',
+    'howWeWork.step3.body': 'We design the complete solution — hydraulics, chemistry, automation and equipment selection — around your parameters, not a standard template.',
+    'howWeWork.step4.title': 'Build & integrate',
+    'howWeWork.step4.body': 'We deliver equipment built for your site and supervise commissioning until everything runs as designed.',
 
     'sustainability.hero.title': 'Sludge is not waste. It’s a resource we haven’t collected yet.',
 
@@ -122,6 +135,19 @@ export const ui = {
     'solutions.hero.subtitle':
       'Fire kjerneteknologier, kombinert og konfigurert etter vannet, anlegget og budsjettet deres.',
     'solutions.forSegments': 'Brukes innen',
+    'solutions.technicalDetails': 'Tekniske spesifikasjoner',
+
+    'howWeWork.heading': 'Slik jobber vi',
+    'howWeWork.tagline': 'Ingeniørarbeid først. Ikke utstyr først.',
+    'howWeWork.sub': 'Utstyret vårt er et resultat — ikke utgangspunktet — for løsningen.',
+    'howWeWork.step1.title': 'Revisjon og prøvetaking',
+    'howWeWork.step1.body': 'Vi analyserer de reelle driftsforholdene — strømningsmønstre, partikkelbelastning, utslippskrav og slamkarakteristikk.',
+    'howWeWork.step2.title': 'Jar-testing og modellering',
+    'howWeWork.step2.body': 'Vi tester det faktiske vannet deres for å finne den mest effektive kjemien og prosesskonfigurasjonen for akkurat den strømmen.',
+    'howWeWork.step3.title': 'Prosessdesign',
+    'howWeWork.step3.body': 'Vi designer den komplette løsningen — hydraulikk, kjemi, automasjon og utstyrsvalg — etter de spesifikke parameterne, ikke en standardmal.',
+    'howWeWork.step4.title': 'Bygg og integrer',
+    'howWeWork.step4.body': 'Vi leverer utstyr bygd for anlegget deres og overvåker idriftsettelse til alt fungerer som designet.',
 
     'sustainability.hero.title': 'Slam er ikke avfall. Det er en ressurs vi ikke har samlet inn ennå.',
 

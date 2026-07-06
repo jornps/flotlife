@@ -4,8 +4,23 @@ solutionKey: screw-press
 title: Sludge Dewatering — FDS Screw Press
 slug: sludge-dewatering
 excerpt: Our FDS multi-disc screw press mechanically separates liquid from solids, cutting sludge volume by up to 7x and turning a disposal cost into a manageable output.
-image: ../../assets/solutions/screw-press-unit.png
-imageAlt: FlotLife FDS multi-disc screw press sludge dewatering unit
+image: ../../assets/solutions/fds-320-installation.jpg
+imageAlt: FlotLife FDS 320 multi-disc screw press units installed at a facility
+technicalDetails: |
+  **Operating principle:** Sludge is fed into a cylinder formed by a series of overlapping, rotating disc rings. As the screw advances, the narrowing gap between the discs and the changing screw pitch compress the sludge progressively, squeezing water through the gaps. Dewatered cake discharges at the end; filtrate returns for further treatment.
+
+  **Models:**
+  - **FDS 200** — compact fixed installation for lower daily volumes
+  - **FDS 320** — larger fixed installation for higher throughput sites
+  - **FDS-MB** — fully operational unit on a road-legal trailer; same press technology, deployable for site trials or multi-site service
+
+  **Performance:**
+  - Volume reduction: up to 7× compared to input sludge
+  - Typical cake dry-solids content: 18–28% DS (varies by sludge type)
+  - Low power consumption vs centrifuges and belt presses
+  - Automated feed control; continuous unattended operation between cycles
+
+  **Documented sludge types:** Municipal biosolids, fish farm sludge (including cod farm, Norway), fish processing effluent, dairy flotation sludge, brewery waste, ice cream, red beet processing, paint/oil industry process water.
 applicableSegments: ["havbruk", "industri", "kommunal"]
 seoTitle: Sludge Dewatering – FDS Multi-Disc Screw Press | FlotLife Nordic
 seoDescription: FDS multi-disc screw press sludge dewatering that reduces volume up to 7x and cuts disposal costs, for aquaculture, industry and municipal sites.

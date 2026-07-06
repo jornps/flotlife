@@ -3,7 +3,9 @@ lang: en
 segmentKey: kommunal
 title: Municipal
 slug: municipal
-excerpt: Flexible treatment for wastewater, treatment plants and decentralized systems in small and mid-sized communities.
+heroImage: ../../assets/solutions/containerized-plant-1.jpg
+heroImageAlt: Pre-assembled containerized water treatment plant for municipal use
+excerpt: Right-sized treatment for the community you serve — without the footprint or cost of a full-scale plant.
 stats:
   - value: "1"
     label: Pre-assembled plant, fast to commission
@@ -17,35 +19,30 @@ seoDescription: Pre-assembled, containerized treatment plants and biological tre
 order: 3
 ---
 
-## Not every community needs a full-scale treatment plant
+## Not every community needs a full-scale plant
 
-Small and mid-sized municipalities, and decentralized settlements outside the main sewer
-network, often need capable treatment without the cost, footprint or construction time of
-a conventional plant. That's the gap our pre-assembled, containerized systems are built to
-close.
+Small and mid-sized municipalities don't need to build for a city. But they do need to meet the same discharge standards, run reliably without full-time operators on site, and stay within a budget that doesn't have room for construction overruns.
 
-## Delivered ready, not built on site
+Our pre-assembled, containerized systems are built exactly for that situation.
 
-Our containerized treatment plants arrive pre-assembled and tested, combining screening,
-biological treatment and polishing in a single unit. That means shorter installation
-time, less civil works, and a system that can be relocated or scaled as a community's
-needs change.
+## Delivered ready — not assembled on site
+
+Our treatment plants arrive pre-built and tested from the factory. Screening, biological treatment and polishing come in a single unit, ready to connect. That means:
+
+- **Shorter installation time** — no months-long on-site construction.
+- **Less civil works** — reduces cost and coordination before commissioning.
+- **Relocatable** — if a community grows or needs shift, the system moves with it.
 
 ## Where it fits
 
-- **Aging treatment plants** in need of retrofit or capacity upgrades without a full rebuild.
-- **Decentralized systems** serving communities outside the main municipal network.
-- **New developments** where a conventional plant isn't justified by the volume involved.
+- **Aging plants** that need retrofit or capacity upgrades without a full rebuild.
+- **Decentralized communities** outside the main municipal sewer network.
+- **New developments** where a permanent large plant isn't justified by current volume.
 
-## Compliance without the guesswork
+## Meeting your discharge standard — automatically
 
-Biological treatment and polishing stages are configured to the discharge standard you
-need to meet, with automation and remote monitoring giving operators visibility without
-requiring staff on site around the clock.
+Biological treatment and polishing stages are configured to the specific consent you need to satisfy. Automation and remote monitoring give operators full visibility without requiring around-the-clock staffing.
 
-## Try dewatering before you commit to it
+## Try dewatering on your own sludge first
 
-Municipal sludge is the single most-documented application for our FDS dewatering line —
-and our trailer-mounted FDS-MB lets a municipality see it run on its own sludge before
-signing off on a fixed installation. Useful if the budget cycle, not the technology, is
-what's holding a decision back. [See it in action on Vimeo](https://vimeo.com/showcase/fdsmb).
+Municipal sludge is the most thoroughly documented application for our FDS dewatering line. Our trailer-mounted FDS-MB lets you see it run on your own material — before signing off on a fixed installation. Useful when the budget cycle, not the technology, is what's holding a decision back. [See it in action →](https://vimeo.com/showcase/fdsmb)

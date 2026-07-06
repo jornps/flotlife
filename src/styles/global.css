@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Brand: deep navy anchors the FlotLife cyan wordmark, green ties to the

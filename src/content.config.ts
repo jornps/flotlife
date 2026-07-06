@@ -40,6 +40,7 @@ const solutions = defineCollection({
       excerpt: z.string(),
       image: image().optional(),
       imageAlt: z.string().optional(),
+      technicalDetails: z.string().optional(),
       applicableSegments: z.array(segmentKey).default([]),
       seoTitle: z.string().optional(),
       seoDescription: z.string().optional(),

@@ -52,6 +52,8 @@ const processStepLabels: Record<string, string> = {
           usedInLabel={t('solutions.forSegments')}
           usedIn={s.data.applicableSegments.map((key) => segmentLabels[key])}
           processStep={processStepLabels[s.data.solutionKey]}
+          technicalDetails={s.data.technicalDetails}
+          detailsLabel={t('solutions.technicalDetails')}
         />
       ))}
     </div>

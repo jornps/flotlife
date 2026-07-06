@@ -5,6 +5,9 @@ import ProcessSteps from '../../components/sections/ProcessSteps.astro';
 import CTA from '../../components/sections/CTA.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
+import { Image } from 'astro:assets';
+import tradeFairImage from '../../assets/about/flotlife-trade-fair.jpg';
+import labImage from '../../assets/solutions/water-analysis-lab.jpg';
 
 const lang = 'no';
 const t = useTranslations(lang);
@@ -81,6 +84,21 @@ const howWeWork = [
         nordiske produksjonsmiljøer, og vi bygger løsninger som fungerer i praksis — over
         tid, ikke bare på dag én.
       </p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+      <div class="grid gap-8 sm:grid-cols-2">
+        <figure>
+          <Image src={tradeFairImage} alt="FlotLife produktlinje på messe — DAF-enheter og containerbaserte anlegg" widths={[600, 900]} sizes="(min-width:640px) 50vw, 100vw" class="w-full rounded-xl object-cover" />
+          <figcaption class="mt-3 text-sm text-neutral-500">FlotLife produserer eget utstyr i EU — fra kompakte DAF-enheter til fullstendig containerbaserte renseanlegg.</figcaption>
+        </figure>
+        <figure>
+          <Image src={labImage} alt="Jar-testing og vannkvalitetsanalyse i FlotLife-laboratorium" widths={[600, 900]} sizes="(min-width:640px) 50vw, 100vw" class="w-full rounded-xl object-cover" />
+          <figcaption class="mt-3 text-sm text-neutral-500">Hvert system starter med analyse. Jar-testing og prosessmodellering bestemmer den mest effektive rensestrategien før noe utstyr spesifiseres.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 

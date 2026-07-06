@@ -3,7 +3,9 @@ lang: no
 segmentKey: kommunal
 title: Kommunal
 slug: kommunal
-excerpt: Fleksible renseløsninger for avløp, renseanlegg og desentraliserte systemer i mindre og mellomstore kommuner.
+heroImage: ../../assets/solutions/containerized-plant-1.jpg
+heroImageAlt: Prefabrikkert containerbasert vannrenseanlegg for kommunal bruk
+excerpt: Riktig dimensjonert rensing for kommunen dere betjener — uten arealbehovet eller kostnaden av et fullskala anlegg.
 stats:
   - value: "1"
     label: Ferdigmontert anlegg, rask idriftsettelse
@@ -17,34 +19,30 @@ seoDescription: Ferdigmonterte containeranlegg og biologisk rensing for kommunal
 order: 3
 ---
 
-## Ikke alle kommuner trenger et fullskala renseanlegg
+## Ikke alle kommuner trenger et fullskala anlegg
 
-Mindre og mellomstore kommuner, og desentraliserte bosettinger utenfor hovednettet, trenger
-ofte kapabel rensing uten kostnaden, arealbehovet eller byggetiden til et konvensjonelt
-anlegg. Det er gapet våre ferdigmonterte containerløsninger er bygget for å dekke.
+Mindre og mellomstore kommuner trenger ikke å bygge for en storby. Men de må møte de samme utslippskravene, kjøre pålitelig uten fulltidsbemanning på stedet, og holde seg innenfor et budsjett uten rom for overskridelser.
 
-## Levert klart, ikke bygget på stedet
+Våre ferdigmonterte, containerbaserte anlegg er bygget nettopp for denne situasjonen.
 
-Våre containerbaserte renseanlegg leveres ferdigmontert og testet, og kombinerer siling,
-biologisk rensing og polering i én enhet. Det betyr kortere installasjonstid, mindre
-grunnarbeid og et anlegg som kan flyttes eller skaleres etter hvert som kommunens behov
-endrer seg.
+## Levert klart — ikke montert på stedet
+
+Anleggene våre leveres ferdigbygd og testet fra fabrikk. Siling, biologisk rensing og polering leveres i én enhet, klar til tilkobling. Det gir:
+
+- **Kortere installasjonstid** — ingen måneder med bygging på stedet.
+- **Mindre grunnarbeid** — reduserer kostnad og koordinering før idriftsettelse.
+- **Kan flyttes** — dersom behovene endrer seg, flyttes anlegget med.
 
 ## Hvor det passer
 
-- **Eldre renseanlegg** som trenger oppgradering eller kapasitetsøkning uten full ombygging.
-- **Desentraliserte systemer** som betjener bosettinger utenfor det kommunale hovednettet.
-- **Nye utbygginger** der et konvensjonelt anlegg ikke er berettiget ut fra volumet.
+- **Eldre anlegg** som trenger oppgradering eller kapasitetsøkning uten full ombygging.
+- **Desentraliserte bosettinger** utenfor kommunenes hovednett.
+- **Nye utbygginger** der et permanent storskala anlegg ikke er berettiget av nåværende volum.
 
-## Etterlevelse uten gjettverk
+## Møt utslippskravet — automatisk
 
-Biologisk rensing og poleringstrinn konfigureres etter utslippskravet dere skal møte, med
-automasjon og fjernovervåking som gir driftsansvarlige oversikt uten behov for
-døgnbemanning.
+Biologisk rensing og poleringstrinn konfigureres etter det spesifikke utslippskravet dere skal møte. Automasjon og fjernovervåking gir driftsansvarlige full oversikt uten behov for døgnbemanning.
 
-## Test avvanning før dere forplikter dere
+## Test avvanning på eget slam først
 
-Kommunalt slam er den mest dokumenterte anvendelsen for vår FDS-avvanningslinje — og den
-tilhengermonterte FDS-MB lar en kommune se den kjøre på eget slam før man vedtar en fast
-installasjon. Nyttig når det er budsjettsyklusen, ikke teknologien, som bremser en
-beslutning. [Se den i aksjon på Vimeo](https://vimeo.com/showcase/fdsmb).
+Kommunalt slam er den mest dokumenterte anvendelsen for FDS-avvanningslinjen vår. Den tilhengermonterte FDS-MB lar dere se den kjøre på eget materiale — før dere vedtar en fast installasjon. Nyttig når det er budsjettsyklusen, ikke teknologien, som bremser beslutningen. [Se den i aksjon →](https://vimeo.com/showcase/fdsmb)

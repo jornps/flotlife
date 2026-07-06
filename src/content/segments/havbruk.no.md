@@ -3,7 +3,7 @@ lang: no
 segmentKey: havbruk
 title: Havbruk
 slug: havbruk
-excerpt: Vann- og slambehandling for RAS, sjøbaserte anlegg, brønnbåt og ventemerd — bygget for nordisk havbruk.
+excerpt: Vannet fisken lever i er den viktigste innsatsfaktoren dere har. Vi hjelper dere å kontrollere det.
 heroImage: ../../assets/segments/havbruk/fish-farm-treatment.jpg
 heroImageAlt: Vannbehandlingsutstyr ved et fiskeoppdrettsanlegg
 stats:
@@ -19,41 +19,29 @@ seoDescription: DAF- og slamavvanningsanlegg for RAS, sjøbaserte anlegg, brønn
 order: 1
 ---
 
-## Vann er den mest krevende innsatsfaktoren dere har
+## Vannet fisken lever i
 
-Enten dere driver et landbasert RAS-anlegg, et sjøbasert anlegg, en brønnbåtflåte eller
-ventemerd før slakting, er vannkvalitet ikke en sidesak — det er miljøet fisken lever i.
-FlotLife Nordic bygger vann- og slambehandling rundt denne virkeligheten: tidlig fangst
-av feces og biosolids, stabil vannkvalitet og mindre slam å håndtere nedstrøms — ikke
-etter en generisk industrimal.
+Fisk tolererer ikke marginal vannkvalitet. Suspendert stoff, for høy organisk belastning og akkumulerte fines reduserer oksygennivå, øker sykdomsrisiko og svekker fôrutnyttelsen — lenge før et utslippstillatelse kommer under press.
 
-## Fra utslippsproblem til innsamlet ressurs
+FlotLife Nordic fjerner problemet ved kilden: tidlig fangst av feces og biosolids, før de sprer seg og blir vanskeligere å håndtere.
 
-DAF (dissolved air flotation) fjerner suspendert stoff og fett før vannet returneres til
-resipienten eller resirkuleres. Det som samles opp trenger ikke å bli en avhendingskostnad:
-våre slamavvanningsanlegg konsentrerer materialet til et håndterbart, transportvennlig
-produkt — det reduserer volum og åpner for gjenbruk som næringsressurs i stedet for avfall.
-Les mer på [bærekraftsiden vår](/no/baerekraft/).
+## Fra avfallsstrøm til innsamlet ressurs
 
-## Bygget for hvordan nordisk havbruk faktisk drives
+DAF (dissolved air flotation) fjerner suspendert stoff og fett fra vannsøylen på minutter. Det som samles opp trenger ikke å bli en regning: slamavvanningssystemene våre reduserer materialet med opptil 7x i volum og produserer en tørr, transportvennlig kake som kan gå til biogass eller gjødsel — ikke til et behandlingsbassin.
 
-- **RAS og semi-lukkede anlegg** — kontinuerlig, automatisert behandling som følger tempoet
-  i intensiv oppdrett.
-- **Sjøbaserte anlegg** — kompakte containerløsninger tilpasset begrenset plass på flåter
-  og lektere.
+[Les mer om slam som ressurs →](/no/baerekraft/)
+
+## Bygget for alle formater i nordisk havbruk
+
+- **RAS og semi-lukkede anlegg** — kontinuerlig, automatisert behandling som følger tempoet i intensivt oppdrett.
+- **Sjøbaserte anlegg** — kompakte containerenheter tilpasset begrenset dekkareal på flåter og lektere.
 - **Brønnbåt** — ombordbehandling av vann som tas inn ved lasting, transport og avlusing.
-- **Ventemerd** — håndtering av utslipp i den følsomme siste fasen før slakting, der
-  regulatorisk oppmerksomhet er størst.
+- **Ventemerd** — håndtering av utslipp i den mest følsomme fasen før slakting.
 
-## En regulatorisk trend dere kan ligge foran
+## Ligge foran den regulatoriske utviklingen
 
-Krav om slamoppsamling ved sjøbaserte anlegg beveger seg fra frivillig til forventet,
-særlig nær sårbare bunnhabitater. Anlegg som allerede har oppsamling og avvanning på plass
-blir ikke tatt på senga når kravene innhenter dem.
+Krav om slamoppsamling ved sjøbaserte anlegg strammes inn, særlig nær sårbare bunnhabitater. Anlegg som allerede kjører oppsamling og avvanning blir ikke tatt på senga når kravene formaliseres.
 
-## Allerede utprøvd på nordisk fiskeslam
+## Utprøvd på nordisk fiskeslam
 
-Vår FDS-avvanningslinje — inkludert den tilhengermonterte mobilenheten FDS-MB — er
-demonstrert på slam fra fiskeforedling, fiskeslam fra biologisk rensing, og ved et
-torskeoppdrett i Norge. Vil dere se hvordan deres eget slam avvannes før dere forplikter
-dere til en fast installasjon, er det et realistisk første steg. [Se den i aksjon på Vimeo](https://vimeo.com/showcase/fdsmb).
+Vår FDS-avvanningslinje — inkludert den tilhengermonterte FDS-MB — er demonstrert på fiskeslam fra biologisk rensing, slam fra fiskeforedling og ved et torskeoppdrett i Norge. [Se den i aksjon på Vimeo →](https://vimeo.com/showcase/fdsmb)

@@ -1,0 +1,36 @@
+---
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const steps = [
+  { number: '01', title: t('howWeWork.step1.title'), body: t('howWeWork.step1.body') },
+  { number: '02', title: t('howWeWork.step2.title'), body: t('howWeWork.step2.body') },
+  { number: '03', title: t('howWeWork.step3.title'), body: t('howWeWork.step3.body') },
+  { number: '04', title: t('howWeWork.step4.title'), body: t('howWeWork.step4.body') },
+];
+---
+
+<section class="bg-brand-navy-950">
+  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand-cyan-400">{t('howWeWork.heading')}</p>
+      <h2 class="mt-2 font-heading text-2xl font-bold text-white">{t('howWeWork.tagline')}</h2>
+      <p class="mt-2 text-brand-navy-600 italic">{t('howWeWork.sub')}</p>
+    </div>
+    <ol class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {steps.map((step) => (
+        <li class="relative border-t border-brand-navy-800 pt-6">
+          <span class="font-heading text-3xl font-bold text-brand-cyan-400 leading-none">{step.number}</span>
+          <h3 class="mt-4 font-heading text-base font-bold text-white">{step.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-neutral-400">{step.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

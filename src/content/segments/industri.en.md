@@ -3,7 +3,7 @@ lang: en
 segmentKey: industri
 title: Industry
 slug: industry
-excerpt: Robust process water and biosolids treatment for food production, chemicals and mechanical industry.
+excerpt: Process water is a cost until it's designed properly. We turn it into something you control.
 heroImage: ../../assets/segments/industri/meat-production.jpg
 heroImageAlt: Industrial process water treatment equipment
 stats:
@@ -19,34 +19,26 @@ seoDescription: DAF, biological treatment and sludge dewatering for food product
 order: 2
 ---
 
-## Process water is a cost until it's designed properly
+## Process water is a cost — until it's designed properly
 
-Food and beverage production, chemical processing and mechanical manufacturing all
-generate water loaded with fats, proteins, solids or chemical residues. Treated as an
-afterthought, it's a compliance risk and a rising disposal bill. Treated as part of the
-process, it's a controllable, even reusable, resource.
+Food and beverage production, chemical processing, and mechanical manufacturing all generate water loaded with fats, proteins, solids or chemical residues.
 
-## A treatment line that matches your discharge requirements
+Left unmanaged, that's a compliance risk and a rising disposal bill. Designed into the process, it becomes controllable — and often reusable.
 
-We combine primary screening, coagulation and flocculation, dissolved air flotation and
-biological treatment into a line sized for your actual flow and load — not oversized,
-not undersized. Where solids need to leave site, our sludge dewatering step reduces
-volume and cost before a truck ever needs to show up.
+## A treatment line matched to your actual load
+
+We combine primary screening, coagulation and flocculation, dissolved air flotation and — where needed — biological treatment into a line sized to your real flow and load. Not a template. Not oversized.
+
+Where solids need to leave site, sludge dewatering cuts your volume before a truck ever arrives.
 
 ## Where it fits
 
-- **Food and beverage production** — fats, oils and organic load from meat, fish, dairy,
-  brewery and ice cream processing.
-- **Chemical and process industries** — variable-load streams from paint and oil-product
-  processing that need robust, adjustable treatment.
-- **Mechanical and metal industry** — oils, coolants and metal-processing wash water.
+- **Food and beverage** — fats, oils and organics from meat, fish, dairy, brewery and ice cream processing.
+- **Chemical and process industries** — variable, challenging streams from paint, oil-product and specialty chemical production.
+- **Mechanical and metal industry** — oils, coolants and metal-processing wash water that needs reliable removal.
 
-Our FDS dewatering line has already been demonstrated on sludge from exactly these
-streams — dairy flotation sludge, brewery waste, ice cream and red beet processing,
-metal processing, paint production and oil-product flotation among them. [See it in action on Vimeo](https://vimeo.com/showcase/fdsmb).
+Our FDS dewatering line has already been run on sludge from all of these: dairy flotation sludge, brewery waste, ice cream and red beet processing, metal processing, paint production and oil-product flotation. [See it in action →](https://vimeo.com/showcase/fdsmb)
 
-## One partner, not a chain of subcontractors
+## One partner, not a chain of suppliers
 
-FlotLife Nordic takes responsibility for the full cycle — design, equipment, installation
-and the automation that keeps it running — so you have one point of contact instead of
-juggling separate vendors for screening, flotation and dewatering.
+FlotLife Nordic owns the full cycle — design, equipment, automation and commissioning. One contact. No finger-pointing between vendors.

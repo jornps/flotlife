@@ -44,6 +44,7 @@ content:
       - { name: excerpt, label: "Kort beskrivelse", type: text, required: true }
       - { name: image, label: "Bildesti (IKKE ENDRE — bildeadministrasjon kommer senere)", type: string }
       - { name: imageAlt, label: "Alt-tekst for bilde", type: string }
+      - { name: technicalDetails, label: "Tekniske spesifikasjoner (collapsible seksjon — valgfritt)", type: rich-text }
       - { name: applicableSegments, label: "Brukes i segment", type: select, list: true, options: [havbruk, industri, kommunal, maritim] }
       - { name: seoTitle, label: "SEO-tittel", type: string }
       - { name: seoDescription, label: "SEO-beskrivelse", type: text }

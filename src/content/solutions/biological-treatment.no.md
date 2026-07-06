@@ -3,6 +3,8 @@ lang: no
 solutionKey: biological-treatment
 title: Biologisk rensing
 slug: biologisk-rensing
+image: ../../assets/solutions/water-sample-testing.jpg
+imageAlt: Vannkvalitetstesting — begerglass med prosessvannssprøver
 excerpt: Mikroorganismer bryter ned løst organisk belastning som flotasjon og siling ikke kan fjerne — trinnet som får dere i mål med utslippskravene.
 applicableSegments: ["industri", "kommunal"]
 seoTitle: Biologisk rensing av avløpsvann | FlotLife Nordic

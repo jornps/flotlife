@@ -3,6 +3,8 @@ lang: no
 solutionKey: daf
 title: DAF (dissolved air flotation)
 slug: daf
+image: ../../assets/solutions/water-before-after.jpg
+imageAlt: Vann før og etter DAF-behandling — fra uklart til klart
 excerpt: Fine luftbobler løfter suspendert stoff, fett og olje til overflaten for fjerning — arbeidshesten i nesten alle renselinjer vi bygger.
 applicableSegments: ["havbruk", "industri", "maritim"]
 seoTitle: DAF – dissolved air flotation | FlotLife Nordic

@@ -4,8 +4,8 @@ solutionKey: screw-press
 title: Slamavvanning — FDS skruepresse
 slug: slamavvanning
 excerpt: Vår FDS multiskive-skruepresse skiller mekanisk væske fra faste stoffer, reduserer slamvolumet med opptil 7x og gjør en avhendingskostnad til et håndterbart produkt.
-image: ../../assets/solutions/screw-press-unit.png
-imageAlt: FlotLife FDS multiskive-skruepresse for slamavvanning
+image: ../../assets/solutions/fds-320-installation.jpg
+imageAlt: FlotLife FDS 320 multiskive-skruepresse installert ved anlegg
 applicableSegments: ["havbruk", "industri", "kommunal"]
 seoTitle: Slamavvanning – FDS multiskive-skruepresse | FlotLife Nordic
 seoDescription: FDS multiskive-skruepresse for slamavvanning som reduserer volum med opptil 7x og kutter avhendingskostnader, for havbruk, industri og kommunale anlegg.

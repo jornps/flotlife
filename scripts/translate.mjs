@@ -9,7 +9,7 @@ import matter from 'gray-matter';
 const DEEPL_API_KEY = process.env.DEEPL_API_KEY;
 const DEEPL_API_URL = 'https://api-free.deepl.com/v2/translate';
 
-const TRANSLATABLE_SCALAR_FIELDS = ['title', 'excerpt', 'heroImageAlt', 'imageAlt', 'seoTitle', 'seoDescription'];
+const TRANSLATABLE_SCALAR_FIELDS = ['title', 'excerpt', 'heroImageAlt', 'imageAlt', 'seoTitle', 'seoDescription', 'technicalDetails'];
 const TRANSLATION_MARKER = '<!-- Automatisk oversatt';
 
 function isUnreviewedTranslation(filePath) {
