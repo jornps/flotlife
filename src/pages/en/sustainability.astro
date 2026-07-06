@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/sections/Hero.astro';
 import StatBlock from '../../components/sections/StatBlock.astro';
+import ProcessDiagram from '../../components/sections/ProcessDiagram.astro';
 import CTA from '../../components/sections/CTA.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
@@ -21,6 +22,8 @@ const stats = [
   <Hero title={t('sustainability.hero.title')} subtitle="Every year, Nordic aquaculture and industry generate sludge rich in nitrogen and phosphorus. Almost none of it is captured. That's not a disposal problem — it's a resource sitting uncollected." image={heroImage} imageAlt="Water sample testing and quality analysis" />
 
   <StatBlock stats={stats} heading="The scale of what's being lost" />
+
+  <ProcessDiagram segment="baerekraft" lang="en" />
 
   <section class="bg-white">
     <div class="mx-auto max-w-3xl space-y-10 px-6 py-16 lg:px-8">

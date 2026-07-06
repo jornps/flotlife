@@ -1,0 +1,377 @@
+---
+export type Segment = 'havbruk' | 'industri' | 'kommunal' | 'maritim' | 'baerekraft';
+
+interface Props {
+  segment: Segment;
+  lang?: 'no' | 'en';
+}
+
+const { segment } = Astro.props;
+---
+
+<section class="bg-white py-12 lg:py-16">
+  <div class="mx-auto max-w-5xl px-6 lg:px-8">
+    <p class="text-sm font-semibold uppercase tracking-widest text-brand-navy-700">Prosessdiagram</p>
+    <h2 class="mt-2 font-heading text-2xl font-bold text-brand-navy-950">Slik behandles vannet</h2>
+    <div class="mt-8 overflow-x-auto rounded-xl border border-neutral-200 shadow-sm">
+
+{segment === 'havbruk' && (
+<svg viewBox="0 0 680 268" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif" style="width:100%;height:auto;display:block;min-width:560px">
+<rect width="680" height="268" fill="#eef6fc"/>
+<rect width="680" height="24" fill="#0a82b8"/>
+<text x="12" y="16" fill="white" font-size="11" font-weight="700">HAVBRUK</text>
+<text x="108" y="16" fill="rgba(255,255,255,.82)" font-size="9.5">Lakseoppdrett · RAS · Brønnbåt · Ventemerd · Smoltanlegg</text>
+<rect x="8" y="28" width="82" height="126" rx="6" fill="white" stroke="#0a82b8" stroke-width="1.5"/>
+<text x="49" y="46" text-anchor="middle" fill="#0a5a80" font-size="9" font-weight="700">Prosessvann</text>
+<text x="49" y="62" text-anchor="middle" fill="#6a8a9a" font-size="8.5">TSS høy</text>
+<text x="49" y="74" text-anchor="middle" fill="#6a8a9a" font-size="8.5">Feces · fôrrester</text>
+<text x="49" y="86" text-anchor="middle" fill="#6a8a9a" font-size="8.5">NH₄ · fosfor</text>
+<text x="49" y="112" text-anchor="middle" fill="#0a82b8" font-size="8" font-weight="600">opp til 500 mg/L TSS</text>
+<polygon points="90,85 100,80 100,90" fill="#0a82b8"/>
+<rect x="100" y="24" width="124" height="19" rx="6" fill="#c8922a" opacity=".4"/>
+<text x="162" y="36" text-anchor="middle" fill="#6a4010" font-size="7.5" font-weight="600">↑ Flotasjonsslam stiger</text>
+<rect x="100" y="43" width="124" height="112" fill="#ddeef8"/>
+<rect x="100" y="24" width="124" height="131" rx="6" fill="none" stroke="#003764" stroke-width="2"/>
+<circle cx="128" cy="110" r="2.5" fill="#1a7ab5" opacity=".5"/><circle cx="142" cy="96" r="2" fill="#1a7ab5" opacity=".5"/><circle cx="156" cy="116" r="3" fill="#1a7ab5" opacity=".5"/><circle cx="170" cy="100" r="2" fill="#1a7ab5" opacity=".5"/><circle cx="184" cy="113" r="2.5" fill="#1a7ab5" opacity=".5"/><circle cx="198" cy="98" r="2" fill="#1a7ab5" opacity=".5"/><circle cx="212" cy="116" r="2.5" fill="#1a7ab5" opacity=".5"/>
+<text x="162" y="63" text-anchor="middle" fill="#003764" font-size="13" font-weight="700">DAF</text>
+<text x="162" y="77" text-anchor="middle" fill="#5b6b78" font-size="9">Flotasjon</text>
+<text x="162" y="144" text-anchor="middle" fill="#3a5a70" font-size="8.5">85–95% TSS · 70–90% fett</text>
+<rect x="224" y="81" width="10" height="6" fill="#5aadcc"/><polygon points="234,81 244,84 234,87" fill="#5aadcc"/>
+<rect x="244" y="28" width="100" height="126" rx="6" fill="#f0fbf3" stroke="#009B50" stroke-width="1.5" stroke-dasharray="5 3"/>
+<rect x="270" y="30" width="48" height="12" rx="10" fill="#b8f0ca"/>
+<text x="294" y="39.5" text-anchor="middle" fill="#006b36" font-size="8" font-weight="700">VALGFRI</text>
+<text x="294" y="60" text-anchor="middle" fill="#006b36" font-size="12" font-weight="700">BIO</text>
+<text x="294" y="73" text-anchor="middle" fill="#4b6b5a" font-size="9">Biologisk rensing</text>
+<text x="294" y="100" text-anchor="middle" fill="#3a6a48" font-size="8.5">RAS: polering av</text>
+<text x="294" y="113" text-anchor="middle" fill="#3a6a48" font-size="8.5">resirkulert vann</text>
+<text x="294" y="142" text-anchor="middle" fill="#006b36" font-size="8.5" font-weight="600">BOD/COD –70–90%</text>
+<rect x="344" y="81" width="10" height="6" fill="#90d0ea"/><polygon points="354,81 364,84 354,87" fill="#90d0ea"/>
+<rect x="364" y="28" width="104" height="126" rx="6" fill="#dff3fc" stroke="#0a82b8" stroke-width="1.5"/>
+<text x="416" y="47" text-anchor="middle" fill="#003764" font-size="10" font-weight="700">Renset vann</text>
+<path d="M372 64 Q378 58 384 64 Q390 70 396 64 Q402 58 408 64 Q414 58 420 64 Q426 58 460 64" stroke="#0a82b8" stroke-width="1.5" fill="none" opacity=".8"/>
+<path d="M372 76 Q378 70 384 76 Q390 82 396 76 Q402 70 408 76 Q414 70 420 76 Q426 70 460 76" stroke="#0a82b8" stroke-width="1.5" fill="none" opacity=".8"/>
+<text x="416" y="104" text-anchor="middle" fill="#3a6a82" font-size="9">Sjøutslipp</text>
+<text x="416" y="116" text-anchor="middle" fill="#3a6a82" font-size="9">RAS-resirkulering</text>
+<text x="416" y="144" text-anchor="middle" fill="#0a82b8" font-size="8.5" font-weight="600">Oppfyller krav</text>
+<rect x="478" y="28" width="194" height="126" rx="6" fill="#fff6e0" stroke="#e09020" stroke-width="1"/>
+<text x="575" y="47" text-anchor="middle" fill="#a05800" font-size="9" font-weight="700">NORSK HAVBRUK — SLAM</text>
+<text x="575" y="68" text-anchor="middle" fill="#c05000" font-size="19" font-weight="700">400 000 t/år</text>
+<text x="575" y="82" text-anchor="middle" fill="#a05800" font-size="9">generert fra norsk oppdrett</text>
+<text x="575" y="101" text-anchor="middle" fill="#c05000" font-size="14" font-weight="700">~98% til sjøen</text>
+<text x="575" y="114" text-anchor="middle" fill="#a05800" font-size="9">uten oppsamling i dag</text>
+<text x="575" y="143" text-anchor="middle" fill="#a05800" font-size="8">(NIBIO / Nofima)</text>
+<line x1="162" y1="155" x2="162" y2="168" stroke="#9a7045" stroke-width="6"/><polygon points="156,168 162,180 168,168" fill="#9a7045"/>
+<text x="182" y="163" fill="#7a5030" font-size="8.5">Slurry ~3–5% TS</text>
+<rect x="100" y="180" width="124" height="78" rx="6" fill="white" stroke="#003764" stroke-width="1.5"/>
+<ellipse cx="122" cy="220" rx="8" ry="11" fill="none" stroke="#003764" stroke-width="1.2"/><ellipse cx="138" cy="220" rx="8" ry="11" fill="none" stroke="#003764" stroke-width="1.2"/><ellipse cx="154" cy="220" rx="8" ry="11" fill="none" stroke="#003764" stroke-width="1.2"/><ellipse cx="170" cy="220" rx="8" ry="11" fill="none" stroke="#003764" stroke-width="1.2"/><ellipse cx="186" cy="220" rx="8" ry="11" fill="none" stroke="#003764" stroke-width="1.2"/><ellipse cx="202" cy="220" rx="8" ry="11" fill="none" stroke="#003764" stroke-width="1.2"/>
+<line x1="106" y1="220" x2="218" y2="220" stroke="#003764" stroke-width="1.8"/>
+<text x="162" y="198" text-anchor="middle" fill="#003764" font-size="11" font-weight="700">FDS</text>
+<text x="162" y="252" text-anchor="middle" fill="#5b6b78" font-size="8.5">Opptil 7× volumreduksjon</text>
+<rect x="224" y="217" width="12" height="6" fill="#C4A067"/><polygon points="236,217 248,220 236,223" fill="#C4A067"/>
+<rect x="248" y="180" width="130" height="78" rx="6" fill="#fdf3e0" stroke="#C4A067" stroke-width="1.5"/>
+<text x="313" y="198" text-anchor="middle" fill="#7a5c00" font-size="10" font-weight="700">N/P-rikt slamkake</text>
+<rect x="258" y="204" width="50" height="38" rx="4" fill="#ecd29a"/>
+<text x="283" y="220" text-anchor="middle" fill="#7a5c00" font-size="9" font-weight="600">Gjødsel</text>
+<text x="283" y="232" text-anchor="middle" fill="#7a5c00" font-size="8.5">N · P</text>
+<rect x="318" y="204" width="50" height="38" rx="4" fill="#ecd29a"/>
+<text x="343" y="220" text-anchor="middle" fill="#7a5c00" font-size="9" font-weight="600">Biogass</text>
+<text x="343" y="232" text-anchor="middle" fill="#7a5c00" font-size="8.5">Energi</text>
+<text x="313" y="252" text-anchor="middle" fill="#8B7355" font-size="8">20–25% tørrstoff etter FDS</text>
+<rect x="390" y="180" width="282" height="78" rx="6" fill="#e2f5e8" stroke="#2a8040" stroke-width="1"/>
+<text x="531" y="198" text-anchor="middle" fill="#1a5a2a" font-size="9" font-weight="700">NÆRINGSSTOFFER FRA NORSK HAVBRUK</text>
+<text x="464" y="220" text-anchor="middle" fill="#1a6a30" font-size="13" font-weight="700">66 000 t N</text>
+<text x="464" y="232" text-anchor="middle" fill="#3a7040" font-size="8.5">nitrogen / år</text>
+<text x="598" y="220" text-anchor="middle" fill="#1a6a30" font-size="13" font-weight="700">14 000 t P</text>
+<text x="598" y="232" text-anchor="middle" fill="#3a7040" font-size="8.5">fosfor / år</text>
+<text x="531" y="252" text-anchor="middle" fill="#2a8040" font-size="8">AquaPhoenix (Ragn-Sells): 40% kutt i norsk fosforimport mulig</text>
+</svg>
+)}
+
+{segment === 'industri' && (
+<svg viewBox="0 0 680 268" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif" style="width:100%;height:auto;display:block;min-width:560px">
+<rect width="680" height="268" fill="#fdf5ec"/>
+<rect width="680" height="24" fill="#c06820"/>
+<text x="12" y="16" fill="white" font-size="11" font-weight="700">INDUSTRI</text>
+<text x="104" y="16" fill="rgba(255,255,255,.82)" font-size="9.5">Matindustri · Meieri · Kjøtt · Fiskeindustri · Kjemisk industri</text>
+<rect x="8" y="28" width="82" height="126" rx="6" fill="white" stroke="#c06820" stroke-width="1.5"/>
+<text x="49" y="46" text-anchor="middle" fill="#6a3810" font-size="9" font-weight="700">Prosessvann</text>
+<text x="49" y="62" text-anchor="middle" fill="#8a6a4a" font-size="8.5">Fett · proteiner</text>
+<text x="49" y="74" text-anchor="middle" fill="#8a6a4a" font-size="8.5">Høy BOD/COD</text>
+<text x="49" y="86" text-anchor="middle" fill="#8a6a4a" font-size="8.5">Slakteavfall</text>
+<text x="49" y="112" text-anchor="middle" fill="#c06820" font-size="8" font-weight="600">BOD opp til 5 000 mg/L</text>
+<polygon points="90,85 100,80 100,90" fill="#c06820"/>
+<rect x="100" y="24" width="124" height="19" rx="6" fill="#c89850" opacity=".4"/>
+<text x="162" y="36" text-anchor="middle" fill="#6a4010" font-size="7.5" font-weight="600">↑ Fett- og proteinskum</text>
+<rect x="100" y="43" width="124" height="112" fill="#fdf0e0"/>
+<rect x="100" y="24" width="124" height="131" rx="6" fill="none" stroke="#6a3000" stroke-width="2"/>
+<circle cx="128" cy="110" r="2.5" fill="#c06820" opacity=".5"/><circle cx="142" cy="96" r="2" fill="#c06820" opacity=".5"/><circle cx="156" cy="116" r="3" fill="#c06820" opacity=".5"/><circle cx="170" cy="100" r="2" fill="#c06820" opacity=".5"/><circle cx="184" cy="113" r="2.5" fill="#c06820" opacity=".5"/><circle cx="198" cy="98" r="2" fill="#c06820" opacity=".5"/><circle cx="212" cy="116" r="2.5" fill="#c06820" opacity=".5"/>
+<text x="162" y="63" text-anchor="middle" fill="#6a3000" font-size="13" font-weight="700">DAF</text>
+<text x="162" y="77" text-anchor="middle" fill="#5b6b78" font-size="9">Flotasjon</text>
+<text x="162" y="144" text-anchor="middle" fill="#7a5030" font-size="8.5">85–95% TSS · 70–90% fett</text>
+<rect x="224" y="81" width="10" height="6" fill="#e09050"/><polygon points="234,81 244,84 234,87" fill="#e09050"/>
+<rect x="244" y="28" width="100" height="126" rx="6" fill="#fff5ee" stroke="#c06820" stroke-width="2"/>
+<rect x="268" y="30" width="50" height="12" rx="10" fill="#ffd0a0"/>
+<text x="293" y="39.5" text-anchor="middle" fill="#a03800" font-size="8" font-weight="700">KREVES</text>
+<text x="294" y="60" text-anchor="middle" fill="#a03800" font-size="12" font-weight="700">BIO</text>
+<text x="294" y="73" text-anchor="middle" fill="#5b6b78" font-size="9">Biologisk rensing</text>
+<text x="294" y="100" text-anchor="middle" fill="#8a4a20" font-size="8.5">Nedbrytning av</text>
+<text x="294" y="113" text-anchor="middle" fill="#8a4a20" font-size="8.5">løst organisk stoff</text>
+<text x="294" y="142" text-anchor="middle" fill="#a03800" font-size="8.5" font-weight="600">BOD/COD –70–90%</text>
+<rect x="344" y="81" width="10" height="6" fill="#e0b070"/><polygon points="354,81 364,84 354,87" fill="#e0b070"/>
+<rect x="364" y="28" width="104" height="126" rx="6" fill="#fff8f0" stroke="#c06820" stroke-width="1.5"/>
+<text x="416" y="47" text-anchor="middle" fill="#6a3800" font-size="10" font-weight="700">Renset vann</text>
+<path d="M372 64 Q378 58 384 64 Q390 70 396 64 Q402 58 408 64 Q414 58 420 64 Q426 58 460 64" stroke="#c06820" stroke-width="1.5" fill="none" opacity=".7"/>
+<path d="M372 76 Q378 70 384 76 Q390 82 396 76 Q402 70 408 76 Q414 70 420 76 Q426 70 460 76" stroke="#c06820" stroke-width="1.5" fill="none" opacity=".7"/>
+<text x="416" y="104" text-anchor="middle" fill="#8a6a4a" font-size="9">Kommunalt nett</text>
+<text x="416" y="116" text-anchor="middle" fill="#8a6a4a" font-size="9">Sjøutslipp</text>
+<text x="416" y="144" text-anchor="middle" fill="#c06820" font-size="8.5" font-weight="600">Oppfyller krav</text>
+<rect x="478" y="28" width="194" height="126" rx="6" fill="#fff3e5" stroke="#e09020" stroke-width="1"/>
+<text x="575" y="47" text-anchor="middle" fill="#7a4000" font-size="9" font-weight="700">RENSEEFFEKT</text>
+<text x="575" y="68" text-anchor="middle" fill="#a04000" font-size="19" font-weight="700">70–90%</text>
+<text x="575" y="82" text-anchor="middle" fill="#7a4000" font-size="9">BOD/COD-reduksjon</text>
+<text x="575" y="101" text-anchor="middle" fill="#a04000" font-size="14" font-weight="700">85–95% TSS</text>
+<text x="575" y="114" text-anchor="middle" fill="#7a4000" font-size="9">via DAF</text>
+<text x="575" y="133" text-anchor="middle" fill="#7a4000" font-size="8">BIO er standard for matprosessering</text>
+<text x="575" y="145" text-anchor="middle" fill="#7a4000" font-size="8">pga. høy organisk last</text>
+<line x1="162" y1="155" x2="162" y2="168" stroke="#9a7045" stroke-width="6"/><polygon points="156,168 162,180 168,168" fill="#9a7045"/>
+<text x="182" y="163" fill="#7a5030" font-size="8.5">Organisk slurry</text>
+<rect x="100" y="180" width="124" height="78" rx="6" fill="white" stroke="#6a3000" stroke-width="1.5"/>
+<ellipse cx="122" cy="220" rx="8" ry="11" fill="none" stroke="#6a3000" stroke-width="1.2"/><ellipse cx="138" cy="220" rx="8" ry="11" fill="none" stroke="#6a3000" stroke-width="1.2"/><ellipse cx="154" cy="220" rx="8" ry="11" fill="none" stroke="#6a3000" stroke-width="1.2"/><ellipse cx="170" cy="220" rx="8" ry="11" fill="none" stroke="#6a3000" stroke-width="1.2"/><ellipse cx="186" cy="220" rx="8" ry="11" fill="none" stroke="#6a3000" stroke-width="1.2"/><ellipse cx="202" cy="220" rx="8" ry="11" fill="none" stroke="#6a3000" stroke-width="1.2"/>
+<line x1="106" y1="220" x2="218" y2="220" stroke="#6a3000" stroke-width="1.8"/>
+<text x="162" y="198" text-anchor="middle" fill="#6a3000" font-size="11" font-weight="700">FDS</text>
+<text x="162" y="252" text-anchor="middle" fill="#5b6b78" font-size="8.5">Opptil 7× volumreduksjon</text>
+<rect x="224" y="217" width="12" height="6" fill="#C4A067"/><polygon points="236,217 248,220 236,223" fill="#C4A067"/>
+<rect x="248" y="180" width="130" height="78" rx="6" fill="#fdf3e0" stroke="#C4A067" stroke-width="1.5"/>
+<text x="313" y="198" text-anchor="middle" fill="#7a5c00" font-size="10" font-weight="700">Organisk slamkake</text>
+<rect x="258" y="204" width="50" height="38" rx="4" fill="#ecd29a"/>
+<text x="283" y="220" text-anchor="middle" fill="#7a5c00" font-size="9" font-weight="600">Biogass</text>
+<text x="283" y="232" text-anchor="middle" fill="#7a5c00" font-size="8.5">Energi</text>
+<rect x="318" y="204" width="50" height="38" rx="4" fill="#ecd29a"/>
+<text x="343" y="220" text-anchor="middle" fill="#7a5c00" font-size="9" font-weight="600">Kompost</text>
+<text x="343" y="232" text-anchor="middle" fill="#7a5c00" font-size="8.5">Jordbruk</text>
+<text x="313" y="252" text-anchor="middle" fill="#8B7355" font-size="8">20–30% tørrstoff etter FDS</text>
+<rect x="390" y="180" width="282" height="78" rx="6" fill="#fff5e8" stroke="#c06820" stroke-width="1"/>
+<text x="531" y="198" text-anchor="middle" fill="#7a4000" font-size="9" font-weight="700">SAMLET RENSEEFFEKT (DAF + BIO + FDS)</text>
+<text x="464" y="222" text-anchor="middle" fill="#a03800" font-size="14" font-weight="700">~95% TSS</text>
+<text x="464" y="234" text-anchor="middle" fill="#7a4000" font-size="8.5">partikkelreduksjon</text>
+<text x="598" y="222" text-anchor="middle" fill="#a03800" font-size="14" font-weight="700">~85% BOD</text>
+<text x="598" y="234" text-anchor="middle" fill="#7a4000" font-size="8.5">organisk belastning ut</text>
+<text x="531" y="252" text-anchor="middle" fill="#7a4000" font-size="8">Helhetlig prosesslinje — én leverandør, én integrasjon</text>
+</svg>
+)}
+
+{segment === 'kommunal' && (
+<svg viewBox="0 0 680 268" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif" style="width:100%;height:auto;display:block;min-width:560px">
+<rect width="680" height="268" fill="#eef6f0"/>
+<rect width="680" height="24" fill="#2a8040"/>
+<text x="12" y="16" fill="white" font-size="11" font-weight="700">KOMMUNAL</text>
+<text x="118" y="16" fill="rgba(255,255,255,.82)" font-size="9.5">VA-anlegg · Renseanlegg · Desentraliserte systemer</text>
+<rect x="8" y="28" width="82" height="126" rx="6" fill="white" stroke="#2a8040" stroke-width="1.5"/>
+<text x="49" y="46" text-anchor="middle" fill="#1a4a28" font-size="9" font-weight="700">Avløpsvann</text>
+<text x="49" y="62" text-anchor="middle" fill="#5a7a6a" font-size="8.5">Blandet organisk</text>
+<text x="49" y="74" text-anchor="middle" fill="#5a7a6a" font-size="8.5">Næringsstoffer</text>
+<text x="49" y="86" text-anchor="middle" fill="#5a7a6a" font-size="8.5">Patogener</text>
+<text x="49" y="112" text-anchor="middle" fill="#2a8040" font-size="8" font-weight="600">Lovpålagte utslippskrav</text>
+<polygon points="90,85 100,80 100,90" fill="#2a8040"/>
+<rect x="100" y="24" width="124" height="19" rx="6" fill="#8aab82" opacity=".45"/>
+<text x="162" y="36" text-anchor="middle" fill="#2a5a20" font-size="7.5" font-weight="600">↑ Primærslam stiger</text>
+<rect x="100" y="43" width="124" height="112" fill="#e8f5ea"/>
+<rect x="100" y="24" width="124" height="131" rx="6" fill="none" stroke="#1a4a28" stroke-width="2"/>
+<circle cx="128" cy="110" r="2.5" fill="#2a8040" opacity=".5"/><circle cx="142" cy="96" r="2" fill="#2a8040" opacity=".5"/><circle cx="156" cy="116" r="3" fill="#2a8040" opacity=".5"/><circle cx="170" cy="100" r="2" fill="#2a8040" opacity=".5"/><circle cx="184" cy="113" r="2.5" fill="#2a8040" opacity=".5"/><circle cx="198" cy="98" r="2" fill="#2a8040" opacity=".5"/><circle cx="212" cy="116" r="2.5" fill="#2a8040" opacity=".5"/>
+<text x="162" y="63" text-anchor="middle" fill="#1a4a28" font-size="13" font-weight="700">DAF</text>
+<text x="162" y="77" text-anchor="middle" fill="#5b6b78" font-size="9">Primærrensing</text>
+<text x="162" y="144" text-anchor="middle" fill="#3a6a48" font-size="8.5">Primærklarering · partikler</text>
+<rect x="224" y="81" width="10" height="6" fill="#60b870"/><polygon points="234,81 244,84 234,87" fill="#60b870"/>
+<rect x="244" y="24" width="104" height="131" rx="6" fill="#eafff0" stroke="#2a8040" stroke-width="2.5"/>
+<rect x="268" y="26" width="58" height="12" rx="10" fill="#68e088"/>
+<text x="297" y="35.5" text-anchor="middle" fill="#006b30" font-size="8" font-weight="700">KJERNE</text>
+<text x="296" y="57" text-anchor="middle" fill="#006b30" font-size="12" font-weight="700">BIO</text>
+<text x="296" y="70" text-anchor="middle" fill="#2a5a38" font-size="9">Sekundærrensing</text>
+<text x="296" y="96" text-anchor="middle" fill="#2a6038" font-size="8.5">Nedbrytning organisk</text>
+<text x="296" y="108" text-anchor="middle" fill="#2a6038" font-size="8.5">stoff + næringsstoffer</text>
+<text x="296" y="125" text-anchor="middle" fill="#1a5028" font-size="8.5" font-weight="600">BOD –90% · N –70%</text>
+<text x="296" y="144" text-anchor="middle" fill="#006b30" font-size="8.5" font-weight="600">P &lt;0.5 mg/L mulig</text>
+<rect x="348" y="81" width="10" height="6" fill="#90d0a0"/><polygon points="358,81 368,84 358,87" fill="#90d0a0"/>
+<rect x="368" y="28" width="100" height="126" rx="6" fill="#e0f5e8" stroke="#2a8040" stroke-width="1.5"/>
+<text x="418" y="47" text-anchor="middle" fill="#1a4a28" font-size="10" font-weight="700">Renset vann</text>
+<path d="M376 64 Q382 58 388 64 Q394 70 400 64 Q406 58 412 64 Q418 58 424 64 Q430 58 464 64" stroke="#2a8040" stroke-width="1.5" fill="none" opacity=".8"/>
+<path d="M376 76 Q382 70 388 76 Q394 82 400 76 Q406 70 412 76 Q418 70 424 76 Q430 70 464 76" stroke="#2a8040" stroke-width="1.5" fill="none" opacity=".8"/>
+<text x="418" y="104" text-anchor="middle" fill="#3a7040" font-size="9">Utslipp til</text>
+<text x="418" y="116" text-anchor="middle" fill="#3a7040" font-size="9">resipient</text>
+<text x="418" y="144" text-anchor="middle" fill="#2a8040" font-size="8.5" font-weight="600">Møter krav</text>
+<rect x="478" y="28" width="194" height="126" rx="6" fill="#e8f8ee" stroke="#2a8040" stroke-width="1"/>
+<text x="575" y="47" text-anchor="middle" fill="#1a5028" font-size="9" font-weight="700">UTSLIPPSKRAV (typisk)</text>
+<text x="575" y="68" text-anchor="middle" fill="#006b30" font-size="16" font-weight="700">P &lt;0.5 mg/L</text>
+<text x="575" y="82" text-anchor="middle" fill="#1a5028" font-size="9">total-fosfor i effluent</text>
+<text x="575" y="100" text-anchor="middle" fill="#006b30" font-size="13" font-weight="700">BOD &lt;25 mg/L</text>
+<text x="575" y="114" text-anchor="middle" fill="#1a5028" font-size="9">biokjemisk oksygenforbruk</text>
+<text x="575" y="133" text-anchor="middle" fill="#1a5028" font-size="8">BIO er ikke valgfri i kommunal</text>
+<text x="575" y="145" text-anchor="middle" fill="#1a5028" font-size="8">— det er kjernetrinnet</text>
+<line x1="162" y1="155" x2="162" y2="168" stroke="#9a7045" stroke-width="6"/><polygon points="156,168 162,180 168,168" fill="#9a7045"/>
+<text x="182" y="163" fill="#7a5030" font-size="8.5">Primærslam</text>
+<line x1="296" y1="155" x2="296" y2="168" stroke="#6a9060" stroke-width="4" stroke-dasharray="4 2"/><polygon points="290,168 296,180 302,168" fill="#6a9060"/>
+<text x="316" y="163" fill="#4a7040" font-size="8">Biosolids</text>
+<rect x="100" y="180" width="124" height="78" rx="6" fill="white" stroke="#1a4a28" stroke-width="1.5"/>
+<ellipse cx="122" cy="220" rx="8" ry="11" fill="none" stroke="#1a4a28" stroke-width="1.2"/><ellipse cx="138" cy="220" rx="8" ry="11" fill="none" stroke="#1a4a28" stroke-width="1.2"/><ellipse cx="154" cy="220" rx="8" ry="11" fill="none" stroke="#1a4a28" stroke-width="1.2"/><ellipse cx="170" cy="220" rx="8" ry="11" fill="none" stroke="#1a4a28" stroke-width="1.2"/><ellipse cx="186" cy="220" rx="8" ry="11" fill="none" stroke="#1a4a28" stroke-width="1.2"/><ellipse cx="202" cy="220" rx="8" ry="11" fill="none" stroke="#1a4a28" stroke-width="1.2"/>
+<line x1="106" y1="220" x2="218" y2="220" stroke="#1a4a28" stroke-width="1.8"/>
+<text x="162" y="198" text-anchor="middle" fill="#1a4a28" font-size="11" font-weight="700">FDS</text>
+<text x="162" y="252" text-anchor="middle" fill="#5b6b78" font-size="8.5">Opptil 7× volumreduksjon</text>
+<rect x="224" y="217" width="12" height="6" fill="#C4A067"/><polygon points="236,217 248,220 236,223" fill="#C4A067"/>
+<rect x="248" y="180" width="130" height="78" rx="6" fill="#fdf3e0" stroke="#C4A067" stroke-width="1.5"/>
+<text x="313" y="198" text-anchor="middle" fill="#7a5c00" font-size="10" font-weight="700">Kommunalt slam</text>
+<rect x="258" y="204" width="50" height="38" rx="4" fill="#ecd29a"/>
+<text x="283" y="220" text-anchor="middle" fill="#7a5c00" font-size="9" font-weight="600">Biogass</text>
+<text x="283" y="232" text-anchor="middle" fill="#7a5c00" font-size="8.5">Energi</text>
+<rect x="318" y="204" width="50" height="38" rx="4" fill="#ecd29a"/>
+<text x="343" y="220" text-anchor="middle" fill="#7a5c00" font-size="9" font-weight="600">Jordbruk</text>
+<text x="343" y="232" text-anchor="middle" fill="#7a5c00" font-size="8.5">Kompost</text>
+<text x="313" y="252" text-anchor="middle" fill="#8B7355" font-size="8">20–25% tørrstoff etter FDS</text>
+<rect x="390" y="180" width="282" height="78" rx="6" fill="#e8f8ee" stroke="#2a8040" stroke-width="1"/>
+<text x="531" y="198" text-anchor="middle" fill="#1a5028" font-size="9" font-weight="700">SLAM FRA BIO + PRIMÆR — SAMLET</text>
+<text x="475" y="220" text-anchor="middle" fill="#006b30" font-size="13" font-weight="700">Primærslam</text>
+<text x="475" y="232" text-anchor="middle" fill="#3a7040" font-size="8.5">fra DAF-flotasjon</text>
+<text x="601" y="220" text-anchor="middle" fill="#006b30" font-size="13" font-weight="700">Biosolids</text>
+<text x="601" y="232" text-anchor="middle" fill="#3a7040" font-size="8.5">fra biologisk trinn</text>
+<text x="531" y="252" text-anchor="middle" fill="#2a8040" font-size="8">FDS avvanner begge strømmer til transportvennlig kake</text>
+</svg>
+)}
+
+{segment === 'maritim' && (
+<svg viewBox="0 0 680 268" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif" style="width:100%;height:auto;display:block;min-width:560px">
+<rect width="680" height="268" fill="#eef0f8"/>
+<rect width="680" height="24" fill="#1a4a8a"/>
+<text x="12" y="16" fill="white" font-size="11" font-weight="700">MARITIM</text>
+<text x="104" y="16" fill="rgba(255,255,255,.82)" font-size="9.5">Fartøy · Offshore · Havner · Brønnbåt · Industrikaier</text>
+<rect x="8" y="28" width="82" height="126" rx="6" fill="white" stroke="#1a4a8a" stroke-width="1.5"/>
+<text x="49" y="46" text-anchor="middle" fill="#1a2a5a" font-size="9" font-weight="700">Lensevann</text>
+<text x="49" y="62" text-anchor="middle" fill="#5a6a8a" font-size="8.5">Olje/vann-blanding</text>
+<text x="49" y="74" text-anchor="middle" fill="#5a6a8a" font-size="8.5">Gråvann</text>
+<text x="49" y="86" text-anchor="middle" fill="#5a6a8a" font-size="8.5">Ballastvann</text>
+<text x="49" y="112" text-anchor="middle" fill="#1a4a8a" font-size="8" font-weight="600">MARPOL-regulert</text>
+<polygon points="90,85 100,80 100,90" fill="#1a4a8a"/>
+<rect x="100" y="24" width="148" height="19" rx="6" fill="#8098b8" opacity=".4"/>
+<text x="174" y="36" text-anchor="middle" fill="#1a2a5a" font-size="7.5" font-weight="600">↑ Oljekonsentrat skilles ut</text>
+<rect x="100" y="43" width="148" height="112" fill="#e8ecf8"/>
+<rect x="100" y="24" width="148" height="131" rx="6" fill="none" stroke="#1a2a4a" stroke-width="2"/>
+<circle cx="130" cy="90" r="3.5" fill="#8a6a20" opacity=".5"/><circle cx="150" cy="75" r="2.5" fill="#8a6a20" opacity=".5"/><circle cx="165" cy="96" r="4" fill="#8a6a20" opacity=".5"/><circle cx="180" cy="78" r="2.5" fill="#8a6a20" opacity=".5"/><circle cx="195" cy="92" r="3.5" fill="#8a6a20" opacity=".5"/><circle cx="210" cy="76" r="2.5" fill="#8a6a20" opacity=".5"/><circle cx="225" cy="95" r="3" fill="#8a6a20" opacity=".5"/>
+<text x="174" y="63" text-anchor="middle" fill="#1a2a4a" font-size="13" font-weight="700">DAF</text>
+<text x="174" y="77" text-anchor="middle" fill="#5b6b78" font-size="9">Olje/vann-separasjon</text>
+<text x="174" y="120" text-anchor="middle" fill="#3a4a6a" font-size="9" font-weight="600">Dominerende modul</text>
+<text x="174" y="132" text-anchor="middle" fill="#3a4a6a" font-size="8.5">Effluent &lt;15 ppm olje</text>
+<text x="174" y="144" text-anchor="middle" fill="#3a4a6a" font-size="8.5">MARPOL Annex I</text>
+<rect x="248" y="81" width="14" height="6" fill="#8098c8"/><polygon points="262,81 274,84 262,87" fill="#8098c8"/>
+<rect x="274" y="28" width="122" height="126" rx="6" fill="#e0e8f8" stroke="#1a4a8a" stroke-width="1.5"/>
+<text x="335" y="47" text-anchor="middle" fill="#1a2a5a" font-size="10" font-weight="700">MARPOL-utslipp</text>
+<circle cx="310" cy="72" r="18" fill="#1a4a8a" opacity=".1"/><circle cx="310" cy="72" r="12" fill="#1a4a8a" opacity=".12"/><circle cx="310" cy="72" r="6" fill="#1a4a8a" opacity=".15"/>
+<text x="354" y="68" text-anchor="middle" fill="#1a3a7a" font-size="10" font-weight="700">&lt;15 ppm</text>
+<text x="354" y="80" text-anchor="middle" fill="#3a5a80" font-size="8.5">olje i utslipp</text>
+<text x="335" y="106" text-anchor="middle" fill="#5a6a80" font-size="9">Annex I · 73/78</text>
+<text x="335" y="118" text-anchor="middle" fill="#5a6a80" font-size="9">Overbordsutslipp</text>
+<text x="335" y="144" text-anchor="middle" fill="#1a4a8a" font-size="8.5" font-weight="600">Godkjent utslipp</text>
+<rect x="406" y="28" width="266" height="126" rx="6" fill="#e8edf8" stroke="#1a4a8a" stroke-width="1"/>
+<text x="539" y="47" text-anchor="middle" fill="#1a2a5a" font-size="9" font-weight="700">MARPOL-RAMMEVERKET</text>
+<text x="539" y="68" text-anchor="middle" fill="#1a3a7a" font-size="14" font-weight="700">Annex I · VI · IV</text>
+<text x="539" y="82" text-anchor="middle" fill="#3a5a7a" font-size="9">Olje · NOₓ/SOₓ · Kloakk</text>
+<text x="539" y="101" text-anchor="middle" fill="#1a3a7a" font-size="12" font-weight="700">PSC-inspeksjon</text>
+<text x="539" y="115" text-anchor="middle" fill="#3a5a7a" font-size="9">Port State Control sjekker</text>
+<text x="539" y="128" text-anchor="middle" fill="#3a5a7a" font-size="9">ORB (Oil Record Book)</text>
+<text x="539" y="144" text-anchor="middle" fill="#1a4a8a" font-size="8">CTP containerisert løsning tilgjengelig for fartøy</text>
+<line x1="174" y1="155" x2="174" y2="168" stroke="#8a6a20" stroke-width="6"/><polygon points="168,168 174,180 180,168" fill="#8a6a20"/>
+<text x="195" y="163" fill="#7a5030" font-size="8.5">Oljekonsentrat</text>
+<rect x="100" y="180" width="148" height="78" rx="6" fill="#fffae8" stroke="#8a6a20" stroke-width="1.5"/>
+<text x="174" y="198" text-anchor="middle" fill="#6a4a00" font-size="10" font-weight="700">Olje/fett-konsentrat</text>
+<rect x="110" y="205" width="58" height="38" rx="4" fill="#f0d878" opacity=".7"/>
+<text x="139" y="221" text-anchor="middle" fill="#6a4a00" font-size="9" font-weight="600">Konsentrert</text>
+<text x="139" y="233" text-anchor="middle" fill="#6a4a00" font-size="8.5">olje/vann</text>
+<rect x="178" y="205" width="58" height="38" rx="4" fill="#f0d878" opacity=".7"/>
+<text x="207" y="221" text-anchor="middle" fill="#6a4a00" font-size="9" font-weight="600">FDS valgfri</text>
+<text x="207" y="233" text-anchor="middle" fill="#6a4a00" font-size="8.5">avvanning</text>
+<text x="174" y="251" text-anchor="middle" fill="#8a6a20" font-size="8">Lavere volum enn konvensjonell separasjon</text>
+<rect x="258" y="180" width="414" height="78" rx="6" fill="#f0f3fc" stroke="#1a4a8a" stroke-width="1"/>
+<text x="465" y="198" text-anchor="middle" fill="#1a2a5a" font-size="9" font-weight="700">GODKJENT AVFALLSBEHANDLING</text>
+<text x="380" y="220" text-anchor="middle" fill="#1a3a7a" font-size="11" font-weight="700">Mottaksanlegg</text>
+<text x="380" y="232" text-anchor="middle" fill="#3a5a7a" font-size="8.5">sertifisert havn</text>
+<text x="500" y="220" text-anchor="middle" fill="#1a3a7a" font-size="11" font-weight="700">Forbrenning</text>
+<text x="500" y="232" text-anchor="middle" fill="#3a5a7a" font-size="8.5">energigjenvinning</text>
+<text x="620" y="220" text-anchor="middle" fill="#1a3a7a" font-size="11" font-weight="700">ORB-logg</text>
+<text x="620" y="232" text-anchor="middle" fill="#3a5a7a" font-size="8.5">dokumentasjon</text>
+<text x="465" y="252" text-anchor="middle" fill="#1a4a8a" font-size="8">Oljerester kan ikke slippes ut — lovpålagt levering til mottaksanlegg</text>
+</svg>
+)}
+
+{segment === 'baerekraft' && (
+<svg viewBox="0 0 680 290" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif" style="width:100%;height:auto;display:block;min-width:560px">
+<rect width="680" height="290" fill="#e8f4ec"/>
+<rect width="680" height="32" fill="#006b36"/>
+<text x="12" y="20" fill="white" font-size="11" font-weight="700">BÆREKRAFT &amp; SIRKULÆR BIOØKONOMI</text>
+<text x="370" y="20" fill="rgba(255,255,255,.82)" font-size="9.5">Ressursgjenvinning fra akvakulturslam</text>
+<rect x="8" y="36" width="208" height="246" rx="8" fill="#fff0e8" stroke="#c04010" stroke-width="1.5"/>
+<rect x="8" y="36" width="208" height="24" rx="8" fill="#c04010"/>
+<text x="112" y="51" text-anchor="middle" fill="white" font-size="10" font-weight="700">STATUS I DAG</text>
+<text x="112" y="83" text-anchor="middle" fill="#a02800" font-size="22" font-weight="700">400 000 t</text>
+<text x="112" y="97" text-anchor="middle" fill="#c04010" font-size="9">slam fra norsk havbruk pr år</text>
+<rect x="38" y="108" width="148" height="30" rx="6" fill="#ffd8c8"/>
+<text x="112" y="122" text-anchor="middle" fill="#a02800" font-size="18" font-weight="700">98% til sjøen</text>
+<text x="112" y="137" text-anchor="middle" fill="#a02800" font-size="9">uten oppsamling (NIBIO)</text>
+<line x1="28" y1="148" x2="188" y2="148" stroke="#c04010" stroke-width=".5" stroke-dasharray="3 2"/>
+<text x="112" y="165" text-anchor="middle" fill="#c04010" font-size="13" font-weight="700">66 000 t N</text>
+<text x="112" y="178" text-anchor="middle" fill="#a04030" font-size="9">nitrogen tapt til sjøen pr år</text>
+<text x="112" y="198" text-anchor="middle" fill="#c04010" font-size="13" font-weight="700">14 000 t P</text>
+<text x="112" y="211" text-anchor="middle" fill="#a04030" font-size="9">fosfor tapt til sjøen pr år</text>
+<line x1="28" y1="222" x2="188" y2="222" stroke="#c04010" stroke-width=".5" stroke-dasharray="3 2"/>
+<text x="112" y="238" text-anchor="middle" fill="#c04010" font-size="8.5" font-weight="600">Fosfor er en endelig ressurs</text>
+<text x="112" y="252" text-anchor="middle" fill="#8a4020" font-size="8">SINTEF OppSlam (2025–2027):</text>
+<text x="112" y="264" text-anchor="middle" fill="#8a4020" font-size="8">krav til oppsamling øker</text>
+<polygon points="222,158 236,153 236,163" fill="#006b36"/>
+<rect x="238" y="36" width="204" height="246" rx="8" fill="white" stroke="#003764" stroke-width="1.5"/>
+<rect x="238" y="36" width="204" height="24" rx="8" fill="#003764"/>
+<text x="340" y="51" text-anchor="middle" fill="white" font-size="10" font-weight="700">FLOTLIFE-LØSNINGEN</text>
+<rect x="250" y="68" width="90" height="58" rx="6" fill="#e8f2fc" stroke="#0a82b8" stroke-width="1.5"/>
+<text x="295" y="85" text-anchor="middle" fill="#003764" font-size="11" font-weight="700">DAF</text>
+<text x="295" y="97" text-anchor="middle" fill="#5b6b78" font-size="8.5">Fanger organisk</text>
+<text x="295" y="109" text-anchor="middle" fill="#5b6b78" font-size="8.5">materiale fra vannet</text>
+<line x1="295" y1="126" x2="295" y2="140" stroke="#003764" stroke-width="2"/><polygon points="290,140 295,150 300,140" fill="#003764"/>
+<rect x="250" y="150" width="90" height="58" rx="6" fill="#e8f2fc" stroke="#003764" stroke-width="1.5"/>
+<text x="295" y="167" text-anchor="middle" fill="#003764" font-size="11" font-weight="700">FDS</text>
+<text x="295" y="179" text-anchor="middle" fill="#5b6b78" font-size="8.5">7× volumreduksjon</text>
+<text x="295" y="191" text-anchor="middle" fill="#5b6b78" font-size="8.5">20–25% tørrstoff</text>
+<line x1="295" y1="208" x2="295" y2="222" stroke="#C4A067" stroke-width="2"/><polygon points="290,222 295,232 300,222" fill="#C4A067"/>
+<rect x="250" y="232" width="90" height="40" rx="6" fill="#fdf3e0" stroke="#C4A067" stroke-width="1.5"/>
+<text x="295" y="249" text-anchor="middle" fill="#7a5c00" font-size="9.5" font-weight="700">Slamkake</text>
+<text x="295" y="262" text-anchor="middle" fill="#8B7355" font-size="8">N/P · organisk · energi</text>
+<text x="380" y="92" text-anchor="middle" fill="#0a82b8" font-size="12" font-weight="700">85–95%</text>
+<text x="380" y="104" text-anchor="middle" fill="#5b6b78" font-size="8">TSS fjernet</text>
+<text x="380" y="120" text-anchor="middle" fill="#003764" font-size="8" font-weight="600">av DAF</text>
+<text x="380" y="174" text-anchor="middle" fill="#003764" font-size="12" font-weight="700">7×</text>
+<text x="380" y="186" text-anchor="middle" fill="#5b6b78" font-size="8">volum</text>
+<text x="380" y="198" text-anchor="middle" fill="#5b6b78" font-size="8">reduksjon</text>
+<text x="380" y="248" text-anchor="middle" fill="#C4A067" font-size="9" font-weight="600">Transportklar</text>
+<text x="380" y="260" text-anchor="middle" fill="#8B7355" font-size="8">kake ut</text>
+<polygon points="444,158 458,153 458,163" fill="#2a8040"/>
+<rect x="464" y="36" width="208" height="246" rx="8" fill="#e6f5ec" stroke="#2a8040" stroke-width="1.5"/>
+<rect x="464" y="36" width="208" height="24" rx="8" fill="#006b36"/>
+<text x="568" y="51" text-anchor="middle" fill="white" font-size="10" font-weight="700">RESSURSEFFEKTEN</text>
+<text x="568" y="83" text-anchor="middle" fill="#006b30" font-size="20" font-weight="700">40%</text>
+<text x="568" y="97" text-anchor="middle" fill="#1a5a2a" font-size="9">reduksjon i norsk fosforimport</text>
+<text x="568" y="109" text-anchor="middle" fill="#3a7040" font-size="8">(Ragn-Sells AquaPhoenix)</text>
+<line x1="484" y1="120" x2="648" y2="120" stroke="#2a8040" stroke-width=".5" stroke-dasharray="3 2"/>
+<rect x="474" y="128" width="88" height="50" rx="6" fill="white" stroke="#2a8040" stroke-width="1"/>
+<text x="518" y="145" text-anchor="middle" fill="#2a8040" font-size="9.5" font-weight="700">Gjødsel</text>
+<text x="518" y="157" text-anchor="middle" fill="#3a7040" font-size="8.5">N · P direkte</text>
+<text x="518" y="168" text-anchor="middle" fill="#3a7040" font-size="8.5">til jordbruk</text>
+<rect x="572" y="128" width="88" height="50" rx="6" fill="white" stroke="#2a8040" stroke-width="1"/>
+<text x="616" y="145" text-anchor="middle" fill="#2a8040" font-size="9.5" font-weight="700">Biogass</text>
+<text x="616" y="157" text-anchor="middle" fill="#3a7040" font-size="8.5">Energi fra</text>
+<text x="616" y="168" text-anchor="middle" fill="#3a7040" font-size="8.5">organisk stoff</text>
+<line x1="484" y1="190" x2="648" y2="190" stroke="#2a8040" stroke-width=".5" stroke-dasharray="3 2"/>
+<text x="568" y="210" text-anchor="middle" fill="#1a5a2a" font-size="9" font-weight="700">SINTEF OppSlam (2025–2027)</text>
+<text x="568" y="224" text-anchor="middle" fill="#3a7040" font-size="8.5">Prosjektet bekrefter regulatorisk</text>
+<text x="568" y="237" text-anchor="middle" fill="#3a7040" font-size="8.5">trend mot krav om oppsamling</text>
+<text x="568" y="250" text-anchor="middle" fill="#3a7040" font-size="8.5">i sjøbaserte anlegg</text>
+<text x="568" y="270" text-anchor="middle" fill="#2a8040" font-size="8" font-weight="600">Slam = ressurs, ikke avfall</text>
+</svg>
+)}
+
+    </div>
+  </div>
+</section>

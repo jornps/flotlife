@@ -5,6 +5,8 @@ import Hero from './Hero.astro';
 import StatBlock from './StatBlock.astro';
 import HowWeWork from './HowWeWork.astro';
 import CTA from './CTA.astro';
+import ProcessDiagram from './ProcessDiagram.astro';
+import type { Segment } from './ProcessDiagram.astro';
 import { pathFor, type Lang } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
 
@@ -30,6 +32,8 @@ const { Content } = await render(entry);
 />
 
 <StatBlock stats={entry.data.stats} heading={t('segment.stats.heading')} />
+
+<ProcessDiagram segment={entry.data.segmentKey as Segment} lang={lang} />
 
 <section class="bg-neutral-50">
   <div class="mx-auto max-w-3xl px-6 py-16 lg:px-8">

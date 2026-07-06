@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/sections/Hero.astro';
 import StatBlock from '../../components/sections/StatBlock.astro';
+import ProcessDiagram from '../../components/sections/ProcessDiagram.astro';
 import CTA from '../../components/sections/CTA.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
@@ -21,6 +22,8 @@ const stats = [
   <Hero title={t('sustainability.hero.title')} subtitle="Hvert år genererer nordisk havbruk og industri slam rikt på nitrogen og fosfor. Nesten ingenting av det fanges opp. Det er ikke et avhendingsproblem — det er en ressurs som ikke samles inn." image={heroImage} imageAlt="Prøvetaking og vannkvalitetsanalyse" />
 
   <StatBlock stats={stats} heading="Størrelsen på det som går tapt" />
+
+  <ProcessDiagram segment="baerekraft" lang="no" />
 
   <section class="bg-white">
     <div class="mx-auto max-w-3xl space-y-10 px-6 py-16 lg:px-8">
