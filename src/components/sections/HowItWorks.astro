@@ -130,6 +130,32 @@ const benefits = [
   t('howItWorks.b4'),
   t('howItWorks.b5'),
 ];
+
+const isNo = lang === 'no';
+const modelsHeading   = isNo ? 'FDS Modellprogram'         : 'FDS Model Range';
+const modelsSubtitle  = isNo ? 'Fra kompakte enkeltenheter til store mobilsystemer — velg kapasitet etter behov.'
+                              : 'From compact single units to large mobile systems — specify by capacity.';
+const standardLabel   = isNo ? 'Stasjonære modeller'       : 'Fixed Installation';
+const mobileLabel     = isNo ? 'Mobile enheter (FDS-MB)'   : 'Mobile Units (FDS-MB)';
+const colFlow         = isNo ? 'Gjennomstrøm'              : 'Flow';
+const colThrough      = isNo ? 'Kapasitet'                 : 'Throughput';
+const colPower        = isNo ? 'Effekt'                    : 'Power';
+const colType         = isNo ? 'Type'                      : 'Type';
+const noteLabel       = isNo ? 'Kapasitet angitt ved 3 % tørrstoff (TS) med polymer-preparasjon inkludert.'
+                              : 'Throughput stated at 3 % dry solids (DS). Polymer preparation included on all models.';
+
+const fixedModels = [
+  { model: 'FDS 260.02.1M', flow: '4 m³/h',   through: '120 kg-DS/h', power: '2.3 kW', note: isNo ? 'Kommunal aktivt slam' : 'Municipal activated sludge' },
+  { model: 'FDS 320.03.1M', flow: '13.5 m³/h', through: '556 kg-DS/h', power: '3.6 kW', note: isNo ? 'Industriell DAF/anaerobt slam' : 'Industrial DAF / anaerobic sludge' },
+  { model: 'FDS 320.00.M2', flow: '17 m³/h',  through: '540 kg-DS/h', power: '3.75 kW', note: isNo ? 'Stor installasjon, opptil 3 000 m³/dag' : 'Large installation, up to 3,000 m³/day' },
+];
+
+const mobileModels = [
+  { model: 'FDS-MB 170.01',   flow: '4.5 m³/h',  through: '90 kg-DS/h',   power: '3.0 kW', note: isNo ? 'Enkel enhet, kat. B-sertifikat' : 'Single unit, cat. B licence' },
+  { model: 'FDS-MB 260.01',   flow: '10 m³/h',   through: '150 kg-DS/h',  power: '3.0 kW', note: isNo ? 'Container-versjon, én skrue' : 'Container version, single screw' },
+  { model: 'FDS-MB 260.02',   flow: '20 m³/h',   through: '300 kg-DS/h',  power: '3.0 kW', note: isNo ? 'Container-versjon, dobbel skrue' : 'Container version, dual screw' },
+  { model: 'FDS-MB 260.01-02',flow: '100 m³/h',  through: '960 kg-DS/h',  power: '—',      note: isNo ? 'Multiskrue, størst kapasitet' : 'Multi-screw, highest capacity' },
+];
 ---
 
 <!-- 5-step process -->
@@ -186,6 +212,74 @@ const benefits = [
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- FDS Model Range -->
+<section class="hiw-models">
+  <div class="hiw-inner">
+    <div class="hiw-models-header">
+      <h2 class="hiw-models-heading">{modelsHeading}</h2>
+      <p class="hiw-models-sub">{modelsSubtitle}</p>
+    </div>
+
+    <div class="hiw-model-group">
+      <h3 class="hiw-group-label">{standardLabel}</h3>
+      <div class="hiw-model-table-wrap">
+        <table class="hiw-model-table">
+          <thead>
+            <tr>
+              <th>{isNo ? 'Modell' : 'Model'}</th>
+              <th>{colFlow}</th>
+              <th>{colThrough}</th>
+              <th>{colPower}</th>
+              <th>{isNo ? 'Egnet for' : 'Suited for'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {fixedModels.map((m) => (
+              <tr>
+                <td class="hiw-model-name">{m.model}</td>
+                <td>{m.flow}</td>
+                <td>{m.through}</td>
+                <td>{m.power}</td>
+                <td class="hiw-model-note">{m.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="hiw-model-group">
+      <h3 class="hiw-group-label">{mobileLabel}</h3>
+      <div class="hiw-model-table-wrap">
+        <table class="hiw-model-table">
+          <thead>
+            <tr>
+              <th>{isNo ? 'Modell' : 'Model'}</th>
+              <th>{colFlow}</th>
+              <th>{colThrough}</th>
+              <th>{colPower}</th>
+              <th>{isNo ? 'Merknad' : 'Note'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mobileModels.map((m) => (
+              <tr>
+                <td class="hiw-model-name">{m.model}</td>
+                <td>{m.flow}</td>
+                <td>{m.through}</td>
+                <td>{m.power}</td>
+                <td class="hiw-model-note">{m.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="hiw-models-note">* {noteLabel}</p>
   </div>
 </section>
 
@@ -378,6 +472,109 @@ const benefits = [
   flex-shrink: 0;
 }
 
+/* ── Model range ─────────────────────────────────────── */
+.hiw-models {
+  background: #fff;
+  padding: 72px 0 64px;
+  border-top: 1px solid #e3e9ee;
+}
+
+.hiw-models-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.hiw-models-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: #003764;
+  letter-spacing: -0.6px;
+  margin: 0 0 12px;
+}
+
+.hiw-models-sub {
+  font-size: 16px;
+  color: #5b6b78;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hiw-model-group {
+  margin-bottom: 40px;
+}
+
+.hiw-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #3CB4E6;
+  margin: 0 0 14px;
+}
+
+.hiw-model-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e3e9ee;
+  border-radius: 6px;
+}
+
+.hiw-model-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hiw-model-table thead tr {
+  background: #eef3f6;
+}
+
+.hiw-model-table th {
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #5b6b78;
+  white-space: nowrap;
+  border-bottom: 1px solid #e3e9ee;
+}
+
+.hiw-model-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f4f7;
+  color: #33434f;
+  vertical-align: middle;
+}
+
+.hiw-model-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hiw-model-table tbody tr:hover td {
+  background: #f6f9fb;
+}
+
+.hiw-model-name {
+  font-weight: 700;
+  color: #003764;
+  white-space: nowrap;
+}
+
+.hiw-model-note {
+  color: #5b6b78;
+  font-size: 13px;
+}
+
+.hiw-models-note {
+  margin: 24px 0 0;
+  font-size: 12.5px;
+  color: #8fa0ae;
+  line-height: 1.5;
+}
+
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1100px) {
   .hiw-grid { grid-template-columns: repeat(3, 1fr); }
@@ -391,6 +588,8 @@ const benefits = [
   .hiw-inner { padding: 0 24px; }
   .hiw-steps { padding: 56px 0 48px; }
   .hiw-product { padding: 56px 0; }
+  .hiw-models { padding: 48px 0; }
+  .hiw-models-heading { font-size: 24px; }
 }
 
 @media (max-width: 480px) {

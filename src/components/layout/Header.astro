@@ -107,18 +107,18 @@ const segmentLinks: { key: PageKey; label: string }[] = [
 .fl-seg-drop {
   display: none;
   position: absolute;
-  top: calc(100% + 10px);
-  left: 0;
-  min-width: 180px;
+  top: 100%;
+  left: -10px;
+  min-width: 190px;
   background: #fff;
   border: 1px solid #e3e9ee;
   border-radius: 6px;
   box-shadow: 0 8px 24px rgba(0,40,80,.10);
-  padding: 6px;
+  padding: 10px 6px 6px;
   flex-direction: column;
   z-index: 100;
 }
-.fl-seg-wrap:hover .fl-seg-drop { display: flex; }
+.fl-seg-drop.open { display: flex; }
 .fl-seg-drop a {
   display: block;
   padding: 8px 12px;
@@ -201,10 +201,25 @@ const segmentLinks: { key: PageKey; label: string }[] = [
 </style>
 
 <script>
+// Mobile hamburger
 const toggle = document.getElementById('fl-menu-toggle');
 const menu   = document.getElementById('fl-mobile-menu');
 toggle?.addEventListener('click', () => {
   const open = menu?.classList.toggle('hidden');
   toggle.setAttribute('aria-expanded', String(!open));
 });
+
+// Segments dropdown — click-based so there's no hover gap dead zone
+const segBtn  = document.querySelector('.fl-seg-btn') as HTMLElement | null;
+const segDrop = document.querySelector('.fl-seg-drop') as HTMLElement | null;
+segBtn?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = segDrop?.classList.toggle('open');
+  segBtn.setAttribute('aria-expanded', String(!!isOpen));
+});
+document.addEventListener('click', () => {
+  segDrop?.classList.remove('open');
+  segBtn?.setAttribute('aria-expanded', 'false');
+});
+segDrop?.addEventListener('click', (e) => e.stopPropagation());
 </script>
