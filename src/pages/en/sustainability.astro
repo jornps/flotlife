@@ -5,6 +5,7 @@ import StatBlock from '../../components/sections/StatBlock.astro';
 import CTA from '../../components/sections/CTA.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
+import heroImage from '../../assets/solutions/water-sample-testing.jpg';
 
 const lang = 'en';
 const t = useTranslations(lang);
@@ -17,7 +18,7 @@ const stats = [
 ---
 
 <BaseLayout lang={lang} pageKey="sustainability" title="Sustainability | FlotLife Nordic" description="Why sludge from Nordic aquaculture and industry is a nutrient resource, not waste — and how collection technology makes recovery possible.">
-  <Hero title={t('sustainability.hero.title')} subtitle="Every year, Nordic aquaculture and industry generate sludge rich in nitrogen and phosphorus. Almost none of it is captured. That's not a disposal problem — it's a resource sitting uncollected." />
+  <Hero title={t('sustainability.hero.title')} subtitle="Every year, Nordic aquaculture and industry generate sludge rich in nitrogen and phosphorus. Almost none of it is captured. That's not a disposal problem — it's a resource sitting uncollected." image={heroImage} imageAlt="Water sample testing and quality analysis" />
 
   <StatBlock stats={stats} heading="The scale of what's being lost" />
 

@@ -8,6 +8,7 @@ import HowItWorks from '../../components/sections/HowItWorks.astro';
 import TechPlatform from '../../components/sections/TechPlatform.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
+import heroImage from '../../assets/solutions/fds-320-installation.jpg';
 
 const lang = 'en';
 const t = useTranslations(lang);
@@ -31,7 +32,7 @@ const processStepLabels: Record<string, string> = {
 ---
 
 <BaseLayout lang={lang} pageKey="solutions" title="Solutions | FlotLife Nordic" description="Dissolved air flotation, sludge dewatering, biological treatment and containerized plants — the four core technologies behind FlotLife Nordic.">
-  <Hero title={t('solutions.hero.title')} subtitle={t('solutions.hero.subtitle')} />
+  <Hero title={t('solutions.hero.title')} subtitle={t('solutions.hero.subtitle')} image={heroImage} imageAlt="FDS sludge dewatering unit installed at an industrial treatment facility" />
 
   <section style="background:#fff;padding:56px 0 0;">
     <div style="max-width:1200px;margin:0 auto;padding:0 40px;">

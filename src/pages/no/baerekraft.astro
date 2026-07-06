@@ -5,6 +5,7 @@ import StatBlock from '../../components/sections/StatBlock.astro';
 import CTA from '../../components/sections/CTA.astro';
 import { pathFor } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/utils';
+import heroImage from '../../assets/solutions/water-sample-testing.jpg';
 
 const lang = 'no';
 const t = useTranslations(lang);
@@ -17,7 +18,7 @@ const stats = [
 ---
 
 <BaseLayout lang={lang} pageKey="sustainability" title="Bærekraft | FlotLife Nordic" description="Hvorfor slam fra nordisk havbruk og industri er en næringsressurs, ikke avfall — og hvordan oppsamlingsteknologi gjør gjenvinning mulig.">
-  <Hero title={t('sustainability.hero.title')} subtitle="Hvert år genererer nordisk havbruk og industri slam rikt på nitrogen og fosfor. Nesten ingenting av det fanges opp. Det er ikke et avhendingsproblem — det er en ressurs som ikke samles inn." />
+  <Hero title={t('sustainability.hero.title')} subtitle="Hvert år genererer nordisk havbruk og industri slam rikt på nitrogen og fosfor. Nesten ingenting av det fanges opp. Det er ikke et avhendingsproblem — det er en ressurs som ikke samles inn." image={heroImage} imageAlt="Prøvetaking og vannkvalitetsanalyse" />
 
   <StatBlock stats={stats} heading="Størrelsen på det som går tapt" />
 
