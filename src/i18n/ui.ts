@@ -1,4 +1,4 @@
-export const languages = { en: 'English', no: 'Norsk' } as const;
+﻿export const languages = { en: 'English', no: 'Norsk' } as const;
 export const defaultLang = 'en' as const;
 
 export const ui = {
@@ -65,6 +65,26 @@ export const ui = {
     'howWeWork.step3.body': 'We design the complete solution — hydraulics, chemistry, automation and equipment selection — around your parameters, not a standard template.',
     'howWeWork.step4.title': 'Build & integrate',
     'howWeWork.step4.body': 'We deliver equipment built for your site and supervise commissioning until everything runs as designed.',
+
+    'howItWorks.eyebrow': 'The FDS Process',
+    'howItWorks.heading': 'How it works',
+    'howItWorks.subtitle': 'The FlotLife Dewatering System uses a multi-disc screw press to condition, flocculate and dewater sludge in a single automated line — reducing volume by up to 7× with no manual intervention.',
+    'howItWorks.step1.title': 'Sludge Conditioning',
+    'howItWorks.step1.body': 'Incoming sludge is collected in a conditioning tank, allowing flow to stabilise before treatment begins.',
+    'howItWorks.step2.title': 'Flow Control',
+    'howItWorks.step2.body': 'An overflow pipe meters feed to the press. Excess sludge returns to the conditioning tank, holding throughput constant.',
+    'howItWorks.step3.title': 'Flocculation',
+    'howItWorks.step3.body': 'Flocculant is added in the flocculation tank. Dissolved particles aggregate into large, dense flocs ready for mechanical separation.',
+    'howItWorks.step4.title': 'Thickening & Dewatering',
+    'howItWorks.step4.body': 'A screw pushes sludge through alternating fixed and moving rings. The thickening zone removes free water; the dewatering zone compresses the cake under increasing pressure.',
+    'howItWorks.step5.title': 'Cake Discharge',
+    'howItWorks.step5.body': 'The end plate applies final pressure. Dewatered cake exits continuously — ready for transport, biogas or disposal.',
+    'howItWorks.product': 'FDS Dewatering System',
+    'howItWorks.b1': 'Up to 7× sludge volume reduction',
+    'howItWorks.b2': 'Clog-resistant self-cleaning ring mechanism',
+    'howItWorks.b3': 'Fully automatic 24/7 unattended operation',
+    'howItWorks.b4': 'Compact footprint — fits in restricted spaces',
+    'howItWorks.b5': 'Sizes from small to large-scale facilities',
 
     'sustainability.hero.title': 'Sludge is not waste. It’s a resource we haven’t collected yet.',
 
@@ -148,6 +168,26 @@ export const ui = {
     'howWeWork.step3.body': 'Vi designer den komplette løsningen — hydraulikk, kjemi, automasjon og utstyrsvalg — etter de spesifikke parameterne, ikke en standardmal.',
     'howWeWork.step4.title': 'Bygg og integrer',
     'howWeWork.step4.body': 'Vi leverer utstyr bygd for anlegget deres og overvåker idriftsettelse til alt fungerer som designet.',
+
+    'howItWorks.eyebrow': 'FDS-prosessen',
+    'howItWorks.heading': 'Slik fungerer det',
+    'howItWorks.subtitle': 'FlotLife Dewatering System bruker en multidisk-skruepresse for å kondisjonere, flokkulere og avvanne slam i én automatisert linje — og reduserer volum med opptil 7× uten manuelt tilsyn.',
+    'howItWorks.step1.title': 'Slamkondisjonering',
+    'howItWorks.step1.body': 'Innkommende slam samles i et kondisjoneringstank og får tid til å stabilisere seg før behandlingen starter.',
+    'howItWorks.step2.title': 'Strømstyring',
+    'howItWorks.step2.body': 'Et overløpsrør regulerer tilførselen til pressen. Overskuddsslam returnerer til tanken og holder gjennomløpet konstant.',
+    'howItWorks.step3.title': 'Flokkulering',
+    'howItWorks.step3.body': 'Flokkulant tilsettes i flokkuleringstanken. Oppløste partikler aggregerer til store, tette flokker klare for mekanisk separasjon.',
+    'howItWorks.step4.title': 'Fortykning og avvanning',
+    'howItWorks.step4.body': 'En skrue presser slam gjennom vekselvise faste og bevegelige ringer. Fortykningssonen fjerner fritt vann; avvanningssonen komprimerer kaken under økende trykk.',
+    'howItWorks.step5.title': 'Kakedischarge',
+    'howItWorks.step5.body': 'Sluttplaten påfører det endelige trykket. Avvannet kake kommer kontinuerlig ut — klar for transport, biogass eller avhending.',
+    'howItWorks.product': 'FDS-avvanningssystem',
+    'howItWorks.b1': 'Opptil 7× reduksjon i slamvolum',
+    'howItWorks.b2': 'Tetningsfri, selvrensende ringmekanisme',
+    'howItWorks.b3': 'Fullt automatisk drift 24/7 uten tilsyn',
+    'howItWorks.b4': 'Kompakt fotavtrykk — passer i trange rom',
+    'howItWorks.b5': 'Størrelser for både små og store anlegg',
 
     'sustainability.hero.title': 'Slam er ikke avfall. Det er en ressurs vi ikke har samlet inn ennå.',
 

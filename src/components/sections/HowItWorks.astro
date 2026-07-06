@@ -1,0 +1,399 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/routes';
+import screwPress from '../../assets/solutions/fl-19-screw-press.png';
+import { Image } from 'astro:assets';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const steps = [
+  {
+    num: '01',
+    title: t('howItWorks.step1.title'),
+    body:  t('howItWorks.step1.body'),
+    svg: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Conditioning tank: cylindrical vessel with fill level indicator -->
+      <rect x="18" y="28" width="44" height="34" rx="4" fill="#eef3f6" stroke="#3CB4E6" stroke-width="2"/>
+      <rect x="18" y="40" width="44" height="22" rx="0" fill="#c0e8f8" opacity=".7"/>
+      <rect x="18" y="40" width="44" height="22" rx="0" fill="#3CB4E6" opacity=".2"/>
+      <!-- Water surface ripple -->
+      <path d="M24 40 Q32 37 40 40 Q48 43 56 40" stroke="#3CB4E6" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <!-- Inlet pipe top -->
+      <line x1="40" y1="14" x2="40" y2="28" stroke="#003764" stroke-width="3" stroke-linecap="round"/>
+      <polygon points="34,20 46,20 40,28" fill="#003764"/>
+      <!-- Outlet pipe bottom -->
+      <rect x="36" y="62" width="8" height="10" rx="2" fill="#003764"/>
+      <!-- Particles in water -->
+      <circle cx="29" cy="50" r="2" fill="#003764" opacity=".4"/>
+      <circle cx="45" cy="48" r="1.5" fill="#003764" opacity=".3"/>
+      <circle cx="52" cy="53" r="2" fill="#003764" opacity=".4"/>
+      <circle cx="33" cy="57" r="1.5" fill="#003764" opacity=".25"/>
+    </svg>`,
+  },
+  {
+    num: '02',
+    title: t('howItWorks.step2.title'),
+    body:  t('howItWorks.step2.body'),
+    svg: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Main tank -->
+      <rect x="10" y="24" width="36" height="38" rx="4" fill="#eef3f6" stroke="#3CB4E6" stroke-width="2"/>
+      <rect x="10" y="38" width="36" height="24" rx="0" fill="#3CB4E6" opacity=".15"/>
+      <!-- Overflow pipe going right -->
+      <rect x="46" y="24" width="6" height="20" rx="2" fill="#003764" opacity=".7"/>
+      <!-- Return arrow curved -->
+      <path d="M52 34 Q68 34 68 52 Q68 64 46 64" stroke="#3CB4E6" stroke-width="2" stroke-dasharray="4 2" fill="none" stroke-linecap="round"/>
+      <polygon points="40,60 48,64 40,68" fill="#3CB4E6"/>
+      <!-- Level line -->
+      <line x1="10" y1="38" x2="46" y2="38" stroke="#3CB4E6" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <!-- Flow arrows down -->
+      <line x1="28" y1="62" x2="28" y2="74" stroke="#003764" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="23,70 33,70 28,76" fill="#003764"/>
+    </svg>`,
+  },
+  {
+    num: '03',
+    title: t('howItWorks.step3.title'),
+    body:  t('howItWorks.step3.body'),
+    svg: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Flocculation tank -->
+      <rect x="14" y="26" width="40" height="36" rx="4" fill="#eef3f6" stroke="#3CB4E6" stroke-width="2"/>
+      <rect x="14" y="40" width="40" height="22" rx="0" fill="#3CB4E6" opacity=".15"/>
+      <!-- Mixer shaft -->
+      <line x1="34" y1="14" x2="34" y2="62" stroke="#003764" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Mixer blades -->
+      <line x1="20" y1="48" x2="48" y2="48" stroke="#003764" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="22" y1="56" x2="46" y2="56" stroke="#003764" stroke-width="2" stroke-linecap="round"/>
+      <!-- Flocculant drop inlet -->
+      <line x1="60" y1="10" x2="60" y2="30" stroke="#3CB4E6" stroke-width="2" stroke-dasharray="3 2"/>
+      <path d="M60 30 L54 30" stroke="#3CB4E6" stroke-width="2"/>
+      <circle cx="54" cy="30" r="3" fill="#3CB4E6" opacity=".8"/>
+      <!-- Floc particles (larger, aggregated) -->
+      <circle cx="24" cy="50" r="4" fill="#003764" opacity=".25"/>
+      <circle cx="44" cy="53" r="5" fill="#003764" opacity=".2"/>
+      <circle cx="34" cy="57" r="3.5" fill="#003764" opacity=".3"/>
+    </svg>`,
+  },
+  {
+    num: '04',
+    title: t('howItWorks.step4.title'),
+    body:  t('howItWorks.step4.body'),
+    svg: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Screw press tube -->
+      <rect x="8" y="30" width="58" height="22" rx="11" fill="#eef3f6" stroke="#003764" stroke-width="2"/>
+      <!-- Screw flights -->
+      <ellipse cx="19" cy="41" rx="7" ry="10" fill="none" stroke="#3CB4E6" stroke-width="1.8"/>
+      <ellipse cx="30" cy="41" rx="7" ry="10" fill="none" stroke="#3CB4E6" stroke-width="1.8"/>
+      <ellipse cx="41" cy="41" rx="7" ry="10" fill="none" stroke="#3CB4E6" stroke-width="1.8"/>
+      <ellipse cx="52" cy="41" rx="6" ry="10" fill="none" stroke="#3CB4E6" stroke-width="1.8"/>
+      <!-- Water drops falling (filtrate) -->
+      <line x1="22" y1="52" x2="22" y2="60" stroke="#3CB4E6" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <line x1="35" y1="52" x2="35" y2="62" stroke="#3CB4E6" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <line x1="48" y1="52" x2="48" y2="60" stroke="#3CB4E6" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <!-- Sludge in (left arrow) -->
+      <line x1="2" y1="41" x2="8" y2="41" stroke="#003764" stroke-width="2.5"/>
+      <polygon points="6,37 12,41 6,45" fill="#003764"/>
+    </svg>`,
+  },
+  {
+    num: '05',
+    title: t('howItWorks.step5.title'),
+    body:  t('howItWorks.step5.body'),
+    svg: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Press body end section -->
+      <rect x="6" y="30" width="34" height="22" rx="4" fill="#eef3f6" stroke="#003764" stroke-width="2"/>
+      <!-- End plate -->
+      <rect x="40" y="26" width="10" height="30" rx="3" fill="#003764" opacity=".7"/>
+      <!-- Pressure spring symbol -->
+      <path d="M50 32 Q55 35 50 38 Q55 41 50 44 Q55 47 50 50" stroke="#3CB4E6" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Cake exit chute -->
+      <rect x="56" y="35" width="18" height="14" rx="3" fill="#c4a96a" opacity=".5" stroke="#8a6f3a" stroke-width="1.5"/>
+      <!-- Exit arrow -->
+      <line x1="40" y1="41" x2="56" y2="41" stroke="#003764" stroke-width="2.5"/>
+      <polygon points="52,37 60,41 52,45" fill="#003764"/>
+      <!-- Cake texture dots -->
+      <circle cx="62" cy="39" r="1.5" fill="#8a6f3a" opacity=".6"/>
+      <circle cx="66" cy="43" r="1.5" fill="#8a6f3a" opacity=".6"/>
+      <circle cx="70" cy="40" r="1.2" fill="#8a6f3a" opacity=".5"/>
+    </svg>`,
+  },
+];
+
+const benefits = [
+  t('howItWorks.b1'),
+  t('howItWorks.b2'),
+  t('howItWorks.b3'),
+  t('howItWorks.b4'),
+  t('howItWorks.b5'),
+];
+---
+
+<!-- 5-step process -->
+<section class="hiw-steps">
+  <div class="hiw-inner">
+    <div class="hiw-header">
+      <span class="hiw-eyebrow">{t('howItWorks.eyebrow')}</span>
+      <h2 class="hiw-heading">{t('howItWorks.heading')}</h2>
+      <p class="hiw-subtitle">{t('howItWorks.subtitle')}</p>
+    </div>
+
+    <!-- Connector line desktop -->
+    <div class="hiw-track" aria-hidden="true"></div>
+
+    <div class="hiw-grid">
+      {steps.map((step) => (
+        <article class="hiw-card">
+          <div class="hiw-num">{step.num}</div>
+          <div class="hiw-icon" set:html={step.svg} />
+          <h3 class="hiw-card-title">{step.title}</h3>
+          <p class="hiw-card-body">{step.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Product spotlight + benefits -->
+<section class="hiw-product">
+  <div class="hiw-inner">
+    <div class="hiw-split">
+      <div class="hiw-img-wrap">
+        <Image
+          src={screwPress}
+          alt="FL-19 FDS screw press dewatering unit"
+          width={600}
+          height={450}
+          class="hiw-img"
+        />
+      </div>
+      <div class="hiw-benefits">
+        <span class="hiw-prod-label">{t('howItWorks.product')}</span>
+        <h3 class="hiw-prod-heading">{t('howItWorks.heading')}</h3>
+        <ul class="hiw-benefit-list">
+          {benefits.map((b) => (
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="9" fill="#3CB4E6" opacity=".18"/>
+                <path d="M5 9l3 3 5-5" stroke="#3CB4E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── Shared layout ───────────────────────────────────── */
+.hiw-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Steps section ───────────────────────────────────── */
+.hiw-steps {
+  background: #eef3f6;
+  padding: 80px 0 72px;
+  position: relative;
+}
+
+.hiw-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+
+.hiw-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #3CB4E6;
+  margin-bottom: 14px;
+}
+
+.hiw-heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: #003764;
+  letter-spacing: -0.8px;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+
+.hiw-subtitle {
+  font-size: 17px;
+  color: #5b6b78;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* horizontal connector line */
+.hiw-track {
+  position: absolute;
+  top: calc(80px + 60px + 56px + 40px); /* header offset + padding + approx card num top */
+  left: calc(50% - 480px + 80px);
+  width: calc(960px - 160px);
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #3CB4E6 8%, #3CB4E6 92%, transparent 100%);
+  opacity: .35;
+  pointer-events: none;
+}
+
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.hiw-card {
+  background: #fff;
+  border: 1px solid #e3e9ee;
+  border-radius: 8px;
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  transition: box-shadow .2s, transform .2s;
+}
+
+.hiw-card:hover {
+  box-shadow: 0 12px 32px rgba(0,40,80,.09);
+  transform: translateY(-3px);
+}
+
+.hiw-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #3CB4E6;
+  background: #eef3f6;
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
+.hiw-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.hiw-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hiw-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #003764;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.hiw-card-body {
+  font-size: 13.5px;
+  color: #5b6b78;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Product section ─────────────────────────────────── */
+.hiw-product {
+  background: #003764;
+  padding: 80px 0;
+}
+
+.hiw-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hiw-img-wrap {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+}
+
+.hiw-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hiw-benefits {
+  color: #c9dce8;
+}
+
+.hiw-prod-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #3CB4E6;
+  margin-bottom: 14px;
+}
+
+.hiw-prod-heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin: 0 0 28px;
+}
+
+.hiw-benefit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hiw-benefit-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.hiw-benefit-list svg {
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .hiw-grid { grid-template-columns: repeat(3, 1fr); }
+  .hiw-track { display: none; }
+}
+
+@media (max-width: 760px) {
+  .hiw-grid { grid-template-columns: 1fr 1fr; }
+  .hiw-heading { font-size: 28px; }
+  .hiw-split { grid-template-columns: 1fr; gap: 36px; }
+  .hiw-inner { padding: 0 24px; }
+  .hiw-steps { padding: 56px 0 48px; }
+  .hiw-product { padding: 56px 0; }
+}
+
+@media (max-width: 480px) {
+  .hiw-grid { grid-template-columns: 1fr; }
+}
+</style>
