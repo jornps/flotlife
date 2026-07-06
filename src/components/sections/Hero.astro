@@ -37,7 +37,7 @@ const { eyebrow, title, subtitle, ctaLabel, ctaHref, ctaSecondaryLabel, ctaSecon
     </div>
     {image && (
       <div class="relative">
-        <div class="overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
           <Image src={image} alt={imageAlt ?? ''} widths={[400, 800, 1200]} sizes="(min-width: 1024px) 50vw, 100vw" class="h-full w-full object-cover" />
         </div>
       </div>
