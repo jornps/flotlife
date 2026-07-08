@@ -1,40 +1,47 @@
 ---
-lang: no
+lang: 'no'
 segmentKey: maritim
-title: Maritim
+title: Sjøfart
 slug: maritim
 heroImage: ../../assets/solutions/containerized-plant-2.jpg
-heroImageAlt: Containerbasert vannbehandlingssystem for maritim og offshore bruk
-excerpt: Begrenset plass, ingen margin for nedetid. Kompakt, automatisert behandling for fartøy, offshore og havner.
+heroImageAlt: Vannbehandlingssystem i container for maritime og offshore-anvendelser
+excerpt: >-
+  Mindre plass, ingen rom for driftsstans. Kompakt, automatisert behandling for
+  skip, offshoreanlegg og havner.
 stats:
-  - value: "1"
-    label: Kompakt system, bygget for begrenset plass
-  - value: "24/7"
+  - value: '1'
+    label: 'Kompakt system, utviklet for trange rom'
+  - value: 24/7
     label: Automatisert drift til sjøs
-  - value: "4"
-    label: Kjerneteknologier, ett samlet system
-relatedSolutions: ["daf", "containerized-plant"]
-seoTitle: Vannbehandling for maritim og offshore | FlotLife Nordic
-seoDescription: Kompakte DAF- og containerbaserte vannbehandlingsanlegg for skip, offshore-plattformer, havner og brønnbåtoperasjoner.
+  - value: '4'
+    label: 'Kjerneteknologier, ett integrert system'
+relatedSolutions:
+  - daf
+  - containerized-plant
+seoTitle: Vannbehandling for sjøfart og offshore | FlotLife Nordic
+seoDescription: >-
+  Kompakte DAF- og containerbaserte vannbehandlingssystemer for skip,
+  offshoreplattformer, havner og brønnbåtvirksomhet.
 order: 4
 ---
+<!-- Automatisk oversatt 2026-07-06 av DeepL — sjekk teksten før publisering -->
 
 ## Plass er begrensningen. Pålitelighet er kravet.
 
-Om bord på et fartøy eller på en offshore-plattform er det ikke rom for overdimensjonert utstyr — og ingen toleranse for systemer som krever konstant tilsyn. Behandlingen må passe innenfor arealrammen, tåle bevegelse og vær, og ikke skape nye problemer for mannskapet.
+Om bord på et fartøy eller på en offshoreplattform er det ikke plass til overdimensionert utstyr – og ingen toleranse for systemer som krever konstant oppfølging. Behandlingssystemet må passe inn i det tilgjengelige arealet, fungere under bevegelse og i all slags vær, og ikke skape nye problemer for mannskapet.
 
-Det er driftsomgivelsene vi designer for.
+Det er dette driftsmiljøet vi designer for.
 
-## Hvor systemene passer
+## Hvor systemene våre passer inn
 
-- **Skip og offshore-installasjoner** — behandling av prosess-, ballast- og vaskevann innenfor et begrenset utstyrsareal.
-- **Havner og terminaler** — mottak og behandling av vann losset fra besøkende fartøy.
-- **Brønnbåt** — behandling av vann som tas inn ved lasting, transport og avlusing, i skjæringspunktet mellom maritim og havbruk.
+- **Skip og offshoreinstallasjoner** – behandling av prosess-, ballast- og vaskevann innenfor et begrenset utstyrsareal.
+- **Havner og terminaler** – mottak og rensing av vann som slippes ut fra anløpende skip.
+- **Brønnbåter** – rensing av vann som tas om bord under lasting, transport og avlusingsoperasjoner, i skjæringspunktet mellom sjøfart og akvakultur.
 
 ## Samme teknologi — i et maritimt format
 
-Containerbaserte konfigurasjoner bringer DAF- og avvanningsteknologi inn i et areal som passer et fartøysdekk eller en plattformmodul, med automasjon designet for drift uten tilsyn mellom mannskapskontroller. Bygget for å kjøre, ikke for å passes på.
+Våre containerbaserte konfigurasjoner bringer DAF- og avvanningsteknologi inn i et fotavtrykk som passer på et skipssdekk eller en plattformmodul, med automatisering designet for uovervåket drift mellom mannskapets kontroller. Bygget for å fungere, ikke for å bli administrert.
 
-## Når pålitelighet ikke er valgfritt
+## Når pålitelighet ikke kan være valgfritt
 
-Et behandlingsanlegg som svikter til sjøs er et annet problem enn et som svikter på land. Systemene våre er designet for forutsigbarhet: automatiserte, fjernovervåkede og bygget uten unødvendig kompleksitet.
+Et rensesystem som svikter til sjøs er et annet problem enn et som svikter på land. Våre systemer er utformet for forutsigbarhet: automatiserte, fjernovervåkede og bygget uten unødvendig kompleksitet.
